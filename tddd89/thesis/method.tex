@@ -1,0 +1,25 @@
+\documentclass[thesis.tex]{subfiles}
+\begin{document}
+
+\subsection{Theoretical basis}
+This thesis results will be based empirical studies and published theories that have been through a peer-review process\cite{1994math}.
+
+\subsection{Types of research questions answered}
+The first kind of question is in the form of means of development, meaning how to implement this in the current implementation of OpenMPI. The second kind of question is a method for analysis which is required to evaluate the quality of the implementation.
+
+\subsection{Pre-study}
+Information gathered during this phase will be used to further delimit the thesis. Several different field will be studied such as OpenMPI, MCA in OpenMPI and general dynamic runtime optimization. 
+\newline
+\newline
+In the end of the pre-study a list of variables that can be adjusted during runtime and the effect of changes in these variables can be calculated will be present. All of these variables will of course have to affect the performance. This list will be the basis for the implementation phase.
+
+\subsection{Implementation}
+
+
+\subsection{Evaluation}
+The primary goal of the implementation is to result in a general speed-up over the most problems which uses OpenMPI. To measure the results one or more of the benchmarking tools listed in the theory will be used with and without the implementation. These benchmarks runs several tests that are designed to mimic real world problems that OpenMPI is used for.
+\newline
+\newline
+To assess the change in resource utilization the benchmarks tools will test the system without the run-time optimization enabled, the results will be documented and the same test will be run with the optimization enabled and hopefully we will see a improvement in performance.
+
+\end{document}

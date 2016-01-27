@@ -1,0 +1,29 @@
+\documentclass[thesis.tex]{subfiles}
+\begin{document}
+This chapter is meant to give a brief introduction and summary of this thesis and hopefully make you compelled to continue reading.
+\section{Motivation}
+Today HPC(High-performance computing) is used in a lot of different areas to make large computations possible. They can be used to recreate the big bang, understanding earthquakes, folding proteins, testing nuclear weapons and predicting climate change to name a few. Some of these are in great interest for mankind. By calculating how proteins fold necessary knowledge can be acquired that can be used to prevent diseases such as Cystic Fibrosis, Mad cow disease and Alzheimer's. By predicting climate change knowledge can be gain on how to prevent the increasing temperature of our planet. 
+\newline
+\newline
+The MPI(Message Passing Interface) is a standardized message-passing system to pass messages between processes. The processes can run on the same or different machines. MPI is just a standard and a lot of different implementations exists on different languages such as C++, C and FORTRAN. The de-facto implementation of MPI is MPICH but a more general implementation is OpenMPI which is the one this thesis will use as it basis.
+\newline
+\newline
+The C++ OpenMPI implementation have many variables that can be changed to increase the performance of the computation. The optimal configuration can differ depending on the platform running the computation and the computation itself. There are many variables and to find the perfect configuration through exhaustive search is not an alternative. There exists auto tuning software that by using benchmarks and algorithms can find a pretty good configuration. There is also software that can analyse the data from the OpenMPI profiling tool after a computation and give a report on how well the system is utilized. This is important when you run a computation several times but what if you are only going to run one large computation one time. In that case you would need something that dynamically tunes the system during run time. This problem is the basis for this thesis.
+\section{Why is this needed}
+There are no run-time tuning software for the C++ OpenMPI. The only alternative are post-mortem analysis of the computation and this is no good if you are only running one large computation once or a lot of smaller ones. One use case of this dynamically run-time optimization can be that you are running a lot of small computations and you don't want to tune the system for each computation since this takes a lot of time and resources. Instead the system will tune itself when you start the computation.
+
+\section{Aim}
+The goal of this thesis is to evaluate which parameters of an calculation distributed on several nodes can be monitored and adjusted during run time. The result will be a tool that can suggest how the computation can be optimized during run time. This will of course require some calculation and bandwidth to analyse the status of the the computation. The goal is that the overall performance will increase so that the performance gained is higher than the performance lost from resources used by the optimization tool.
+
+\section{Research questions}
+\begin{itemize}
+\item Of the parameters that can be adjusted during run time in the OpenMPI library, for which of these can the result of a adjustment during run time be calculated
+\item Is the OpenMPI profiling tool capable of the measuring the data required for the calculation in question two or are there are need for a new tool running on all nodes
+\end{itemize}
+
+\section{Delimitations}
+This thesis will only use the C++ OpenMPI library as it basis. No other programming languages or libraries will be evaluated. However OpenMPI has it roots on MPICH so there might be a possibility that it could work with MPICH and its derivatives but that will not be considered in this thesis. If the result is that such a tool can be created then the work on a base framework will start, however due to time constraints just the bare bone structure will be implemented and documentation will be created on how to further develop it. In the end there will only be some base functionality, not a complete tool. 
+\newline
+\newline
+The performance testing can only be done one a regular Ethernet and will not use standard HPC equipment such as Infiniband. 
+\end{document}

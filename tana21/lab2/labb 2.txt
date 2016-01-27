@@ -1,0 +1,80 @@
+2.1
+
+P=polyfit(X,Y,N)
+returnerar koefficienterna till ett polynom som minimerar felet y=P(x) med grad N
+
+Y=polyval(p,x)
+
+För varje x returnes ett y värde y=p(x)
+
+2.2
+
+3 representerar grad av polynomet och siffrorna representerar koefficienterna för polynomet
+
+
+2.3
+
+xx=1.0:0.05:2.5
+
+YY=polyval(c,xx)
+ger:
+y=p(xx)
+
+2.4:
+
+de går igenom
+
+2.5:
+
+c=polyfit(x,y,2)
+yy=polyval(c,xx)
+plot(xx,yy,x,y,'*')
+
+nej den går inte igenom
+
+c=polyfit(x,y,1)
+yy=polyval(c,xx)
+plot(xx,yy,x,y,'*')
+
+nej den går inte igenom
+
+2.6
+
+c=polyfit(x,y,4)
+yy=polyval(c,xx)
+plot(xx,yy,x,y,'*')
+
+ja det går igenom. Behöver inte fler grader än punkter
+
+c=polyfit(x,y,10)
+yy=polyval(c,xx)
+plot(xx,yy,x,y,'*')
+
+Ja men annorlunda kurva
+
+2.7
+
+grad 2
+
+3.1
+
+tycker den blir sämre
+
+4.1
+4 gånger mindre
+
+4.2
+
+samma
+
+4.3
+a)linjärt
+b)kvadratiskt
+c)kubiskt
+
+
+5.1
+bättre än 3.1
+
+
+

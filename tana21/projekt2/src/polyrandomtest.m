@@ -1,0 +1,17 @@
+%create a random polynomial
+number_of_factors= randi([1,10]);
+
+coeff= randi([1,5],1,number_of_factors);
+
+% data points
+x=number_of_factors;
+
+%get some data from the datapoints and polynomial
+y=polyval(coeff,1:x);
+
+my_polynomial=mypolyfit(1:x,y);
+
+my_y=mypolyval(my_polynomial,1:x);
+
+plot(1:x,y,1:x,my_y);
+

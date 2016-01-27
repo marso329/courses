@@ -1,0 +1,41 @@
+
+optimization:
+
+Om en subsekvens rymms i shared memory så använd det
+Om ett tal ska jämföras två gånger på raken i ett block så ha det i registret
+
+Answer 1:
+half: 2 outputs
+second half: no output
+
+answer 2:
+1024
+
+answer 3:
+syncronizing so calculation are in correct order. For exempel the 4 element divide dont happen before the 2 element divide are done
+Solved using several kernel runs and syncronizing between them
+
+answer 4:
+between 65536 and 131072 is the GPU faster.
+65536:
+CPU:0.055905
+GPu:0.045350
+
+131072:
+CPU:	0.122329
+GPU: 	0.048445
+
+
+answer 5:
+if the data a block is working in can fit into shared memory then use it
+
+answer 6:
+at 32768 elements is the gpu faster
+
+16384
+CPU:0.025662
+GPU:0.047227
+
+32768
+CPU:0.054371
+GPU:0.047645

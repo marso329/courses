@@ -1,0 +1,5 @@
+PART 1:
+QUESTION: How many cores will simple.cu use, max, as written? How many SMs?
+16 because we use 16 blocks and each thread can migrate to one block
+
+

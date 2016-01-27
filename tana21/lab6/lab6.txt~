@@ -1,0 +1,67 @@
+2.1
+2^1023
+För stort blir inf
+
+2.2
+
+2^(-1074)
+
+Blir noll
+
+2.3
+
+
+a=inf
+a+a=inf
+1/a=0
+-a=-inf
+a-a=NaN
+
+2.4
+inf returns the IEEE arithmetic representation for positive
+infinity.
+
+NaN is the IEEE arithmetic representation for Not-a-Number.
+A NaN is obtained as a result of mathematically undefined
+operations like 0.0/0.0  and inf-inf.
+
+3.1
+
+2^(-52)+1 är större än 1
+samma som eps
+
+3.2
+
+2+2^(-51) är större än 2
+samma som eps
+
+3.3
+4+2^(-50) är större än 4
+samma som eps
+
+3.4
+x=1:10:10000000;
+y=eps(x)
+plot(x,y)
+
+4.1
+
+Ja
+
+4.2
+det första var sämst
+
+4.3
+litet till stort
+
+5.1
+se figure51.png
+
+5.2
+y=x.*sqrt(1+(x.^(-2)))-1;
+
+5.3
+Den sista dvs -1 då resultatet blir nära noll
+
+
+

@@ -1,0 +1,140 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{subscript}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[]{algorithm2e}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+\title{TDDD89 Planning Report:}
+\author{Martin Söderén\\ marso329@student.liu.se\\900929-1098}
+\date{\today}
+\maketitle
+\vfill % Fill the rest of the page with whitespace
+\thispagestyle{empty}
+\end{titlepage}
+\section{Preliminary title}
+Real time visulization of MPI utilization in the C++ MPI library 
+
+\section{Problem description}
+MPI(Message Passing Interface) is a standardized interface for message-passing between computers and is mostly used for distributed computing on large parallel computers. There is a need for a real time platform independent visualization tool that can be used to analyze how well the computing is being performed. There exists tools that do this post-mortem such as mpe and VAMPIRE. Some tools that do this in real time but are not up to date such as XMPI.
+\newline
+\newline
+The expected result should be base framework with some limited functionality and documentation on how to further develop the functionality since development of a complete tool will probably take more time that can be spend during this thesis.
+
+\section{Approach}
+The first phase will be to read up on how the MPI is used and read all of the relevant documentation that exists.
+\newline
+\newline
+The second phase will be test and use the current available softwares to see how they are used and their downsides and upsides.
+\newline
+\newline
+The third phase will be to read relevant literature of academic nature on how a optimized implementation should be implemented.
+\newline
+\newline
+The forth phase will be to start implementing
+\newline
+\newline
+During this whole time there will be time spent on the actual thesis. 
+
+\section{Literature base }
+\begin{itemize}
+\item Using MPI - 2nd Edition: Portable Parallel Programming with the Message Passing Interface (Scientific and Engineering Computation)
+\item http://www.mcs.anl.gov/research/projects/mpi/usingmpi2/
+\item http://www.cs.usfca.edu/~peter/ppmpi/
+\item http://moss.csc.ncsu.edu/~mueller/cluster/mpi.guide.pdf
+\item http://dl.acm.org/citation.cfm?id=898758
+\item https://www.vampir.eu/
+\item http://www.mcs.anl.gov/research/projects/perfvis/software/MPE/
+\item https://wiki.mpich.org/mpich/index.php/MPE\_by\_example
+\end{itemize}
+
+\section{Time plan}
+\subsection{Pre-study}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{Activity} & Duration & Finished & Dependencies & Comment  \\ \hline
+    Planning & One day & 6-11-15 & None & This document \\ \hline
+    Create all latex templates & Couple of hours & 13-11-15 & None & Setup reference \\ \hline
+    Reading MPI documentation & One week & 20-11-15 & None & Also testing \\ \hline
+    Testing MPI tools & Three days & 25-11-15 & MPI doc & Document during \\ \hline
+	 Reading academic literature & Two weeks & 9-12-15 & None & Document during \\ \hline
+   Thesis draft & Three days & 12-12-15 & academic lit. & None \\ \hline
+  \end{tabular}
+  \caption{Pre-study time plan }
+  \label{tab:funktion1}
+\end{table}
+\subsection{Experimental}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{Activity} & Duration & Finished & Dependencies & Comment  \\ \hline
+    Implementation & Six weeks & 6-02-16 & Pre-study & None \\ \hline
+
+  \end{tabular}
+  \caption{Implementation time plan }
+  \label{tab:funktion1}
+\end{table}
+
+
+\subsection{Writing}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{Activity} & Duration & Finished & Dependencies & Comment  \\ \hline
+    Writing thesis & Two months & 6-4-16 & Implementation & None \\ \hline
+
+  \end{tabular}
+  \caption{Writing time plan }
+  \label{tab:funktion1}
+\end{table}
+
+\section{Relevant courses}
+\begin{itemize}
+\item TDDB68	Processprogrammering och operativsystem
+\item TDDD20	Konstruktion och analys av algoritmer
+\item TDDD56	Multicore- och GPU-Programmering
+\item TDDD89	Vetenskaplig metoder
+\item TDDD25 	Distribuerade system
+\item TDDD38 	Avancerad programmering i C++
+\item TDDC78 	Programmering av parallelldatorer - metoder och verktyg
+\end{itemize}
+
+\end{document}

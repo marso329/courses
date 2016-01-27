@@ -1,0 +1,393 @@
+
+\documentclass[titlepage, a4paper]{article}
+
+\input{../mall/layout.tex}	% Importera generella layout-strukturer
+
+% Information nödvändig för generella layout-strukturer
+\newcommand{\LIPSredaktor}{Dennis Ljung}
+\newcommand{\LIPSversion}{1.0}
+\newcommand{\LIPSdokument}{Prediktionsreglering}
+\newcommand{\LIPSdokumenttyp}{Kandidatrapport}
+\newcommand{\LIPSgranskatdatum}{-}
+\newcommand{\LIPSgranskare}{Dennis Ljung}
+\newcommand{\LIPSgodkannare}{Andreas Runfalk}
+\newcommand{\LIPSgodkantdatum}{-}
+\newcommand{\LIPSkursnamn}{TDDD77}
+\newcommand{\LIPSprojektnamn}{Prediktionsreglering}
+\newcommand{\LIPSprojektgrupp}{Grupp 2}
+\newcommand{\LIPSartaltermin}{VT, 2015}
+\newcommand{\LIPSgrupphemsida}{http://pum-2.ida.liu.se/}
+\newcommand{\LIPSkund}{Saab}
+\newcommand{\LIPSkundkontakt}{Daniel Simon}
+\newcommand{\LIPSkursansvarig}{Kristian Sandahl}
+\newcommand{\LIPShandledare}{Andreas Runfalk}
+
+%% Titelsida martins
+\newcommand{\LIPSTitelsidamartin}{%
+{\ }\vspace{45mm}
+\begin{center}
+  \textbf{\Huge Optimering av matrisbibliotek}
+\end{center}
+\begin{center}
+  {\Large Författare: Martin Söderén}
+\end{center}
+\begin{center}
+  {\Large \textbf{Version \LIPSversion}}
+\end{center}
+\vfill
+\begin{center}
+  {\large Status}\\[1.5ex]
+  \begin{tabular}{|*{3}{p{40mm}|}}
+    \hline
+    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    \hline
+    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    \hline
+  \end{tabular}
+\end{center}
+\newpage
+}
+
+
+%% Titelsida Adam
+\newcommand{\LIPSTitelsidayngve}{%
+{\ }\vspace{45mm}
+\begin{center}
+  \textbf{\Huge Utvärdering av byggsystem}
+\end{center}
+\begin{center}
+  {\Large Författare: Alexander Yngve}
+\end{center}
+\begin{center}
+  {\Large \textbf{Version \LIPSversion}}
+\end{center}
+\vfill
+\begin{center}
+  {\large Status}\\[1.5ex]
+  \begin{tabular}{|*{3}{p{40mm}|}}
+    \hline
+    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    \hline
+    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    \hline
+  \end{tabular}
+\end{center}
+\newpage
+}
+
+%% Titelsida Adam
+\newcommand{\LIPSTitelsidaadam}{%
+{\ }\vspace{45mm}
+\begin{center}
+  \textbf{\Huge Best practices}
+\end{center}
+\begin{center}
+  {\Large Författare: Adam Sestorp}
+\end{center}
+\begin{center}
+  {\Large \textbf{Version \LIPSversion}}
+\end{center}
+\vfill
+\begin{center}
+  {\large Status}\\[1.5ex]
+  \begin{tabular}{|*{3}{p{40mm}|}}
+    \hline
+    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    \hline
+    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    \hline
+  \end{tabular}
+\end{center}
+\newpage
+}
+
+
+%% Titelsida ruben
+\newcommand{\LIPSTitelsidaruben}{%
+{\ }\vspace{45mm}
+\begin{center}
+  \textbf{\Huge Kvalitetssäkring}
+\end{center}
+\begin{center}
+  {\Large Författare: Ruben Das}
+\end{center}
+\begin{center}
+  {\Large \textbf{Version \LIPSversion}}
+\end{center}
+\vfill
+\begin{center}
+  {\large Status}\\[1.5ex]
+  \begin{tabular}{|*{3}{p{40mm}|}}
+    \hline
+    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    \hline
+    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    \hline
+  \end{tabular}
+\end{center}
+\newpage
+}
+
+%% Titelsida dennis
+\newcommand{\LIPSTitelsidadennis}{%
+{\ }\vspace{45mm}
+\begin{center}
+  \textbf{\Huge {\LaTeX} för teknisk dokumentation}
+\end{center}
+\begin{center}
+  {\Large Författare: Dennis Ljung}
+\end{center}
+\begin{center}
+  {\Large \textbf{Version \LIPSversion}}
+\end{center}
+\vfill
+\begin{center}
+  {\large Status}\\[1.5ex]
+  \begin{tabular}{|*{3}{p{40mm}|}}
+    \hline
+    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    \hline
+    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    \hline
+  \end{tabular}
+\end{center}
+\newpage
+}
+
+
+%% Titelsida johan
+\newcommand{\LIPSTitelsidajohan}{%
+{\ }\vspace{45mm}
+\begin{center}
+  \textbf{\Huge Mjukvarutestning}
+\end{center}
+\begin{center}
+  {\Large Författare: Johan Isaksson}
+\end{center}
+\begin{center}
+  {\Large \textbf{Version \LIPSversion}}
+\end{center}
+\vfill
+\begin{center}
+  {\large Status}\\[1.5ex]
+  \begin{tabular}{|*{3}{p{40mm}|}}
+    \hline
+    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    \hline
+    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    \hline
+  \end{tabular}
+\end{center}
+\newpage
+}
+
+%% Titelsida Sebastian
+\newcommand{\LIPSTitelsidasebastian}{%
+{\ }\vspace{45mm}
+\begin{center}
+  \textbf{\Huge Uppbyggnad av stabila arkitekturer}
+\end{center}
+\begin{center}
+  {\Large Författare: Sebastian Fast}
+\end{center}
+\begin{center}
+  {\Large \textbf{Version \LIPSversion}}
+\end{center}
+\vfill
+\begin{center}
+  {\large Status}\\[1.5ex]
+  \begin{tabular}{|*{3}{p{40mm}|}}
+    \hline
+    Granskad & \LIPSgranskare & \LIPSgranskatdatum \\
+    \hline
+    Godkänd & \LIPSgodkannare & \LIPSgodkantdatum \\
+    \hline
+  \end{tabular}
+\end{center}
+\newpage
+}
+
+% Dokument-specifika paket
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pdfpages}
+\usepackage[round]{natbib}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{url}
+%\usepackage{mathtools}
+\usepackage{titletoc}
+\usepackage{refcount}
+\usepackage{tcolorbox}
+\usepackage{epstopdf}
+\usepackage{placeins}
+\usepackage{color}
+
+
+
+\bibliographystyle{apalike}
+
+\usetikzlibrary{shapes, arrows}
+
+\pagenumbering{roman}
+
+\DeclareGraphicsRule{.0.pdf}{pdf}{*}{}
+
+\begin{document}
+
+
+\begin{LIPSprojektidentitet}
+	\LIPSgruppmedlem{Adam Sestorp}{Teamledare}{070 9987270}{adase035@student.liu.se}
+	\LIPSgruppmedlem{Dennis Ljung}{Dokumentansvarig}{070 8568148}{denlj069@student.liu.se}
+	\LIPSgruppmedlem{Alexander Yngve}{Utvecklingsansvarig}{076 2749762}{aleyn573@student.liu.se}
+	\LIPSgruppmedlem{Martin Söderén}{Analysansvarig}{070 8163241}{marso329@student.liu.se}
+	\LIPSgruppmedlem{Ruben Das}{Kvalitetssamordnare}{073 7355892}{rubda680@student.liu.se}
+	\LIPSgruppmedlem{Sebastian Fast}{Arkitekt}{073 3885208}{sebfa861@student.liu.se}
+	\LIPSgruppmedlem{Johan Isaksson}{Testledare}{070 2688785}{johis024@student.liu.se}
+\end{LIPSprojektidentitet}
+
+\newpage
+\input{tex/kandidatrapport-sammanfattning}\textbf{}
+\newpage
+
+\newpage
+\startcontents
+\printcontents{}{1}{}
+\newpage
+
+\begin{LIPSdokumenthistorik}
+\LIPSversionsinfo{0.1}{2015-03-05}{Första utkast}{Dennis Ljung}{}
+\LIPSversionsinfo{0.2}{2015-04-10}{Andra utkast}{Dennis Ljung}{}
+\LIPSversionsinfo{1.0}{2015-05-13}{Final}{Dennis Ljung}{}
+\end{LIPSdokumenthistorik}
+
+\newpage
+\pagenumbering{arabic}	%Påbörja sidnumrering
+\input{tex/kandidatrapport-inledning}
+\input{tex/kandidatrapport-bakgrund}
+\input{tex/kandidatrapport-teori}
+\input{tex/kandidatrapport-metod}
+\input{tex/kandidatrapport-resultat}
+\input{tex/kandidatrapport-diskussion}
+\input{tex/kandidatrapport-slutsatser}
+\input{tex/kandidatrapport-fortsatt-arbete}
+
+\newpage
+%start the appendix
+\appendix
+
+%\appendixpage
+%\addappheadtotoc
+\renewcommand{\thesection}{\arabic{section}}
+
+%Yngves report
+\addcontentsline{toc}{section}{Bilagor}
+\addcontentsline{toc}{section}{\protect\numberline{A} Utvärdering av byggsystem}
+\stopcontents
+
+\startcontents[sections]
+\LIPSTitelsidayngve
+\setcounter{section}{0} 
+\printcontents[sections]{ }{1}{}
+\newpage
+\input{yngve_input}
+\newpage
+
+%Adams report
+\stopcontents[sections]
+
+\resumecontents[default]
+\addcontentsline{toc}{section}{\protect\numberline{B} Best practices}
+\stopcontents
+
+\startcontents[sections]
+\LIPSTitelsidaadam
+\setcounter{section}{0} 
+\printcontents[sections]{ }{1}{}
+\newpage
+\input{adam_input}
+%Martins report
+\stopcontents[sections]
+\newpage
+
+\resumecontents[default]
+\addcontentsline{toc}{section}{\protect\numberline{C} Optimering av matrisbibliotek}
+\stopcontents
+
+\startcontents[sections]
+\LIPSTitelsidamartin
+\setcounter{section}{0} 
+\printcontents[sections]{ }{1}{}
+\newpage
+\label{martins}
+\input{martin_input}
+\stopcontents[sections]
+\newpage
+
+%Dennis report
+\stopcontents
+\resumecontents[default]
+\addcontentsline{toc}{section}{\protect\numberline{D} \LaTeX \ för teknisk dokumentation}
+\stopcontents
+\startcontents[sections]
+\LIPSTitelsidadennis
+\setcounter{section}{0} 
+\newpage
+\printcontents[sections]{ }{1}{}
+\newpage
+\input{dennis_input}
+\newpage
+
+%Johans report
+\newpage
+\stopcontents[sections]
+\resumecontents[default]
+\addcontentsline{toc}{section}{\protect\numberline{E} Mjukvarutestning}
+\stopcontents
+\startcontents[sections]
+\LIPSTitelsidajohan
+\setcounter{section}{0} 
+\printcontents[sections]{ }{1}{}
+\newpage
+\input{johan_input}
+\newpage
+
+%Sebastian report
+\newpage
+\stopcontents[sections]
+\resumecontents[default]
+\addcontentsline{toc}{section}{\protect\numberline{F} Uppbyggnad av stabila arkitekturer }
+\stopcontents
+\startcontents[sections]
+\LIPSTitelsidasebastian
+\setcounter{section}{0} 
+\printcontents[sections]{ }{1}{}
+\newpage
+\input{sebastian_input}
+\newpage
+
+%Rubens report
+\stopcontents[sections]
+\resumecontents[default]
+\addcontentsline{toc}{section}{\protect\numberline{G} Kvalitetssäkring}
+\stopcontents
+\startcontents[sections]
+\LIPSTitelsidaruben
+\setcounter{section}{0} 
+\printcontents[sections]{ }{1}{}
+\newpage
+\input{ruben_input}
+\newpage
+
+\resumecontents[default]
+\addcontentsline{toc}{section}{Referenser}
+\bibliography{tex/refs}{}
+\end{document}

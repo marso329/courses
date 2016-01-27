@@ -1,0 +1,166 @@
+\documentclass[11pt,a4paper,oldfontcommands]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage[nodayofweek]{datetime}
+\usepackage[a4paper]{geometry}
+\usepackage{subfiles}
+\usepackage[
+breaklinks=true,colorlinks=true,
+%linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
+linkcolor=black,urlcolor=black,citecolor=black,% PRINT
+bookmarks=true,bookmarksopenlevel=2]{hyperref}
+
+
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewenvironment{abstract}
+  {\small\quotation
+  {\bfseries\noindent{\large\abstractname}\par\nobreak\smallskip}}
+  {\endquotation}
+
+\usepackage{geometry}
+% PDF VIEW
+% \geometry{total={210mm,297mm},
+% left=25mm,right=25mm,%
+% bindingoffset=0mm, top=25mm,bottom=25mm}
+% PRINT
+\geometry{total={210mm,297mm},
+left=20mm,right=20mm,
+bindingoffset=10mm, top=25mm,bottom=25mm}
+
+\OnehalfSpacing
+%\linespread{1.3}
+
+%%% CHAPTER'S STYLE
+%\chapterstyle{bianchi}
+%\chapterstyle{ger}
+%\chapterstyle{madsen}
+\chapterstyle{ell}
+%%% STYLE OF SECTIONS, SUBSECTIONS, AND SUBSUBSECTIONS
+\setsecheadstyle{\Large\bfseries\sffamily\raggedright}
+\setsubsecheadstyle{\large\bfseries\sffamily\raggedright}
+\setsubsubsecheadstyle{\bfseries\sffamily\raggedright}
+
+
+%%% STYLE OF PAGES NUMBERING
+%\pagestyle{companion}\nouppercaseheads 
+%\pagestyle{headings}
+%\pagestyle{Ruled}
+%\pagestyle{plain}
+\makepagestyle{plain}
+\makeevenfoot{plain}{}{}{\thepage}
+\makeoddfoot{plain}{}{}{\thepage}
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+
+
+\maxsecnumdepth{subsubsection} % chapters, sections, and subsections are numbered
+\maxtocdepth{subsubsection} % chapters, sections, and subsections are in the Table of Contents
+
+
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+
+\begin{document}
+\pagenumbering{gobble}
+\makepagestyle{plain}
+\makeevenfoot{plain}{}{}{\thepage}
+\makeoddfoot{plain}{}{}{\thepage}
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+%   TITLEPAGE
+%
+%   due to variety of titlepage schemes it is probably better to make titlepage manually
+%
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+\thispagestyle{empty}
+
+{%%%
+\sffamily
+\centering
+\Large
+
+~\vspace{\fill}
+
+{\huge 
+Run time optimization of the C++ OpenMPI library
+}
+
+\vspace{2.5cm}
+
+{\LARGE
+Martin Söderén
+}
+
+\vspace{3.5cm}
+
+Final thesis\\[1em]
+Master of Science in Computer Science and Engineering\\
+at Linköping University
+
+\vspace{3.5cm}
+
+Supervisor: Prof. The Punisher
+
+\vspace{\fill}
+
+\today
+
+}%%%
+\newpage
+
+\begin{abstract}
+\noindent
+Your abstract goes here...
+...
+\end{abstract}
+\newpage
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+\noindent
+ Thanks Mum!
+\end{abstract}
+\newpage
+\pagenumbering{Roman}
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+
+\tableofcontents*
+
+\clearpage
+
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\subfile{introduction.tex}
+
+\chapter{Background}
+\subfile{background.tex}
+
+\chapter{Theory}
+\subfile{theory.tex}
+
+\chapter{Method}
+\subfile{method.tex}
+
+\chapter{Results}
+\subfile{results.tex}
+
+\chapter{Discussion}
+\subfile{discussion.tex}
+
+\chapter{Conclusions}
+\subfile{conclusions.tex}
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{sample}
+
+\end{document}
+

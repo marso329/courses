@@ -1,0 +1,47 @@
+ x=0:0.001:1
+ y=exp(-x.^2)
+ 
+
+1.1:
+
+ode45
+ode23
+ode113
+
+1.2
+massa bra saker
+
+2.1
+
+se figur21.png
+
+2.2
+
+se f.m
+
+2.3
+
+ja se figur22.png
+
+2.4
+
+[tv1 f1]=ode23('f',[0 1],1)
+
+plot(x,y,tv1,f1,'*')
+
+Ja det ser bra ut
+
+2.5
+
+se figur25.png
+
+I y(0) då det var ett krav i båda lösningarna att y(0)=1
+
+3.1
+
+Ja men lite överkast och väldigt långsam(om tidsenheten är sekunder)
+
+3.2
+
+
+

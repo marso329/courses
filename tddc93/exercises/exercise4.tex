@@ -1,0 +1,117 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+\title{TDDC93 Exercises:\\
+Testing and SCM}
+\author{Martin Söderén\\ marso329@student.liu.se\\900929-1098}
+\date{\today}
+\maketitle
+
+
+
+
+\vfill % Fill the rest of the page with whitespace
+
+\thispagestyle{empty}
+
+\end{titlepage}
+\section{A)}
+\subsection{Inputs}
+\begin{itemize}
+\item Class
+\item Length
+\item Width
+\item Height
+\item Thickness
+\item Diamater
+\end{itemize}
+\subsection{Output}
+\begin{itemize}
+\item bool:True
+\item bool:False
+\end{itemize}
+\subsection{Rules}
+\begin{enumerate}
+\item Envelope: 140mm$\leq$ Length$\leq$600mm
+\item Envelope: 90mm$\leq$Width
+\item Envelope: Length+width+thickness$\leq$ 900mm
+\item Cylinder: 100mm$\leq$Length$\leq$900mm
+\item Cylinder: 170mm$\leq$Length +2*diamater$\leq$1040mm
+\end{enumerate}
+\subsection{Equivalence classes}
+\begin{enumerate}
+\item Class:Envelope,Length$<$140mm
+\item Class:Envelope,600mm$<$Length
+\item Class:Envelope,140mm$\leq$Length$\leq$600mm
+\item Class:Envelope,Width$<$90mm
+\item Class:Envelope,90mm$\leq$Width
+\item Class:Envelope,900mm$<$Length+width+thickness
+\item Class:Envelope,Length+width+thickness$\leq$900mm
+\item Class:Cylinder,Length$<$100mm
+\item Class:Cylinder,900mm$<$Length
+\item Class:Cylinder,100mm$\leq$Length$\leq$900mm
+\item Class:Cylinder,Length+2*diamater$<$170mm
+\item Class:Cylinder,1024mm$<$Length+2*diamater
+\item Class:Cylinder,170mm$\leq$Length+2*diamater$\leq$1024mm
+\end{enumerate}
+The critereas from the exercise can be formulated as the rules in 1.3. These rules are then used to create the equivalence classes in 1.4. For example rule 1 consists of a range of valid numbers and these create EC1-3 which is numbers that are smaller than the valid numbers, numbers that are in the range and numbers that are larger than the valid range.
+\section{B)}
+\begin{center}
+    \begin{tabular}{| l | l | l | l | l | l | l | l | l |}
+    \hline
+    Test-case id & Class & Length & Width & Height & Thickness & Diamater & Output & EC \\ \hline
+    1 & Envelope & 600 & 90 & 0 & 210 & 0 & Yes & 3,5,7 \\ \hline
+    2 & Envelope & 600 & 90 & 0 & 211 & 0 & No &3,5,6 \\ \hline
+	3 & Envelope & 140 & 89 & 0 & 671 & 0 & No & 3,4,7 \\ \hline
+	4 & Cylinder & 900 & 0 & 0 & 0 & 62 & Yes & 10,13 \\ \hline
+	5 & Cylinder & 900 & 0 & 0 & 0 & 63 & No & 10,12 \\ \hline
+	6 & Cylinder & 901 & 0 & 0 & 0 & 62 & Yes & 9,13 \\ \hline
+    \end{tabular}
+\end{center} 
+\section{C)}
+
+Unit testing: No, The project is to implement a complete system that can check the shipping goods. An example of a unit test in this system would be checking the sensors that reads the size of the envelope or a small function in the computer system. 
+\newline
+‌\newline
+Integration test: No. but it is possible that this system will need to integrate into a larger logistics system and an example of an integration test would be make shure the system can send a signal to the larger system that it has a envelope that can't be sent.
+\newline
+\newline
+Acceptance testing: No. This test could be used when the system is fully developed and make sure that it meets the criteria set when a contract was signed. But an acceptance test is used by the customer that ordered the system.
+\newline
+\newline
+System testing: Yes. This test is to make shure the whole system works as it is planned to do. But a system test normally includeds all kinds of different tests to make sure every aspect of the system works as planned. If the system has more criterias than just sort out which mail that can be sent then this can be a part of a system test and if this is the only criteria then this could be a system test.
+\section{D)}
+The system was tested using the black-box technique because the test don't care how the system works. The test sees a input and a output and decides if the output is correct.
+White box testing is when you test a system and you have a clear sight of how the system works. An example of white box testing is debugging code using a debugger where you can step through the code and see the current variable values. The tests should be designed with how the system is created in mind and the tester should be familiar with similar systems. For example if the tester goes through the source code and the design specifications and sees that the system uses an sql-database on a server off sight then he should do stress tests how many request that server can handle before it goes down. 
+\end{document}

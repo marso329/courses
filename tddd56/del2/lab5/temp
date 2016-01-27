@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Bash version ${BASH_VERSION}..."
+for  ((i=16384;i<=131072;i*=2))
+  do
+     make clean
+	make K=$i PRINT=0 >/dev/null
+	./gpu
+	echo $i
+ done

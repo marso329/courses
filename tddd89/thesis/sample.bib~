@@ -1,0 +1,133 @@
+
+@Article{Huang,
+  author =       "Edgar Gabriel and Shuo Huang",
+  title =        " Runtime optimization of application level com-
+munication patterns",
+  journal =      "In
+12th International Workshop on High-Level Parallel Pro-
+gramming Models and Supportive Environments",
+  year =         "March
+2007",
+  DOI =          "Long Beach, CA, USA"
+} 
+
+ @InProceedings{graham05:_open_mpi,
+  author =       {Richard L. Graham and Timothy S. Woodall and Jeffrey M. Squyres},
+  title =         {Open {MPI}: A Flexible High Performance {MPI}},
+  booktitle    = {Proceedings, 6th Annual International Conference on Parallel Processing and Applied Mathematics},
+  year	       = 2005,
+  address      = {Poznan, Poland},
+  month	       = {September}
+} 
+
+@misc{OpenMPI-tuning,
+  title = {General run-time tuningn},
+  howpublished = {\url{https://www.open-mpi.org/faq/?category=tuning}},
+  note = {Accessed: 2015-11-29}
+}
+
+@misc{OpenMPI-profiling,
+  title = {Performance analysis tools},
+  howpublished = {\url{https://www.open-mpi.org/faq/?category=perftools}},
+  note = {Accessed: 2015-11-30}
+}
+
+@misc{infiniband,
+  title = {Infiniband trade association},
+  howpublished = {\url{http://www.infinibandta.org/}},
+  note = {Accessed: 2015-12-16}
+}
+
+@INPROCEEDINGS{6355867,
+author={Pellegrini, S. and Prodan, R. and Fahringer, T.},
+booktitle={Cluster Computing Workshops (CLUSTER WORKSHOPS), 2012 IEEE International Conference on},
+title={Tuning MPI Runtime Parameter Setting for High Performance Computing},
+year={2012},
+pages={213-221},
+keywords={application program interfaces;message passing;optimisation;parallel architectures;parallel machines;statistical analysis;ANOVA;HPC;MPI runtime parameter setting tuning;SPEC MPI 2007 benchmark suite;analysis of variance;computational kernels;high performance computing;input programs;open MPI library;optimization space;optimized programs;parallel architectures;parallel computers;Computer architecture;Computers;Kernel;Libraries;Performance gain;Runtime;Tuning;ANOVA;MPI;runtime parameter tuning},
+doi={10.1109/ClusterW.2012.15},
+month={Sept},}
+
+@INPROCEEDINGS{Fagg,
+    author = {Graham E. Fagg and Jelena Pjesivac-grbovic and George Bosilca and Jack J. Dongarra and Emmanuel Jeannot},
+    title = {Flexible collective communication tuning architecture applied to open MPI},
+    booktitle = {In 2006 Euro PVM/MPI},
+    year = {2006}
+}
+
+@phdthesis{Visualisation,
+    title    = {MPI Visualisation},
+    school   = {The University of Edinburgh},
+    author   = {Thomas RICHARD},
+    year     = {2011}, %other attributes omitted
+}
+
+@MISC{Reussner98skampi:a,
+    author = {Ralf Reussner and Peter Sanders and Lutz Prechelt and Matthias Müller},
+    title = {SKaMPI: A Detailed, Accurate MPI Benchmark},
+    year = {1998}
+}
+
+@incollection{DBLP:reference/parallel/Bailey11,
+  author    = {David H. Bailey},
+  title     = {{NAS} Parallel Benchmarks},
+  booktitle = {Encyclopedia of Parallel Computing},
+  pages     = {1254--1259},
+  year      = {2011},
+  crossref  = {DBLP:reference/parallel/2011},
+  url       = {http://dx.doi.org/10.1007/978-0-387-09766-4_133},
+  doi       = {10.1007/978-0-387-09766-4_133},
+  timestamp = {Wed, 11 Jan 2012 14:45:34 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/reference/parallel/Bailey11},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@incollection{machinelearning,
+year={2009},
+isbn={978-3-642-03769-6},
+booktitle={Recent Advances in Parallel Virtual Machine and Message Passing Interface},
+volume={5759},
+series={Lecture Notes in Computer Science},
+editor={Ropo, Matti and Westerholm, Jan and Dongarra, Jack},
+doi={10.1007/978-3-642-03770-2_26},
+title={Optimizing MPI Runtime Parameter Settings by Using Machine Learning},
+url={http://dx.doi.org/10.1007/978-3-642-03770-2_26},
+publisher={Springer Berlin Heidelberg},
+keywords={MPI; optimization; runtime parameter tuning; multi-core},
+author={Pellegrini, Simone and Wang, Jie and Fahringer, Thomas and Moritsch, Hans},
+pages={196-206},
+language={English}
+}
+
+@inproceedings{Pellegrini:2010:ATM:1787275.1787310,
+ author = {Pellegrini, Simone and Fahringer, Thomas and Jordan, Herbert and Moritsch, Hans},
+ title = {Automatic Tuning of MPI Runtime Parameter Settings by Using Machine Learning},
+ booktitle = {Proceedings of the 7th ACM International Conference on Computing Frontiers},
+ series = {CF '10},
+ year = {2010},
+ isbn = {978-1-4503-0044-5},
+ location = {Bertinoro, Italy},
+ pages = {115--116},
+ numpages = {2},
+ url = {http://doi.acm.org/10.1145/1787275.1787310},
+ doi = {10.1145/1787275.1787310},
+ acmid = {1787310},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {machine learning, mpi runtime parameters, tuning},
+} 
+
+@ARTICLE{1994math......4236T,
+   author = {{Thurston}, W.~P.},
+    title = "{On proof and progress in mathematics}",
+  journal = {ArXiv Mathematics e-prints},
+   eprint = {math/9404236},
+ keywords = {Mathematics - History and Overview},
+     year = 1994,
+    month = mar,
+   adsurl = {http://adsabs.harvard.edu/abs/1994math......4236T},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+
+

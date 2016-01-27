@@ -1,0 +1,160 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{multicol}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+\title{TAMS27\\
+Sammanfattning}
+\author{Martin Söderén\\ marso329@student.liu.se\\900929-1098}
+\date{\today}
+\maketitle
+
+
+
+
+\vfill % Fill the rest of the page with whitespace
+
+\thispagestyle{empty}
+
+\end{titlepage}
+\begin{multicols}{2}
+
+\section{Kontinuerlig tvådimensionell stokastiskt variabel}
+
+\subsection{Täthetsfunktion}
+En täthetsfunktions
+$$f(x,y)$$
+ duger om den uppfyller:
+ $$f(x,y)\geq 0 \ \text{för alla x,y}$$
+ $$\int_{R^2}{f(x,y)dxdy}=1$$
+ 
+ \subsection{Marginella täthetsfunktioner}
+ $$f_X(x)=\int_{-\infty}^{\infty}{f_{X,Y}(x,y)dy}$$
+ $$f_Y(y)=\int_{-\infty}^{\infty}{f_{X,Y}(x,y)dx}$$
+ \subsection{övrigt}
+ $$P(X<Y)=\int_{0}^{\infty}{\int_{0}^{Y}{f_{X,Y}(x,y)dx dy}}$$
+ 
+ \section{Betingad sannolikhet}
+ $$P(X=j|Y=k)=\frac{P(X=j,Y=k)}{P(Y=k)}$$
+$$(X=j|Y=k)=$$
+$$\frac{P(Y=j|X=k)P(X=k)}{P(Y=k)}$$
+$$f_{X|Y=y(x)}=\frac{f_{X,Y}(x,y)}{\int_{-\infty}^{\infty}{f_{X,Y}(t,y)dt}}$$
+ \section{Räkneregler}
+ $$P(A)=P(A|B)P(B)+P(A|C)P(C)$$
+
+ 
+ \section{Väntevärde}
+ Säger vart massan är belägen i genomsnitt
+ $$E(X)=\int_{-\infty}^{\infty}xf_X(x)dx$$
+ $$E(X) \ \text{betecknas ibland } \mu$$
+ Vid likformig fördelning på (a,b):
+ $$E(X)=(a+b)/2$$
+ 
+ \section{Varians}
+Spridningsmått som anger hur sprid täthetsfunktionen är.
+$$V(X)=\int_{-\infty}^{\infty}(x-\mu)^2f_X(x)dx$$
+$$E(X^2)=\int_{-\infty}^{\infty}x^2f_x{(x)dx}$$
+$$V(X)=E(X^2)-(E(X))^2$$
+Betecknas ibland $\sigma^2$\\
+Vid likformig fördelning på (a,b):
+$$V(X)=(b-a)/\sqrt{12}$$
+\section{Kovarians}
+$$C(X,Y)=E(XY)-E(X)E(Y)$$
+$$E[XY]=\sum \sum xyP(X=x,Y=y)$$
+$$E(X)=\sum \sum x*f_{X,Y}(x,y)$$
+
+\section{korrelation}
+$$\rho(X,Y)=\frac{C(X,Y)}{\sqrt{V(X)V(Y)}}$$
+
+\section{min och max}
+$$P(a*min(X,Y)>b)=P(min(X,Y)>\frac{b}{a})$$
+$$=P(X>\frac{b}{a})P(Y>\frac{b}{a})$$
+
+ \section{Oberoende stokastiska variabler}
+ Två stokastiska variabler är oberoende om och endast om följande är uppfyllt:
+ $$F_{X,Y}(x,y)=F_X(x)F_Y(y) \ \text{för alla x och y}$$
+ 
+ \subsection{Summa av stokastiska variabler} Om alla variabler är oberoende och fördelade enligt $N(\mu,\sigma)$ så är summan fördelad enligt:
+ $$N(\mu,\sigma/\sqrt{n})$$
+ där n är antalet variabler
+ OBS:
+ $$P(X\leq x)=P(\frac{X-\mu}{\frac{\sigma}{ \sqrt{n}}})$$
+ Om man har två variabler $X=N(x,y)$ och Y=N(a,b) och vill veta sannolikheten att $X>Y$
+ så söker man $X-Y>0$. Som har väntevärde x-a och standardavvikelse $\sqrt{y^2+b^2}$
+ \\
+ väntevärde för en summa av stokastiska variabler:
+ $$\frac{1}{n} \sum_{i=1}^{n}{X_i}$$
+ \section{Centrala gränsvärdessatsen}
+ Om man har en mängd stokastiska variabler
+ $$X_1,X_2....X_n$$
+ som är normalfördelade 
+ $$N(x,y)$$
+ och man skapar en stokastisk variabel av summan
+ $$Y=\sum_1^iX_i$$
+ så är y fördelad approximativt
+ $$N(nx,ny^2)$$
+ 
+ \section{Poisson fördelning}
+ Sannolikhetsfunktionen är exponentiell. Beskrivs bäst med ett exempel:
+ Anta att en intensitet följer en poissonprocess så det sker x gånger per timme. Du vill veta hur stor sannolikheten är det detta sker k gånger under y timmar.
+ $$\mu=xy$$
+ sannolikheten att det sker k gånger är(obs k=0 innebär att det sker en gång):
+ $$p_X(k)=\frac{\mu^k}{k!}e^{-\mu}$$
+ 
+ $$P_X(X>x)=1-P_X(X\leq x)=1-\sum_{k=0}^{x}{P_X(X=k)}$$
+ 
+ \section{Binomial fördelning}
+ sannolikhet p att A inträffar i ett enskilt försök. Om n oberoende försök utförs och X är antalet gånger som A inträffar så är X  BIN(n,p)
+ 
+ $$Bin(\mu,\sigma)\approx Poi(\mu \sigma)$$
+ 
+ $$Bin(\mu,\sigma)\approx N(\mu \sigma,\mu \sigma(1-\sigma))$$
+  
+ \section{Exponential fördelning}
+Om en händelse är exponentialfördelad med $\lambda=3$ så är sannolikheten ett det sker efter x tidsenheter
+$$e^{-\lambda x}$$
+täthetsfunktion
+$$f_X(x)=\lambda e^{-\lambda x}$$
+fördelningsfunktion:
+$$F_X(x)=1-e^{-\lambda x}$$
+ 
+ \section{Normalfördelning}
+ \subsection{normalisering}
+ antag att man har X som är N(x,y) som ej är på normalform dvs $X\neq N(0,1)$
+ och man vill veta $P(X\leq z)$
+ $$P(X\leq z)=P(\frac{X-x}{\sqrt y}\leq \frac{z-x}{\sqrt y})=\Phi(\frac{z-x}{\sqrt y})$$
+$$P(a<X\leq b)=\Phi{(b)}-\Phi{(a)}$$
+\end{multicols}
+\end{document}
+

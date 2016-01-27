@@ -1,0 +1,69 @@
+# LaTeX-relaterat
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdy
+*.tdo
+*.swp
+*.pdf
+*.bcf
+*.glsdefs
+*.sbl
+*.ptc
+
+#For bachelorrepor
+!dokumentation/kandidatrapport/pdf/*.pdf
+
+#For technical documentation
+!dokumentation/doxygen/pdf/*.pdf
+
+# Emacs backup files
+*~
+
+# meld/merging files
+*.orig
+
+# Python files
+*.pyc
+*.xml
+*.idea
+
+# LaTeXing addon for Atom build files
+*.fls
+
+# Build directory
+*/obj/*
+*.o
+
+# Matlab stuff
+*.mexmaci64
+
+# McShit
+.DS_Store

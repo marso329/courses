@@ -1,0 +1,81 @@
+\subsection{Matrisbibliotek}
+För att kunna utföra projeket så behövdes det ett matrisbibliotek för att kunna hantera alla matrisoperationer som lösaren behövde göra. Dessa operationer var:
+\begin{itemize}
+
+\item addition
+\item subtraktion
+\item multiplikation
+\item beräkna determinat
+\item beräkna invers
+\item lösa linjära ekvationssystem
+\item gausselimination
+\item transponering
+\item skalärmultiplikation
+\item radoperationer
+\item kolumnoperationer
+
+\end{itemize}
+
+
+\subsubsection{Befintliga matrisbibliotek}
+Det fanns många bibliotek som hade dessa operationer dock så uppfyllde inget alla krav kandidatgruppen ställde. Kandidatgruppen vill att biblioteket skulle:
+\begin{enumerate}
+\item ha lättanvänt API (Application Programming Interface)
+\item prestera bra
+\item vara platformsoberoende
+\item vara lätt att kompilera
+\item ta upp lite minne
+\item ha bra dokumenterad kod så man själv kan implementera förbättringar
+\end{enumerate} 
+De bibliotek som kandidatgruppen undersökte var:
+\begin{itemize}
+
+\item GNU Scientific library
+\item LAPACK
+\item ATLAS
+\item NAG
+
+\end{itemize}
+GNU gick bort för det krävde att man installera det som ett extern paket vilket kandidatgruppen inte vill att vår kund ska behöva göra. Bortsett från detta så var detta det bibliotek som var mest lovande. 
+LAPACK krävde en FORTRAN kompilator för att kunna kompileras och eftersom det var skrivet i FORTRAN så var alla funktionsnamn endast sex tecken vilket kandidatgruppen inte klassar som ett lättanvänt API.
+ATLAS bygger på LAPACK så det har ärvt mycket av alla funktionsnamn.
+NAG är det modernaste av bibliotekten men även det använder funktionsnamn med sex tecken och var också bristfälligt dokumenterat.
+\newline
+\newline
+Först så övervägdes att göra att API till något av biblioteken för att göra det mer lättanvänt men sedan så bestämdes det att kandidatgruppen skulle göra att eget biblioteket. Anledning till detta var att man då kunde bygga allting på standard C-bibliotek så man inte krävde några externa bibliotek. Detta leder till att biblioteket kunde användas på alla platformar så länge det hade en C-kompilator. 
+
+
+\subsubsection{matLib}
+Syftet med att utveckla ett eget matrisbibliotek är att minska beroendet på komponenter från tredje part och att göra QuadOpt platformsoberoende. Detta har lett till att det även kan användas på till exempel microkontrollers såsom Atmega 2560 eller liknande.
+Det var även krav på att det skulle vara ett lättanvänt API så funktionsnamnen var tvungna att vara självförklarade. Här är namnen på ett urval av funktionerna:
+\lstinputlisting[language=C]{tex/functions.c}
+Kombinerat med förklarande funktionsnamn så är all kod väldokumenterad så det är enkelt att sätta sig in i den och göra eventuella förbättringar i framtiden.
+\newline
+\newline
+Det som var det svåraste kravet att uppfylla var prestandakravet. Det är svårt att konkurrera med etablerade matrisbibliotek såsom ATLAS som använder hårdvaruoptimerad kod. Genom att hålla koden på låg nivå och använda funktioner för direkt datamanipulation så hålls prestandan rätt hög. Det som kräver mer arbete i framtiden är arbete på funktionerna som innehåller algoritmer som har tidskomplexitet $\mathcal{O}(n^3)$ såsom matrismultiplikation och lösning av linjära system.
+
+
+
+\subsubsection{Datastrukturer}
+Hela biblioteket bygger på en C-struct som heter matrix och är definierad enligt figur~\ref{fig:matrix_struct}. Alla operationer bygger på denna struct. Columns säger hur många kolumner matrisen har, rows säger hur många rader den har, size säger hur många element den har och start är en pekare till första elementet i matrisen. För att komma åt ett element på rad x och i kolumn y så använder man ekvationen $start+columns(x-1)+y-1$ vilket ger pekaren till elementet. Alla operationer för att sätta in och hämta element har då tidskomplexitet $\mathcal{O}(1)$.
+\begin{figure}[H]
+\lstinputlisting[language=C]{tex/matrix_struct.c}
+\caption{Matrix struct}
+\label{fig:matrix_struct}
+\end{figure}
+
+
+Det finns även ett tillägg till matLib som döpts till sparseLib. Detta är ett matrisformat som är till för att lagra och operera på glesa matriser. En gles matris är en matris som har få nollskillda element. Strukturen bygger på att man endast sparar de nollskillda elementens värden samt deras position. 
+
+\begin{figure}[H]
+\lstinputlisting[language=C]{tex/sparse_struct.c}
+\caption{Sparse matrix struct}
+\label{fig:sparse_struct}
+\end{figure}
+
+I figur~\ref{fig:sparse_struct} precis som i den vanliga matrisen innehåller glesa matrisen information om antal rader, antal columner och storlek. Istället för ett fält med alla elementen finns nu tre fält. A innehåller de nollskillda elementens värden, rA innehåller deras radkoordinat och cA innehåller deras columnkoordinat. \\
+Fördelen med detta format är att vissa operationer blir snabbare. Till exempel, en multiplikation mellan en gles matris och en vanlig matris. Båda av storleken $nxn$. Om den glesa matrisen innehåller $m$ nollskilda element blir tidkomplexiteten endast $\mathcal{O}(m*n)$, i jämförelse med den naiva matrismultiplikationen vars komplexitet är $\mathcal{O}(n^3)$. För att matrisen ska räknas som gles så är $m \ll n^2$.
+Ett annat exempel på förbättring är att ta ut transponatet av en matris. För en matris i det glesa formatet behövs endast pekaren till radfältet och pekaren till columnfältet byta plats. Detta leder till att komplexiteten för denna operation blir $\mathcal{O}(1)$ istället för $\mathcal{O}(n^2)$. \\
+Nackdelar med det nya formatet är att information om var element befinner sig i fälten saknas. Därför krävs det, om man ska skriva till en position i matrisen, att man itererar igenom fälten för att hitta det valda elementet. Detta tar $\mathcal{O}(n)$ tid, jämfört med vanliga matrisen där det tar $\mathcal{O}(1)$ tid.
+En annan nackdel är att om matrisen inte är gles tar det mer minne. Om alla element i matrisen är nollskillda går det åt cirka tre gånger så mycket minne, eftersom alla element måste sparas, och även deras koordinater.
+

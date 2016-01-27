@@ -1,0 +1,273 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{subscript}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[]{algorithm2e}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+\section{checklist}
+\subsection{problem formulation}
+The presentation of the problem is clearly formulated, demarcated and realistic; it is also
+adapted to degree projects at this educational level.
+\newline
+Answer: The presentation of the problem is clear, the problem is that the solutions seems to only apply for one codebase which is a 2d-game. I am unsure about if it adapts to the educational level, this seems not much more complicated than a bachelor thesis. 
+\newline
+\newline
+The presentation of the problem is relevant with respect to both the student’s main field of
+study within the degree programme and the student’s future career.
+\newline
+Answer: Probably
+\newline
+\newline
+The presentation of the problem is placed in a societal 1 /commercial utility perspective.
+\newline
+Answer: Yes but only for one company
+\subsection{scientific basis}
+The report shows that the student is capable of identifying the most relevant scientific
+references for the chosen problem formulation.
+\newline
+Answer: according to the author most of the sources are best sellers and influent people, this does not necessarily men scientific references 
+\newline
+\newline
+The student’s work is clearly linked to established scientific theories and concepts.
+\newline
+Answer:
+Well no, they may by established theories but not neccesarily established scientific theories.
+\newline
+\newline
+The references are related to and evaluated on the basis of the student’s presentation of
+the problem and the student’s results and conclusions.
+\newline
+Answer: Have not read results and conclusions yet
+\subsection{Execution and Scientific Approach}
+The report shows that the student uses established scientifically relevant methods, has an
+understanding of their limitations, and justifies the choice of methods.
+\newline
+Answer: the problem is "scientifically" but yes
+\newline
+\newline
+The report shows that the student has the ability to use and integrate the knowledge and
+skills that have been acquired during his/her education, as well as the ability to
+independently acquire other knowledge or skills necessary to solve the problem.
+\newline
+Answer:Yes
+\newline
+\newline
+The report shows that the student systematically describes how he/she reaches the results
+and conclusions based on the chosen method and the given preconditions.
+\newline
+Answer:Yes
+\newline
+\newline
+The report shows that the student has the ability to model, design as well as analyse or
+evaluate products/systems/methods/processes/theories in a professional manner.
+\newline
+answer: Yes
+\subsection{Results and Conclusions}
+The report shows that the student produces relevant results, draws adequate conclusions
+and critically reviews the relevance and limitations of these results and conclusions.
+\newline
+\newline
+The report shows that the student has substantial theoretical understanding of his/her
+results and conclusions.
+\newline
+\newline
+The report shows that the student can make assessments with respect to relevant societal
+needs and can take into consideration ethical aspects.
+\subsection{Precision in Communication}
+The report is written so that a reader at the same educational level and in the same main
+field of study can grasp and understand the contents.
+\newline
+Answer: Yes but there are a lot of new subjects that you might need to read up on to grasp some parts.
+\newline
+\newline
+The title and the abstract describe the topic of the degree project in a manner that is both
+informative and attracts the reader’s interest.
+\newline
+Answer: Not my interest but certainly some persons
+\newline
+\newline
+The report’s outline and headings are clear and informative.
+\newline
+Answer: yes
+\newline
+\newline
+The central parts of the report, such as problem formulation, the method, and the results,
+are easy to find.
+\newline
+Answer: yes
+\newline
+\newline
+The language is used in a correct manner.
+\newline
+Answer: Yes
+\newline
+\newline
+The layout and the typography adheres to praxis and facilitates reading.
+\newline
+Answer: Yes but some mathematical formulas could be formated better
+\newline
+\newline
+Figures and tables with associated captions are informative and self-explanatory.
+\newline
+Answer: yes but there are a lot of code examples that I find uneccesary
+\newline
+\newline
+Citations and references are used in an adequate manner with regard to the main field of
+study.
+\newline
+Answer: yes
+\section{Questions}
+    Does the theory cover both techniques relevant to the project and research methods employed in similar work? Is there material that seems superfluous given the research question?	
+    \newline
+    There is very much information in the theory about 	quality metrics but very little about IoC which is what the thesis is about.
+    \newline
+    \newline
+    Are the references used in the published thesis relevant to support the claim in the thesis? Are they well cited? Are they specific to the claims that they are used to support?
+    \newline
+    Answer: Yes they are relevent but some are not very scientific. 
+     The Mythical Man-Month: enligt In the 25 years since The Mythical Man-Month what have we learned about project management? så har den blivit citerad i genomsnitt 25 gånger per år sedan 1975. 
+     A Metrics Suite for Object Oriented Design[6] är citerad 1251 gånger men från 1994. 
+     
+Refactoring: improving the design of existing code [9] är citerad 977 gånger enligt acm
+Working Effectively with Legacy Code[8] är citerad 25 gånger enligt ACM.
+Metric based testability model for object oriented design[14] är citerad 5 gånger enligt ACM. 
+    \newline
+    \newline
+    The other references that you found, did you consider them as better suited for the same purpose? Were they newer, more well-cited or a better match for the claims they could support? Do they seem to present similar or different results? How did you find them? Describe these references including how you found them and their abstracts.
+    \newline
+    Answer: sciencedirect and web of science were used. 
+    first reference: 
+Predicting class testability using object-oriented metrics Bruntink, Magiel 
+second: 
+A survey of software refactoring: Mens, t
+    \newline
+    \newline
+    Can you check all items from the checklist relevant to the Theory and Method chapters?Justify your answer.
+    \newline
+    See above, I would not say that all items can be checked of
+    \newline
+    \newline
+    Is it clear that the research question is well-formulated and relevant, based on contents of the Theory chapter?
+    \newline
+    Answer: yes but I would like to see more theory on IoC. There is also not much theory on refactoring which is a major part of the thesis 
+    \newline
+    \newline
+    Is the method formulated clearly enough that someone else would be able to replicate the study?
+    \newline
+    No and it seems to be based on not very scientific methods. I would not be able to refactor a codebase using IoC containers after reading the method chapter.
+\section{Theory}
+3.1:"The software development field has only existed for some 50 years and therefore suffers from some of
+the problems expected of such a relatively young discipline." source on that it suffers from this. 50 years might be a relative age. 
+
+"As a result, software development is a field of many practitioners without formal training. The
+practices deployed are in many cases based on general experience rather than scientifically verified
+knowledge or empirical evidence." source ?
+\newline
+\newline
+3.2:"Code written with test first programming has, if done right, a high quality with regard to design and as
+a corollary – high testability. See section 3.3 for a continued discussion of the attribute of testability." source?
+\newline
+\newline
+3.5.1: "Another aspect is speed. Unit tests should be fast enough to be run often. Preferably every time you
+compile. They should not take more than 1-2 seconds in total, absolutely not more than 10. Hence,
+individual tests should run on a few milliseconds." this is only suggestions and does not belonge in theory.
+\newline
+\newline
+3.5.2: [34] (time: 09:30) weird reference
+\newline
+\newline
+3.7:"According to Martin Fowler [60] Inversion of Control originates
+from the “Hollywood Principle” 9 probably introduced by Richard E.
+Sweet in [81" you should not use probably in theory
+\newline
+\newline
+3.8.4: "Template injection (TI) is not established terminology but introduced here in this report for the use of
+the C++ template engine to inject dependencies. The almost non-existent interest in template injection
+could be the lack of general availability or for historical reasons. Java, where DI is most prominent,
+did not have generics, the closest to an equivalent, until J2SE 5.0. Another reason could be the
+imposed limitations that templates bring. See section 7.1.4 Dependency injection: Preferred Methods
+for further discussion on the ramifications of Template injection." could be?
+
+
+\section{Method}
+2.2 literature study: sources relies on best sellers. That does not sound good in my ears.
+\newline
+\newline
+2.3 investigative method. He says he uses method that he discovered first hand. Also says that the refactoring was a trial and error effort which does not give confident in the literal background behind the refactoring.
+\newline
+\newline
+2.4: does not mention which metrics were left out.
+\newline
+\newline
+ 2.5: a numbers of profiling tools were used but mentions none. 
+\section{references}
+\subsection{reference 1}
+cited:337 times (ACM)
+Beck, Kent (2003) Test-driven Development : by example . The Addison-Wesley signature series.
+Addison-Wesley, Boston, Massachusetts. ISBN: 0-321-14653-0
+
+usage:
+\newline
+page 17
+\newline
+\newline
+
+In [2], Kent Beck outline the following development cycle:
+• Add a new test.
+• Run all tests and see if any tests fail.
+17• If it does, write some code –if not, start over and add another test.
+• Run all tests again to verify that the added code makes the test pass.
+• Remove duplication, clean up the added code and verify by running the tests again.
+• Start over.
+The development cycle can also be expressed more compactly as:
+• Create a failing test
+• Write just enough code to pass the test
+• Refactor your code to improve design
+This cycle is also known as Red/Green/Refactor. The color reference is to how some unit testing
+framework’s IDE plug-ins display failing and passing tests with a red and green bar, respectively [2]
+(p. x).
+\newline
+\newline
+The fundamental principle behind the xUnit test pattern is to verify that the class or function under test
+are in a specific state, has produced a specific result or has performed a specific task. This is done
+using what is called Asserts 7 . As in code example I the Assert verify a specific condition such as that
+the actual result equals the expected result. [2] (p. 157)
+\newline
+Comments: One of the primary sources and used 2 times to give credability to very little having to do with his thesis. His major reason for this source is to reference the algorithm for tdd and on that note this is a good source. If you however were to dig deeper inte tdd Erdogmus, Hakan; Morisio, Torchiano. "On the Effectiveness of Test-first Approach to Programming". Proceedings of the IEEE Transactions on Software Engineering, 31(1). might be a better source since it is a ieee conference publication with reasonable number of citation of 64(ACM) and not a book based on experience and not on theoretical facts. 
+
+\subsection{reference 2}
+cited: 25(ACM)
+Feathers, Michael (2004) Working Effectively with Legacy Code . Prentice Hall.
+Is used alot in the thesis (12 times). Can't seem to find any better source. This publications seems to be the major papper in this field
+\end{document}

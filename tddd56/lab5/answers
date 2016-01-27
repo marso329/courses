@@ -1,0 +1,4 @@
+optimization:
+
+Om en subsekvens rymms i shared memory så använd det
+Om ett tal ska jämföras två gånger på raken i ett block så ha det i registret

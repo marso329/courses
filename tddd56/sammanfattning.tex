@@ -1,0 +1,231 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{subscript}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[]{algorithm2e}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+\title{TDDD56 Summary:}
+\author{Martin Söderén\\ marso329@student.liu.se\\900929-1098}
+\date{\today}
+\maketitle
+\vfill % Fill the rest of the page with whitespace
+\thispagestyle{empty}
+\end{titlepage}
+\section{Optimized Matrix multiplication on GPU}
+Let one thread compute one element in the C-matrix. We split the matrix up into smaller matrices are small enough to load into the shared memory. If we have a 1024X1024 matrix multiplication we can split it up into 16x16 matrices. So to compute a element in C 64 smaller matrices have to be loaded into the shared memory.
+\begin{lstlisting}
+Calculate position global_x,global_y in C matrix;
+
+//variable to store result int
+float Cvalue=0.0;
+
+__shared__ float SubA[blockDim.x*blockDim.Y];
+__shared__ float SubB[blockDim.x*blockDim.Y];
+
+//for all submatrices
+For i in A
+.width/blockDim.X:
+	Get one element from A and put it into subA
+	get one element from B and put it into subB
+	//synchronize after getting data
+	__synchthreads()
+	//add the values from subA and subB multiplicated into Cvalue
+	for j in blockdim.x:
+		Cvalue+=subA[threadidx.y*blockDim.x+j]*subB[j*blockDim.x
+				+threadIdx.x];
+	//synchronize so no other threads starts getting new data into subA and subB
+	__synchthreads();
+//write value to global memeory
+C[global_y*C.width+global_x]=Cvalue;
+
+\end{lstlisting}
+\section{GPU memory comparison}
+\subsection{Registers}
+Fastest, only accessible by a thread, lifetime of a thread
+\subsection{Shared memory}
+Fast, parallel, restricted to block
+\subsection{Global}
+slow, not as parallel as shared
+\subsection{constant}
+read only, fast when all threads reads the same memory
+\section{Reduction algorithms}
+Multiple kernels calls which reduced the problem in size each time. For example find max, min in data.
+
+\section{Quickies}
+\subsection{What geometry is usually used for shader-based GPU computing?}
+Triangles
+\subsection{What concept in CUDA corresponds to a streaming multiprocessor in the GPU
+architecture?}
+warp
+\subsection{How can pinned (page-locked) CPU memory improve performance?}
+reduces copying time since data transfer from the gpu to cpu does not need to go through a temporary page.
+\subsection{List three different kinds of hardware that OpenCL runs on. (Similar systems by
+different vendors count as one.)}
+cpu,dsp,fpga,gpu(not all)
+
+\subsection{SIMD}
+Single instruction multiple data. For example act on a vector of data. 
+\subsection{Hardware multithreading}
+Having multiple thread contexts in a single processor. So the processor can fast switch between them.
+\subsection{Cache coherence}
+The problem that arises when two processors have the same data in cache and it needs to be synchronized.
+\subsection{Heterogeneous multicore system}
+The have processors that are not identical. Let say a special dsp processor for some signal modification.
+\subsection{sequential consistency}
+all instructions are executed in order and write operations are visible throughout the system immediately.
+\section{Weak memory consistency}
+access to protected regions are done sequential by nodes, all other access can be seen in different orders on different nodes, The set of both read and write operations in between different synchronization operations is the same in each process.
+\section{multi-banked memory}
+Can handle multiple request in parallel.
+ 
+
+\section{non-blocking compared to blocking synchronization}
+\subsection{non-blocking}
+pros:prevents deadlocks and does not block. 
+\subsection{blocking}
+cons:contention(wait for release), overhead, hard to debug, priority inversion(does not matter which priority a thread has), convoying(all other threads needs to wait if a thread holds the lock and is interrupted).
+
+\section{Brents theorem}
+If a parallel computer can exploit the maximum concurrency in a algorithm with N operations in T time. Then a parallel computer with P processors can do it in $T_p$ time where
+$$T_p \leq T +\dfrac{N-T}{P}$$ 
+This theorem assumes a PRAM model where the communication cost is zero and all operations are done in one time unit. A good example is summation. 
+
+\section{Walls}
+\subsection{Power walls}
+Cpu:s require to much power and dissipate to much energy so they can't be cooled effectively. This led to multi core processors since this makes is possible to have two low powered processors (or more) instead of one powerful. This however require great parallelism.
+\subsection{Memory bottleneck}
+The bandwidth between the CPU and ram can't keep up with the speed of the processor.
+\subsection{instruction level parallelism}
+How many instructions in a program can be executed simultaneously. 
+
+\section{FFT}
+Uses a pipelined architecture in most algorithms. In the recursive version all recursive calls can spawn a new thread.
+
+\section{Analysis}
+\subsection{parallel work}
+how many instructions are executed in total by all processors 
+\subsection{parallel time}
+The number of time steps required to execute the algorithm.
+\subsection{Parallel cost}
+(parallel time)* max number of processors used. 
+\subsection{work-optimal}
+If a algorithm solves a problem at the lower bound of the problem then the algorithm is work optimal.
+
+\section{gpu vs cpu}
+the gpu purpose is to take huge batches of data and perform the same operation over and over again very parallel.The cpu is created to handle a few threads while the gpu is created to handle thousands of threads.
+
+\section{cuda vs opencl terminology}
+\begin{itemize}
+\item gpu:device
+\item multiprocessor:computeUnit
+\item scalar core:processing element
+\item global memory: global memory
+\item shared memory:local memory
+\item local memeory: private memory
+\item kernel:program
+\item block: work-group
+\item thread:work-item
+\end{itemize}
+\section{Cuda$>$2.0}
+\begin{itemize}
+\item a block can not have more than 1024 threads
+\item maximum dimensions of a block is 1024,1024,64
+\item each block has maximum 48kb of shared memory
+\item the number of threads on a block must be a multiple of 32 (warp size)
+\item each block is mapped onto a sm
+\end{itemize}
+\section{Fermi}
+double precision, exceptions, multiple kernels, sm independent l1 cache, higher bandwidth
+\section{G80}
+a single unified processor, SIMT model, shared memory and barrier syncronization.
+
+\section{glsl}
+opengl shading language, used for controlling the graphics pipeline.
+\section{cuda streams}
+You can use multiple cuda streams asynchronous to upload data, launch kernels.
+
+\section{loop interchange}
+safe when iteration variables are independent. Utilizes the cpu cache and loop interchange can reduce cache misses.
+
+\section{skeleton programming}
+algorithmic skeletons (a.k.a. Parallelism Patterns) are a high-level parallel programming model for parallel and distributed computing.
+
+Algorithmic skeletons take advantage of common programming patterns to hide the complexity of parallel and distributed applications. Starting from a basic set of patterns (skeletons), more complex patterns can be built by combining the basic ones.
+Pros:portability, programmability, abstraction. Cons: no performance portability,  available skeletons does not always fit, may lose performance compared to direct parallelization.
+
+\section{Histogram algorithm}
+Let each thread create a local histogram of a subset of the data, add all local histograms in the block together(does not need sync), send all blocks histograms to global memory, second kernel adds all block histogram together. 
+
+\section{Cuda coordinates}
+$$int x = blockIdx.x * blockDim.x + threadIdx.x;$$
+ $$ int y = blockIdx.y * blockDim.y + threadIdx.y;$$
+
+\section{SMP}
+Symmetric multiprocessing is the most common architecture today. You have multiple identical processors with individual cache that share a global memory. The operating system treats all the processors equally.
+
+\section{bus snooping}
+Used to achieve cache coherency. Each processors cache controller snoops the bus to listen for relevant changes on addressees in its cache.
+
+\section{ABA problem}
+Can occur with single cas in linked lists for example.
+\begin{enumerate}
+\item Thread 1 checks a value
+\item Thread 2 modifies the value to something and then back to the original
+\item thread one checks the value again and assumes everything is fine and dandy
+\end{enumerate}
+
+\section{speedup anomaly}
+If a computation is executed faster than the model predicted. For example when a problem is divided into so small parts so they can fit into the core cache. 
+
+\section{thrashing}
+How to prevent a block from being exchanged back and forth between two nodes.
+\section{MESI protocol}
+\subsection{invalid}
+cache line is shared and have been modified elsewhere
+\subsection{modified}
+cacheline is only in this cache and have been modified
+\subsection{exclusive}
+cacheline is only in this cache and have not been modified
+\subsection{shared}
+is available in multiple caches and have not been modified
+
+\section{pram(Parallel random-access machine)}
+\subsection{CREW PRAM}
+Concurrent read exclusive write (CREW)—multiple processors can read a memory cell but only one can write at a time
+\subsection{EREW PRAM}
+Exclusive read exclusive write (EREW)—every memory cell can be read or written to by only one processor at a time
+\end{document}

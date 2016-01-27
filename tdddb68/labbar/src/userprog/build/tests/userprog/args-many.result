@@ -1,0 +1,12 @@
+FAIL
+Kernel panic in run: PANIC at ../../lib/kernel/list.c:171 in list_insert(): assertion `is_interior (before) || is_tail (before)' failed.
+Call stack: 0xc0106610 0xc01068d1 0xc0106a0a 0xc01022df 0xc010a5c8 0xc010a05a 0xc0109f10 0xc01000a4
+Translation of call stack:
+0xc0106610: debug_panic (.../../lib/kernel/debug.c:34)
+0xc01068d1: list_insert (.../../lib/kernel/list.c:174)
+0xc0106a0a: list_push_back (.../../lib/kernel/list.c:220)
+0xc01022df: sema_down (.../../../threads/synch.c:72)
+0xc010a5c8: dir_create (...../filesys/directory.c:30)
+0xc010a05a: do_format (.../../filesys/filesys.c:100)
+0xc0109f10: filesys_init (..../../filesys/filesys.c:31)
+0xc01000a4: main (.../../../threads/init.c:118)

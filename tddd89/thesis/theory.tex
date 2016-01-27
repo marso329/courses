@@ -1,0 +1,58 @@
+\documentclass[thesis.tex]{subfiles}
+\begin{document}
+\subsection{HPC in general}
+An HPC is normally a massively parallel computer using thousands of nodes interconnected by high bandwidth, low latency networks such as Infiniband\cite{infiniband}. This is however when the cluster computing approach is used. A HPC can also use a GRID structure where computers does not necessary need to be in the same building or even in the same country. You can for example have two clusters in different countries and spread the work on both clusters and then use a GRID/cluster approach. 
+\newline
+\newline
+Today there are many algorithms that scale well horizontal, meaning that adding a extra node to the cluster will decrease computing time. Today hardware is also relatively cheap, the most expensive part of a computing is mostly the electricity required to run the nodes. Most benchmarks available focuses on performance but it could also be possible to tune for efficiency to reduce the energy required.
+\newline
+\newline
+The optimization of a HPC can be done on multiple levels. For example in libraries using auto tuning library generators such as the one in ATLAS(Auto-tuning linear algebra library) which as the name suggests is a library for linear algebra. The optimization can be done in the compiler using iterative compiling. It can also be done using dynamic composition meaning that there is a exposed tuning interface for the programmer but it could also mean that the program is using learning-algorithms during run-time to tune the parameters exposed.
+\subsection{OpenMPI}
+OpenMPI is a standard message passing interface. It purpose is to abstract away all the underlying transport for the program that is needed to send data from one process to another. The other process can be on the same node or on another node in another country.
+OpenMPI can however do much more than just send messages between different processes, it supports sending complex data structures, starting, monitoring and killing processes and also debugging them.
+\subsubsection{MCA in OpenMPI}
+The design of the OpenMPI library is called MCA(Modular Component Architecture). This design pattern makes the library very modular and the exchange for other modules and addition of newer easier. The application is also split up into abstraction layers:
+\begin{itemize}
+\item OMPI
+\item ORTE
+\item OPAL
+\end{itemize}
+Where the OMPI(Open MPI) is the highest abstraction layer and the which communicates with the application. The ORTE(Open MPI Run-Time Environment) handles the execution and killing of processes on nodes.
+\newline
+\newline
+The MCA in OpenMPI is a series of frameworks,components and modules that not only can be combined during compilation but can also be exchanged during runtime. This allows for runtime tuning by exchanging different modules. Also variables can be adjusted during runtime if it considered a MCA variable, a example is the boundary between long and short messages in the TCP protocol. If one node has two connections, one GigaBit and one 10 GigaBit, it might wants to change these values when switching between connections.\cite{OpenMPI-tuning}
+
+\subsection{OTPO}
+Mostly used for tuning OpenMPI as a whole cluster. Also uses a combination of brute-force and heuristics before runtime. This requires a lot of compilation or optimization time and are sensitive to input data \cite{6355867}.
+
+\subsection{Runtime optimization}
+There have been evaluation of dynamic control over MCA parameters and the end result where that these could be implemented without any considerabke overhead.
+\cite{Fagg}.
+
+\subsection{Profiler organisation}
+The PMPI (MPI standard profiling interface) is used to gather information from the running code using several different modules. For example it can catch calls to the MPI\_Send (actually PMPI\_Send when setup to capture the event) and monitor the time spent in that function. According to the OpenMPI documentation \cite{OpenMPI-profiling} the OMPI source base which PMPI is a part of can be used to capture performance data but it needs to be analyzed by an external program. The PMPI has been used to create a real time visulization tool\cite{Visualisation}. 
+\subsection{Benchmarking tools}
+There exists a lot of different benchmarking tools for OpenMPI. One or several of these will be used to measure the change in performance by runtime tuning the parameters. 
+\subsubsection{SKaMPI}
+SKaMPI consists of three parts the benchmarking program, the postprocessing tool and the report generation tool. It can benchmark induvidual MPI operations and compare different configurations. It's very configurable. \cite{Reussner98skampi:a}
+\subsubsection{NAS Parallel Benchmarks}
+NAS is a collection of several different benchmarks. It was developed in 1991 by NASA to benchmark their HPC. The benchmarks are eight programs relative to science and are supposed to mimic programs normally run on HPC.\cite{DBLP:reference/parallel/Bailey11}
+\subsubsection{OSU benchmarks}
+The OSU runs many microbenchmarks and reports back data such as latency and sending time for packages of different size.
+\subsubsection{Intel® MPI Benchmarks}
+The Intel MPI Benchmark focuses on point-to-point and global communcation operations.
+\subsection{Optimizing using machine learning}
+There has been work done in the field of using machine learning algorithms to make the HPC learn which parameters work best for different kinds of calculations. The two algorithms mostly used is decisions trees and neural networks. This works by analysing work being done and the application being run. Using different algorithms to test settings the system learns which settings fits what application best. These could be changed during runtime but mostly the system runs one instance of the application and acquires data, selects the appropriate parameter values and starts the complete computation.\cite{machinelearning}\cite{Pellegrini:2010:ATM:1787275.1787310}
+
+\subsection{Parameters relevent in shared memory applications}
+According to \cite{machinelearning} the following parameters affect performance in shared memory application:
+\begin{itemize}
+\item sm\_eager\_limit
+\item mpi\_paffinity\_alone
+\item coll\_sm\_control\_size
+\item coll\_tuned\_use\_dynamic\_rules
+\newline
+[insert descriptions]
+\end{itemize}
+\end{document}

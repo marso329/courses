@@ -1,0 +1,66 @@
+\documentclass[titlepage, a4paper]{article}
+
+\input{../mall/layout.tex}	% Importera generella layout-strukturer
+
+% Information nödvändig för generella layout-strukturer
+\newcommand{\LIPSredaktor}{Ruben Das}
+\newcommand{\LIPSversion}{0.2}
+\newcommand{\LIPSdokument}{Kvalitetssäkring}
+\newcommand{\LIPSdokumenttyp}{Kandidatrapport}
+\newcommand{\LIPSgranskatdatum}{2015-05-13}
+\newcommand{\LIPSgranskare}{Ruben Das}
+\newcommand{\LIPSgodkannare}{Andreas Runfalk}
+\newcommand{\LIPSgodkantdatum}{-}
+\newcommand{\LIPSkursnamn}{TDDD77}
+\newcommand{\LIPSprojektnamn}{Prediktionsreglering}
+\newcommand{\LIPSprojektgrupp}{Grupp 2}
+%\newcommand{\LIPSgruppadress}{\todo{Ta bort}}
+\newcommand{\LIPSartaltermin}{VT, 2015}
+\newcommand{\LIPSgrupphemsida}{http://pum-2.ida.liu.se/}
+\newcommand{\LIPSkund}{Saab}
+\newcommand{\LIPSkundkontakt}{Daniel Simon}
+\newcommand{\LIPSkursansvarig}{Kristian Sandahl}
+\newcommand{\LIPShandledare}{Andreas Runfalk}
+
+% Dokument-specifika paket
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[round]{natbib}
+\usepackage[nottoc]{tocbibind}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{url}
+
+\usetikzlibrary{shapes, arrows}
+
+\pagenumbering{roman}
+\renewcommand*{\thepage}{D-\roman{page}}
+
+\DeclareGraphicsRule{.0.pdf}{pdf}{*}{}
+
+\begin{document}
+
+\LIPSTitelsida
+\newpage
+\tableofcontents	%Innehållsförteckning
+\newpage
+\pagenumbering{arabic}
+\renewcommand*{\thepage}{D-\arabic{page}}
+\input{ruben-tex/inledning}
+\input{ruben-tex/bakgrund}
+\input{ruben-tex/teori}
+\input{ruben-tex/metod}
+\input{ruben-tex/resultat}
+\input{ruben-tex/diskussion}
+\input{ruben-tex/slutsatser}
+\newpage
+\setcounter{secnumdepth}{0}
+\input{ruben-tex/kodstandard}
+%bibliographystyle{plainnat}
+%\bibliography{tex/refs}{}
+\end{document}

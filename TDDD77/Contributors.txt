@@ -1,0 +1,7 @@
+Adam Sestorp (Lagledare)
+Sebastian Fast (Arkitekt)
+Martin Söderén (Analysansvarig)
+Johan Isaksson (Testledare)
+Alexander Yngve (Utvecklingsledare)
+Ruben Das (Kvalitetssamordnare)
+Dennis Ljung (Dokumentansvarig)

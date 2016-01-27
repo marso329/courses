@@ -1,0 +1,27 @@
+Copying tests/userprog/write-stdin into /tmp/56FcmhfPos.dsk...
+Writing command line to /tmp/v0ZQfk3api.dsk...
+qemu -hda /tmp/v0ZQfk3api.dsk -hdb /tmp/wtnZibwBbt.dsk -hdc /tmp/56FcmhfPos.dsk -p 1234 -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put write-stdin run write-stdin
+Pintos booting with 4,096 kB RAM...
+375 pages available in kernel pool.
+374 pages available in user pool.
+Calibrating timer...  7,155,200 loops/s.
+hd0:0: detected 129 sector (64 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 87 sector (43 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'write-stdin' into the file system...
+Executing 'write-stdin':
+(write-stdin) begin
+write-stdin: exit(-1)
+Execution of 'write-stdin' complete.
+Timer: 61 ticks
+Thread: 30 idle ticks, 31 kernel ticks, 1 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 55 reads, 182 writes
+hd1:0: 87 reads, 0 writes
+Console: 793 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

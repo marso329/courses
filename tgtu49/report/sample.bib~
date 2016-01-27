@@ -1,0 +1,379 @@
+
+@book{edgerton,
+  author    = {Edgerton, David}, 
+  title     = {The shock of the old},
+  publisher = {PROFILE BOOKS LTD},
+  year      = 2006,
+  isbn      = {978 1 86197 306 1}
+}
+
+@book{hansson,
+  author    = {Hansson, Staffan}, 
+  title     = {Den skapande människan},
+  publisher = {Studentlitteratur},
+  year      = 2002,
+  isbn      = {978-91-44-02148-5}
+}
+
+@inproceedings{sheng,
+ author = {Needham, Joseph},
+ title = {Science and Civilisation in China: Paper and Printing},
+ series = {part one, vol. 5},
+ year = {1985},
+ pages = {201-202},
+ numpages = {2},
+ keywords = {Cambridge: Cambridge University Press},
+} 
+
+@inproceedings{mina,
+ author = {Needham, Joseph},
+ title = {Science and Civilisation in China: Military Technology: The Gunpowder Epic},
+ series = {part seven, vol. 5},
+ year = {1987},
+ pages = {25},
+ numpages = {1},
+ keywords = {Cambridge: Cambridge University Press},
+} 
+
+@inproceedings{compass,
+ author = {Needham, Joseph},
+ title = { Clerks and Craftsmen in China and the West},
+ year = {1970},
+ pages = {243-244},
+ numpages = {2},
+ keywords = {Cambridge: Cambridge University Press},
+ isbn      = {978-0-521-07235-9}
+} 
+
+@misc{eyeglasses,
+  title = {Timeline of Eyeglasses},
+  howpublished = {\url{"http://www.museumofvision.org/exhibitions/?key=44&subkey=4&relkey=35"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@inproceedings{handgun,
+ author = {Chase, Kenneth},
+ title = { Firearms: A Global History to 1700},
+ year = {2003},
+ keywords = {Cambridge: Cambridge University Press},
+ isbn      = {978-0-521-82274-9}
+} 
+
+@inproceedings{navalmine,
+ author = {Fu, Chunjiang},
+ title = { Origins of Chinese Science and Technology},
+ year = {2004},
+ pages = {18,
+ numpages = {1},
+ keywords = {Asiapac Books},
+ isbn      = {981-229-376-0}
+} 
+
+@inproceedings{brace,
+ author = {White, Lynn},
+ title = { Medieval Technology and Social Change},
+ year = {1962},
+ keywords = {Clarendon Press},
+ isbn      = {978-0195002669}
+} 
+
+@misc{gutenberg,
+  title = {100 Most Influential People of the Millennium},
+  howpublished = {\url{"http://www.wmich.edu/mus-gened/mus170/biography100"}},
+  note = {Accessed: 2015-12-05}
+}
+@misc{gutenberg1,
+  title = {1000+ People of the Millenium and Beyond},
+  howpublished = {\url{"http://rhsweb.org/library/1000PeopleMillennium.htm"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@inproceedings{gutenberg2,
+ author = {Childress, Diana},
+ title = { Johannes Gutenberg and the Printing Press (Pivotal Moments in History)},
+ year = {2008},
+ keywords = {Twenty-First Century Books},
+ isbn      = {978-0822575207}
+} 
+
+@inproceedings{backstaff,
+ author = {W.F.J. Mörzer Bruyns, Richard Dunn},
+ title = { Sextants at Greenwich: A Catalogue of the Mariner's Quadrants, Mariner's Astr 1abes, Cross-staffs, Backstaffs, Octants, Sextants, Quintants, Reflecting Circles and Artificial Horizons in the National Maritime Museum},
+ year = {2009},
+  pages = {72},
+ keywords = {OUP Oxford},
+ isbn      = {9780191608902}
+} 
+
+@misc{revolver,
+  title = {The World’s Oldest Existing Revolver – 1597},
+  howpublished = {\url{"http://thornews.com/2014/03/27/the-worlds-oldest-existing-revolver-1597/"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{telescope,
+  title = {The Telescope},
+  howpublished = {\url{"http://galileo.rice.edu/sci/instruments/telescope.html"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{calculator,
+  title = {Schickard versus Pascal - an empty debate?},
+  howpublished = {\url{"http://metastudies.net/pmwiki/pmwiki.php?n=Site.SchicardvsPascal"}},
+  note = {Accessed: 2015-12-05}
+}
+
+
+@misc{barometer,
+  title = {The Invention of the Barometer},
+  howpublished = {\url{"http://www.islandnet.com/~see/weather/history/barometerhistory1.htm"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@inproceedings{steam,
+ author = {Morris, Charles},
+ title = { The Dawn of Innovation: The First American Industrial Revolution},
+ year = {2012},
+  pages = {42},
+ keywords = {PublicAffairs},
+ isbn      = {1586488287}
+} 
+
+@misc{harrison,
+  title = {John Harrison},
+  howpublished = {\url{"http://www.rmg.co.uk/discover/explore/longitude-found-john-harrison"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@inproceedings{jenny,
+ author = {Timmins, Geoffrey},
+ title = { he Last Shift:The decline of handloom weaving in nineteenth-century Lancashire},
+ year = {1993},
+  pages = {253},
+ keywords = {Manchester University Press},
+ isbn      = {0 7190-3725-5}
+} 
+
+@misc{watt,
+  title = {Captivity of Steam},
+  howpublished = {\url{"http://inventors.about.com/od/wstartinventors/a/JamesWatt.htm"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{trevishick,
+  title = {Richard Trevithick's steam locomotive},
+  howpublished = {\url{"www.museumwales.ac.uk/articles/2008-12-15/Richard-Trevithicks-steam-locomotive/"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{sturgeon,
+  title = {William Sturgeon and the Invention of the Electromagnet},
+  howpublished = {\url{"http://inventors.about.com/od/famousinventions/fl/William-Sturgeon-and-the-Invention-of-the-Electromagnet.htm"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{henry,
+  title = {The electromechanical relay of Joseph Henry},
+  howpublished = {\url{"http://history-computer.com/ModernComputer/Basis/relay.html"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{nobel,
+  title = {Alfred Nobel},
+  howpublished = {\url{"http://www.tekniskamuseet.se/1/1910.html"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{edison,
+  title = {Inventing Entertainment: The Early Motion Pictures and Sound Recordings of the Edison Companies },
+  howpublished = {\url{"http://www.loc.gov/collection/edison-company-motion-pictures-and-sound-recordings/about-this-collection/"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@misc{wright,
+  title = {The Wright Brothers - First Flight, 1903 },
+  howpublished = {\url{"http://www.eyewitnesstohistory.com/wright.htm"}},
+  note = {Accessed: 2015-12-05}
+}
+
+
+@misc{ambrose,
+  title = {Sir Ambrose Fleming: Father of Modern Electronics },
+  howpublished = {\url{"http://www.icr.org/article/sir-ambrose-fleming-father-modern-electronics/"}},
+  note = {Accessed: 2015-12-05}
+}
+
+
+@misc{penicillin,
+  title = {Discovery and Development of Penicillin },
+  howpublished = {\url{"http://www.acs.org/content/acs/en/education/whatischemistry/landmarks/flemingpenicillin.html"}},
+  note = {Accessed: 2015-12-05}
+}
+
+@inproceedings{zuse,
+ author = {Priestley, Mark},
+ title = { A Science of Operations
+Machines, Logic and the Invention of Programming},
+ year = {2011},
+  pages = {253},
+ keywords = {Springer},
+ isbn      = {978-1-84882-554-3}
+} 
+
+
+@article{fission,
+  author  = {MEITNER,LISE and FRISCH,R }, 
+  title   = {Disintegration of Uranium by Neutrons: a New Type of Nuclear Reaction},
+  journal = {Nature},
+  year    = 1939,
+  number  = 143,
+  pages   = {239-240},
+}
+
+@misc{choe,
+  title = { Hwacha},
+  howpublished = {\url{"http://www.revolvy.com/main/index.php?s=Hwacha"}},
+  note = {Accessed: 2015-12-06}
+}
+
+
+@misc{galileo-life,
+  title = { Galileo Biography},
+  howpublished = {\url{"http://www.biography.com/people/galileo-9305220"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{pascal-life,
+  title = { Blaise Pascal Biography},
+  howpublished = {\url{"http://www.biography.com/people/blaise-pascal-9434176"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{torricelli-life,
+  title = { Evangelista Torricelli},
+  howpublished = {\url{"http://global.britannica.com/biography/Evangelista-Torricelli"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{berti-life,
+  title = { Gasparo Berti},
+  howpublished = {\url{"http://www.eoht.info/page/Gasparo+Berti"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{newcomen-life,
+  title = { Thomas Newcomen (1663 - 1729)},
+  howpublished = {\url{"http://www.bbc.co.uk/history/historic_figures/newcomen_thomas.shtml"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{hargreaves-life,
+  title = { James Hargreaves},
+  howpublished = {\url{"http://global.britannica.com/biography/James-Hargreaves"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{watt-life,
+  title = { James Watt },
+  howpublished = {\url{"http://www.bbc.co.uk/history/historic_figures/watt_james.shtml"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{trevithick-life,
+  title = { Richard Trevithick },
+  howpublished = {\url{"http://global.britannica.com/biography/Richard-Trevithick"}},
+  note = {Accessed: 2015-12-06}
+}
+
+
+@misc{sturgeon-life,
+  title = { William Sturgeon },
+  howpublished = {\url{"http://global.britannica.com/biography/William-Sturgeon"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{henry-life,
+  title = { Joseph Henry, 1797-1878  },
+  howpublished = {\url{"http://siarchives.si.edu/history/joseph-henry"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{nobel-life,
+  title = { Alfred Nobel },
+  howpublished = {\url{"http://www.chemheritage.org/discover/online-resources/chemistry-in-history/themes/early-chemistry-and-gases/nobel.aspx"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{edison-life,
+  title = { Thomas Edison Biography },
+  howpublished = {\url{"http://www.biography.com/people/thomas-edison-9284349"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{wright-life,
+  title = { Wilbur and Orville Wright },
+  howpublished = {\url{"http://www.nps.gov/wrbr/learn/historyculture/thebrothers.htm"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{ambrose-life,
+  title = { John Ambrose Fleming - short biography },
+  howpublished = {\url{"http://www.electronics-radio.com/articles/history/pioneers/sir-john-ambrose-fleming.php"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{fleming-life,
+  title = { Alexander Fleming Biography},
+  howpublished = {\url{"http://www.biography.com/people/alexander-fleming-9296894"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{zuse-life,
+  title = { Biography of Konrad Zuse (1910-1995)},
+  howpublished = {\url{"http://history-computer.com/People/ZuseBio.html"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@misc{hahn-life,
+  title = { Otto Hahn - Biographical},
+  howpublished = {\url{"http://www.nobelprize.org/nobel_prizes/chemistry/laureates/1944/hahn-bio.html"}},
+  note = {Accessed: 2015-12-06}
+}
+
+@inproceedings{landes,
+ author = {Landes, David},
+ title = {the unbound
+prometheus
+Technological change and industrial
+development in Western Europe
+from 1750 to the present},
+ series = {second edition},
+ year = {2003},
+ keywords = {Cambridge: Cambridge University Press},
+} 
+
+@misc{dick,
+  author        = {Magnusson, Dick},
+  title         = {Föreläsning om "Vetenskapliga revolutionen och industriella revolutionen" },
+  month         = {November},
+  year          = {2015},
+  pages  				={39-41},
+  publisher={Linköpings Universitet}
+}
+
+@misc{haikola,
+  author        = {Haikola, Simon},
+  title         = {Föreläsning 4 i kursen TGTU49 },
+  month         = {November},
+  year          = {2015},
+  publisher={Linköpings Universitet}
+}
+
+@misc{gyberg,
+  author        = {Gyberg, Per},
+  title         = {Föreläsning 5 i kursen TGTU49 },
+  month         = {November},
+  year          = {2015},
+  publisher={Linköpings Universitet}
+}
+

@@ -1,0 +1,33 @@
+Copying tests/filesys/base/lg-random into /tmp/q09KKkb8dI.dsk...
+Writing command line to /tmp/tukyyhjPkb.dsk...
+qemu -hda /tmp/tukyyhjPkb.dsk -hdb /tmp/9mY4gwBp8e.dsk -hdc /tmp/q09KKkb8dI.dsk -p 1234 -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put lg-random run lg-random
+Pintos booting with 4,096 kB RAM...
+375 pages available in kernel pool.
+374 pages available in user pool.
+Calibrating timer...  6,547,200 loops/s.
+hd0:0: detected 129 sector (64 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 93 sector (46 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'lg-random' into the file system...
+Executing 'lg-random':
+(lg-random) begin
+(lg-random) create "bazzle"
+(lg-random) open "bazzle"
+(lg-random) write "bazzle" in random order
+(lg-random) read "bazzle" in random order
+(lg-random) close "bazzle"
+(lg-random) end
+lg-random: exit(0)
+Execution of 'lg-random' complete.
+Timer: 102 ticks
+Thread: 30 idle ticks, 26 kernel ticks, 46 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 233 reads, 498 writes
+hd1:0: 93 reads, 0 writes
+Console: 963 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

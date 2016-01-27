@@ -1,0 +1,221 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{subscript}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[]{algorithm2e}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+\title{TDDD20 Summary:}
+\author{Martin Söderén\\ marso329@student.liu.se\\900929-1098}
+\date{\today}
+\maketitle
+\vfill % Fill the rest of the page with whitespace
+\thispagestyle{empty}
+\end{titlepage}
+\section{Proven NP-problem}
+\begin{itemize}
+\item CIRCUIT-SAT
+\item SAT
+\item 3-CNF-SAT
+\item SUBSET-SUM
+\item CLIQUE
+\item VERTEX-COVER
+\item HAM-CYCLE
+\item TSP 
+\end{itemize}
+
+\section{Find Hamiltion path in graph of degree 2}
+\subsection{explanation}
+Find a way in a graph which visits all vertices where every vertex is connected to maximum two vertices and the path can only visit each vertex once.
+\subsection{Algorithm}
+\begin{algorithm}
+ \KwData{undirected graph of degree 2 : G}
+ \KwResult{a hamilton path }
+ empty 	set of vertices : C \;
+  choose random vertex : v \;
+  add v to C\;
+ \While{True}{
+ choose vertex vk which is connected to last vertex added\;
+ \eIf{vk not in C}{
+ add vertex vk to C\;
+ }{
+ 
+  break\;
+ }
+ }
+  \eIf{C not contains all vertices in G}{
+ return fail\;
+ }{
+ 
+  return C\;
+ }
+ \caption{Find Hamiltion path in graph of degree 2}
+\end{algorithm}
+\subsection{Why does it work}
+Start point does not matter, if it a point of degree 0 then we know directly if it a hamilton path or not. If it is of degree one then we need to start or stop in that vertex. If it is of degree 2 we need to pass is sooner or later so we can start in it as well. 
+
+\subsection{Time complexity}
+Linear since in worst case you need to add all vertices.
+
+\section{Maximum subarray problem}
+\subsection{Explanation}
+contiguous subarray within a one-dimensional array of numbers which has the largest sum.
+
+\subsection{Algorithm}
+Go though every number and calculate the maximum sum that ends in that position. This value is of course the maximum ending number of the last one plus the current value. Have variable to keep track of the largest.
+
+
+\section{Maximum set packing problem}
+\subsection{Explanation}
+For a set U and some subsets S of U. The problem is to find the largest set of subsets that are pairwise disjoint. For example:
+$U=\{\{1,2\}\{2,3\}\{3,4\}\{5,6\}\}$ The largest set of disjoint subsets are $\{\{1,2\},\{3,4\},\{5,6\}\}$.
+
+\subsection{Proof of np-completness}
+Think of each subset in U as a vertex in a graph and add a edge between two vertices if their intersection is not empty. This can be done in polynomial time. 
+\newline
+\newline
+Now the largest set of pairwise disjoint subsets is a independent set problem because you can have two vertices connected by an edge. The complementary problem to independent set problem is a cliqeue problem that is proven NP.
+
+\section{Independent set problem}
+\subsection{Explanation}
+Find the largest set of vertices that are not connected to each other. This problem is a complement to Cliqueue problem.
+
+\section{Clique problem}
+\subsection{Explanation}
+Find the largest set of vertices in a graph where all vertices in the set is connected to each other. This problem is a completement to Independent set problem.
+
+
+\section{subset-sum}
+\subsection{Explanation}
+Given a set of integers G. Does it exists a subset C of G that sums to t?
+For example:
+$G=\{1,2,3,4,5,6,7,8\}$ t=10. Answer: $C=\{2,8\}$
+\subsection{Time complexity}
+NP-complete
+\subsection{Solution}
+Exhaustive search for small values and dynamic programming else.
+
+\section{Find if a graph contains a triangle(3-clique)}
+\subsection{Algorithm}
+If the adjacency matrix of a graph A has $trace(A^3)=0$ then it contains no triangels.
+
+\section{Longest increasing subsequence}
+\subsection{Explanation}
+$A=\{1,2,3,4,5,6,7,8\}$, $B=\{5,4,6,8,7,3,8\}$, Answer= $\{5,6,7,8\}$ 
+
+\subsection{Algorithm}
+Sort the number which can be done in nlogn time and solve the longest common subseqence problem with the one string as the unsorted numbers and the other string as the sorted.
+
+\subsection{Time complexity}
+$\O(n^2)$ since the sorting can be done in nlogn and longest common subsequence runs in $\O(n^2)$
+
+\section{longest common subsequence problem}
+\subsection{Explanation}
+To find the longest subsequence that exists in the two strings that are the input to the problem. For example C="ATCG" R="ATCT" then the longest subsequence is "ATC". 
+
+\subsection{Algorithm}
+\begin{enumerate}
+\item Create a matrix with a string on each axis
+\item Add a extra column to the right and an extra row on top
+\item Set all values in the extra column and row to zero
+\end{enumerate}
+\begin{algorithm}
+ \KwData{matrix : m,string A,string B}
+ \KwResult{ longest common subsequence}
+\For{each row : i}{
+\For{each column : j}{
+\eIf{A[i]==B[j]}{
+M[i , j]=max(M[i-1 , j], M[i-1 , j-1], M[i , j-1])+1
+}{M[i , j]=max(M[i-1 , j], M[i-1 , j-1], M[i , j-1])}
+
+}
+}
+backtrack through the matrix to find the sequence\;
+\end{algorithm}
+\subsection{Complexity}
+$\O(|A|*|B|)$ Since you need the go through each element in the matrix which is of size $|A|*|B| $.
+
+\section{Tree splitting}
+\subsection{Explanation}
+Split the tree by removing one node. The remaining subtrees can have a maximum size of n/2.
+
+\subsection{Algorithm}
+
+\begin{enumerate}
+\item traverse the tree and count the number of nodes $\O(n)$
+\item Choose one node the be the root
+\item Traverse the tree again and set how many children every node has.
+\item Now traverse the tree and find a node that will make a good enought cut. 
+\end{enumerate}
+
+\section{Edge cover a tree}
+\subsection{Algorithm}
+\begin{algorithm}
+ \KwData{Tree G}
+ \KwResult{minimum edge cover}
+ \While{edge was removed}{
+\For{each leaf a in G}{
+a is connected by (a,b) to b \;
+\For{each edge (b,c) connected to b }{
+	\If{degree(c)$>$1}{
+	remove((b,c))
+	}
+}
+}
+}
+\end{algorithm}
+\subsection{complexity}
+This is more or less a DPS so the time is linear.
+\section{DAG from a directed graph with of 1/4 edges left}
+\subsection{Algorithm}
+\begin{algorithm}
+ \KwData{directed graph G}
+ \KwResult{a DAG}
+\For{each node in G}{
+assign the node a 1 or 0 with 50 procent each \;
+\For{each edge (a,b) in G }{
+	\If{a==0 and b==1}{
+	add edge to dag \;
+	}
+}
+}
+\end{algorithm}
+\subsection{Why does it work}
+There can only be one way from say a to b. since a has value 0 there is a chance there is a a edge (a,c) but then c must have value 1 and cant have a outgoing edge which leads to b.
+\newline
+\newline
+1/4 of all edges will remain since the possible combinations of values are 0,0 0,1 1,0 and 1,1 and only those with 0,1 will remain which will be 1/4 of all edges. 
+
+\end{document}

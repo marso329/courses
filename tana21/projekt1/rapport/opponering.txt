@@ -1,0 +1,15 @@
+Beskrivningen: Skulle mäte något objekt och ni valde ett gem. 
+
+Dåligt med enheter.
+
+Indrag i nytt stycke fast mellanrum
+
+"Där d är gemets diameter" men d är inte med i formeln. 
+
+Hur stor felmarginal behövs pga en linjal och varför?
+
+Varför avrunda pi till 3.14
+
+i Resultatet: ni kan vara säkra på att volymen inte är negativ
+
+Jag skulle föreslå en mikrometer

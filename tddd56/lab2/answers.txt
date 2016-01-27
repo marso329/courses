@@ -1,0 +1,33 @@
+Write an explaination on how CAS can be used to implement protection for concur-
+rent use of data structures:
+
+in stack push:
+odl= head pointer
+set node.next=head
+cas:a head and node.next retry if fail
+
+in stack pop:
+node=head
+cas:a head and node.next
+
+Sketch a scenario featuring several threads raising the ABA problem:
+
+head->1->2->3->4
+A starts to pop 1:
+old=1
+#get preemted
+cas(head,old,old.next)
+
+
+B pops 1 head->2->3->4
+B pushed 0 head->0->2->3->4
+modify 1
+push 1 head->1->0->2->3->4
+
+A's old points to 2
+A completes cas since head=1
+stack is corrupt
+head->2->3->4
+but should look like
+ head->0->2->3->4
+ 

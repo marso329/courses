@@ -1,0 +1,49 @@
+1.1:
+
+function [ y ] = f( x )
+y=exp(1+x.^2);
+
+end
+
+2.1
+
+x=0.5:0.001:1.5;
+plot(x,f(x))
+ ca 16
+  
+2.2:
+
+function [ y ] = df( x )
+y=2*x.*exp(1+x.^2);
+
+end
+
+df(1)=14.7781
+
+2.3
+
+h=0.015*2.^-(0:13);
+
+h=0.015*2^(-0).........0.015*2^(-13)
+
+2.4
+
+trunkeringsfel vid framåt och bakåt: O(h)
+Vid centraldifferens: O(h)
+Med tillräckligt små h blir felen små
+
+ plot(h,Dplus(h))
+ plot(h,Dminus(h))
+ plot(h,Dcentral(h))
+ 
+ 2.5:
+ 
+ function [ y ] = g(x)
+y=round(f(x), 5, 'significant');
+end
+
+2.6:
+
+se bild uppgift26a och uppgift26b
+
+På grund av sämre noggrannhet så blir täljaren i Dplus noll då h går mot noll

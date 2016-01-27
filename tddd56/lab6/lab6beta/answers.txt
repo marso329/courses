@@ -1,0 +1,22 @@
+QUESTION: How much data did you put in local (shared memory?
+
+36*36*3 ints=12288 bytes
+Because each work item works on 32*32 pixels but needs to access pixels 2 steps outside this
+
+QUESTION: How much data does each thread copy to local memory?
+
+4 pixels = 4*3=48 bytes
+
+QUESTION: How did you handle the necessary overlap between the work groups?
+copying more than needed, this is no problem because we are not dependent of data from other work groups
+
+QUESTION: If we would like to increase the block size, about how big work groups would be safe to use in this case? Why?
+
+That depends on how much local memory we have. Let say we have 4k of local memory and a int is 4 bytes. We can store 1000 ints
+
+x*x*3*4=4096->x=18
+
+we have 1024 cores to we could have 32x32 instead of 16x16
+
+ QUESTION: How much speedup did you get over the naive version?
+ not measured yet

@@ -1,0 +1,284 @@
+\documentclass[titlepage, a4paper]{article}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{listings}
+% Sidformat
+\usepackage{a4wide}
+\usepackage[parfill]{parskip}
+% Bättre bildtexter
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption}
+
+% Enkelt kommando som låter mig attgöra-markera text
+\newcommand{\todo}[1] {\textbf{\textcolor{red}{#1}}}
+
+\usepackage{graphicx,epstopdf}
+\usepackage{listings}
+\epstopdfsetup{suffix=}
+\DeclareGraphicsExtensions{.ps}
+\DeclareGraphicsRule{.ps}{pdf}{.pdf}{`ps2pdf -dEPSCrop -dNOSAFER #1 \noexpand\OutputFile}
+
+\lstset{literate=%
+    {å}{{\r{a}}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {Å}{{\r{A}}}1
+    {Ä}{{\"A}}1
+    {Ö}{{\"O}}1
+}
+
+%% Headers och Footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{Martin Söderén \\ Alexander Yngve}
+\chead{TANA21}
+
+
+
+\begin{document}
+
+{\ }\vspace{45mm}
+
+\begin{center}
+    \Huge \textbf{TANA21: Projektrapport}
+\end{center}
+\begin{center}
+    \Large Ickelinjära ekvationer
+\end{center}
+
+\vspace{250pt}
+
+\begin{center}
+    \begin{tabular}{|*{3}{p{40mm}|}}
+        \hline
+        \textbf{Namn} & \textbf{Personnummer} & \textbf{Epostaddress} \\ \hline
+        {Martin Söderén} & {900929-1098} & {marso329@student.liu.se} \\ \hline
+        {Alexander Yngve} & {930320-6651} & {aleyn573@student.liu.se} \\ \hline
+    \end{tabular}
+\end{center}
+\newpage
+
+\section{Inledning}
+Denna rapport behandlar konvergensordningen hos sekantsmetoden som används för att lösa olinjära ekvationer $f(x)=0$.
+
+\section{Uppgift}
+Projektets uppgift är att skapa en MATLAB-funktion \textit{mysol} som returnerar en approximativ rot till en ickelinjär ekvation med önskad noggrannhet.
+\newline
+\newline
+Frågor att besvara:
+\begin{itemize}
+\item Är konvergensordningen som förväntad?
+\end{itemize}
+
+
+\section{Teori}\label{sec:teori}
+Den matematiska definitionen ser ut på följande sätt\cite{lamport94}:
+\begin{figure}[H]
+  $$x_n=x_{n-1}-\dfrac{f(x_{n-1})(x_{n-1}-x_{n-2})}{f(x_{n-1}-f(x_{n-2}))}$$
+\end{figure}
+
+Detta ger en konvergensordning på $\dfrac{1+\sqrt{5}}{2}\approx1.62$
+ Konvergensordningen beräknas med $$lim_{x \rightarrow \infty}\dfrac{|x_{k+1}-L|}{{|x_k-L|}^p}=\mu|\mu>0$$
+Där \textit{L} är talet som summan ska konvergera mot. Om gränsen är uppfylld så har konvergensordning \textit{p}. Så man får testa olika \textit{p} för att hitta rätt.
+
+\section{Metod}\label{sec:metod}
+Funktionerna implementerades i enlighet med teorin och därefter testades \textit{mysol} med koden i figur \ref{lst:test}. Det testkoden i figur \ref{lst:test} gör är att för några godtyckliga funktioner med kända rötter så beräknas dessa och mellan varje iteration så jämförs hur mycket värdet har förändrats, det vill säga hur snabbt värdet konvergerar med hjälp av funktionen för konvergensordningen i teorin.
+
+\section{Kod}
+Funktionen \textit{mysol} (figur \ref{lst:mysol}) hittar en rot till funktionen f och använder x1 och x2 som startpunkter, error anger hur nära roten ska vara, det vill säga funktionen stannar när $|f(x)| \leq error$.
+
+\begin{figure}[H]
+  \begin{lstlisting}
+function[x,it,x_arr] = mysol(f,x1 ,x2 ,error)
+x = (x1*f(x2) - x2*f(x1))/(f(x2) - f(x1));
+it=1;
+x_arr=[];
+while abs(f(x2)) > error
+    it=it+1;
+    x1 = x2;
+    x2 = x;
+    x = (x1*f(x2) - x2*f(x1))/(f(x2) - f(x1));
+    x_arr=[x_arr x];
+end
+end
+  \end{lstlisting}
+  \caption{\textit{mysol}}
+  \label{lst:mysol}
+\end{figure}
+
+
+  \begin{lstlisting}
+con=1.80;
+
+%root in 1 and 1000
+f=@(x) x.^2-1001*x+1000;
+[x,it,x_arr]=mysol(f,-10,10,0.0000000001);
+convergence1=zeros(1,length(x_arr)-1);
+for i=1:length(x_arr)-1
+convergence1(i)=abs(x_arr(i+1)-1)/abs(x_arr(i)-1)^con;
+end
+
+for i=1:length(convergence1)-1
+if convergence1(i+1)<convergence1(i)
+    disp('fail')
+end
+end
+
+f=@(x) 3*x+sin(x)-exp(x);
+[x,it,x_arr]=mysol(f,0,1,0.0000000000);
+convergence2=zeros(1,length(x_arr)-1);
+for i=1:length(x_arr)-1
+convergence2(i)=abs(x_arr(i+1)-0.360421702960324)/abs(x_arr(i)-0.360421702960324)^con;
+end
+
+for i=1:length(convergence2)-1
+if convergence2(i+1)<convergence2(i)
+    disp('fail')
+end
+end
+
+f=@(x) cos(x)-x*exp(x);
+[x,it,x_arr]=mysol(f,1,2,0.0000000000001);
+convergence3=zeros(1,length(x_arr)-1);
+for i=1:length(x_arr)-1
+convergence3(i)=abs(x_arr(i+1)-0.517757363682458)/abs(x_arr(i)-0.517757363682458)^con;
+end
+
+for i=1:length(convergence3)-1
+if convergence3(i+1)<convergence3(i)
+    disp('fail')
+end
+end
+
+f=@(x) x.^4-x-10;
+[x,it,x_arr]=mysol(f,-2,-1.5,0.0000001);
+convergence4=zeros(1,length(x_arr)-1);
+for i=1:length(x_arr)-1
+convergence4(i)=abs(x_arr(i+1)+1.697471880844153)/abs(x_arr(i)+1.697471880844153)^con;
+end
+for i=1:length(convergence4)-1
+if convergence4(i+1)<convergence4(i) && convergence4(i+1)~=0 
+    disp('fail')
+end
+end
+  \end{lstlisting}
+  \begin{figure}[H]
+  \caption{Testkod för konvergensordningen}
+  \label{lst:test}
+\end{figure}
+
+\section{Validering}
+För samtliga funktioner i testkoden så hittar \textit{mysol} den kända roten med den givna toleransen så man kan anta att den fungerar korrekt.
+\section{Resultat}
+Resultatet av testet beskrivet i avsnitt \ref{sec:metod} återges i tabell \ref{tab:funktion1}, \ref{tab:funktion2}, \ref{tab:funktion3} och \ref{tab:funktion4}.
+
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Iteration} & Värde för p=1  & Värde för p=2  \\ \hline
+    $\dfrac{|x_{2}-L|}{{|x_1-L|}^p}$ & 0.000099009811628 & $10^{10}*0.000000000011011$ \\ \hline
+ 
+     $\dfrac{|x_{3}-L|}{{|x_2-L|}^p}$ & 0.000000900362447 & $10^{10}*0.000000001011317$ \\ \hline
+
+ $\dfrac{|x_{4}-L|}{{|x_3-L|}^p}$ & 0.001385041551247 & $10^{10}*1.727887150716499$ \\ \hline
+ 
+  $\dfrac{|x_{5}-L|}{{|x_4-L|}^p}$ & X & X \\ \hline
+
+   $\dfrac{|x_{6}-L|}{{|x_5-L|}^p}$ & X & X \\ \hline
+
+    $\dfrac{|x_{7}-L|}{{|x_6-L|}^p}$ & X & X \\ \hline
+  \end{tabular}
+  \caption{Resultetet för funktionen $x^2-1001x+1000 \quad [-10 \ 10]$ }
+  \label{tab:funktion1}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Iteration} & Värde för p=1  & Värde för p=2  \\ \hline
+    $\dfrac{|x_{2}-L|}{{|x_1-L|}^p}$ &  0.041417589533209 & $10^{15}*0.000000000000001$ \\ \hline
+ 
+     $\dfrac{|x_{3}-L|}{{|x_2-L|}^p}$ & .018151073167259 & $10^{15}*0.000000000000008$ \\ \hline
+
+ $\dfrac{|x_{4}-L|}{{|x_3-L|}^p}$ & 0.000783911390405 & $10^{15}*0.000000000000020$ \\ \hline
+ 
+  $\dfrac{|x_{5}-L|}{{|x_4-L|}^p}$ & 0.000014214666714 & $10^{15}*0.000000000000456$ \\ \hline
+
+   $\dfrac{|x_{6}-L|}{{|x_5-L|}^p}$ & 0.000876643706951 & $10^{15}*0.000001977734388$ \\ \hline
+
+    $\dfrac{|x_{7}-L|}{{|x_6-L|}^p}$ & 1.000000000000000 & $10^{15}*2.573485501354569
+$ \\ \hline
+  \end{tabular}
+  \caption{Resultetet för funktionen $3x+sin(x)-e^x $}
+  \label{tab:funktion2}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Iteration} & Värde för p=1  & Värde för p=2  \\ \hline
+    $\dfrac{|x_{2}-L|}{{|x_1-L|}^p}$ &  0.211560916696176 & $10^{14}* 0.000000000000010$ \\ \hline
+ 
+     $\dfrac{|x_{3}-L|}{{|x_2-L|}^p}$ & 0.157355243766339 & $10^{14}*0.000000000000035$ \\ \hline
+
+ $\dfrac{|x_{4}-L|}{{|x_3-L|}^p}$ & 0.036470298695798 & $10^{14}*0.000000000000052$ \\ \hline
+ 
+  $\dfrac{|x_{5}-L|}{{|x_4-L|}^p}$ & 0.005861398055047  & $10^{14}*0.000000000000229$ \\ \hline
+
+   $\dfrac{|x_{6}-L|}{{|x_5-L|}^p}$ & 0.000214492965481 & $10^{14}*0.000000000001428$ \\ \hline
+
+    $\dfrac{|x_{7}-L|}{{|x_6-L|}^p}$ &  0.428571428571429 & $10^{14}*5.514611788616934
+$ \\ \hline
+  \end{tabular}
+  \caption{Resultetet för funktionen  $cos(x)-xe^x$  }
+  \label{tab:funktion3}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Iteration} & Värde för p=1  & Värde för p=2  \\ \hline
+    $\dfrac{|x_{2}-L|}{{|x_1-L|}^p}$ & 0.040364291101974 & $10^{2}*0.046041753089641$ \\ \hline
+ 
+     $\dfrac{|x_{3}-L|}{{|x_2-L|}^p}$ & 0.007342564217199 & $10^{2}*0.207493714710633$ \\ \hline
+
+ $\dfrac{|x_{4}-L|}{{|x_3-L|}^p}$ & 0.000297545054916 & $10^{2}*1.145149468054755$ \\ \hline
+ 
+  $\dfrac{|x_{5}-L|}{{|x_4-L|}^p}$ & 0.000000574416522  & $10^{2}*7.429911231660303
+$ \\ \hline
+
+   $\dfrac{|x_{6}-L|}{{|x_5-L|}^p}$ & X & X \\ \hline
+
+    $\dfrac{|x_{7}-L|}{{|x_6-L|}^p}$ &  X & X \\ \hline
+  \end{tabular}
+  \caption{Resultetet för funktionen  $x^4-x-10 \quad [1 \ 2]$  }
+  \label{tab:funktion4}
+\end{table}
+
+
+\section{Diskussion}
+ Alla funktioner konvergerar med $p=2$ mot ett värde $>$0. Vi testade lite olika värden och det minsta värdet på \textit{p} som vi tyckte gav bra resultat var 1.8 vilket inte är så långt från det teoretiska värdet på 1.62. Så konvergensordningen verkar vara ungefär som förväntat.
+
+\begin{thebibliography}{9}
+
+\bibitem{lamport94}
+  Olof Runborg,
+  \emph{Konvergensordning för sekantmetoden},
+  http://www.csc.kth.se/utbildning/kth/kurser/DN1240/
+  numfcl11/DN1242/sekant.pdf,
+  [2015-10-14].
+
+\end{thebibliography}
+
+\end{document}
+

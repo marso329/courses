@@ -1,0 +1,31 @@
+Copying tests/userprog/read-zero into /tmp/Wbu02FQ9er.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/Wbu02FQ9er.dsk...
+Writing command line to /tmp/ZxXxvFsEpA.dsk...
+qemu -hda /tmp/ZxXxvFsEpA.dsk -hdb /tmp/biDA6Senbc.dsk -hdc /tmp/Wbu02FQ9er.dsk -p 1234 -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put read-zero put sample.txt run read-zero
+Pintos booting with 4,096 kB RAM...
+375 pages available in kernel pool.
+374 pages available in user pool.
+Calibrating timer...  6,950,400 loops/s.
+hd0:0: detected 129 sector (64 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 90 sector (45 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'read-zero' into the file system...
+Putting 'sample.txt' into the file system...
+Executing 'read-zero':
+(read-zero) begin
+(read-zero) open "sample.txt"
+(read-zero) end
+read-zero: exit(0)
+Execution of 'read-zero' complete.
+Timer: 63 ticks
+Thread: 30 idle ticks, 32 kernel ticks, 2 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 86 reads, 190 writes
+hd1:0: 90 reads, 0 writes
+Console: 884 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

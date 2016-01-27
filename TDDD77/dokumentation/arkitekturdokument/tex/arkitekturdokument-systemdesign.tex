@@ -1,0 +1,40 @@
+\section{Systemdesign}
+
+En tydlig beskrivning av hur arkitekturen hänger ihop ses i figur 2.
+
+\subsection{Problembeskrivning}
+Detta är en enkel beskrivning på vårt koncept om hur programmet ska fungera. Man har ett konvext kvadratiskt optimeringsproblem som man vill lösa. Problemet skickas till vårt program som med effektiva algoritmer utvalda av oss räknar ut den optimala lösningen \textit{z*}.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.7]{bilder/Generellt.png}
+	\end{center}
+	\caption{Enkel beskrivning av problemet.}
+\end{figure}
+
+\subsection{Standarder}
+Källkoden följer de standarder som är beskrivna i kvalitetsplanen.
+
+\subsection{Systemskiss} simulink
+Programmet kommer i huvudsak köras via Matlab, där kommer programmet anropas som en funktion med all indata i parametrarna. Funktionen som anropas ligger i en Matlab \textit{mex-fil}, som vi bygger utifrån vår lösare skriven i C med hjälp av Matlabs egna  \textit{build}-funktion. Detta är för att Matlab i sig inte kan anropa kompilerade C binärer direkt utan denna konvertering till mex. Att lösaren ska kunna köras via Matlab är framförallt för att Simulink också ska kunna användas.
+\\
+Programmet kommer även att kunna köras från vårt eget GUI, där man i GUI:t kan mata in sitt QP problem och de matriser man vill använda, generera en C-problemfil som kan lösas av C lösaren. Resultatet skickas sedan tillbaka och visas i GUI:t.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.7]{bilder/arkitektur.png}
+	\end{center}
+	\caption{Övergripande beskrivning av systemet.}
+\end{figure}
+
+%\input{tex/systemskiss.tex}
+
+
+%\subsection{Arkitekturens delar}
+%Arkitekturen är uppdelad i tre större delar där GUI:t och parsern är en del
+%Lösningsalgoritmen solvern är en del ... active-set-metoden
+%Integrationen mot matlab är en del ... funktioner...
+
+\subsection{Matrisbibliotek}
+Arkitekturen innehåller ett eget matrisbibliotek, innehållande alla nödvändiga matrisoperationer för lösaren.
+

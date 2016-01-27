@@ -1,0 +1,236 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper,textwidth=160mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{url}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-0.5\baselineskip}%               space above header
+   {0.2\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.5\baselineskip}%              space above header
+   {0.2\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+
+\linespread{1.3}
+
+\begin{document}
+\begin{titlepage}
+\title{TGTU49 Rapport:\\
+Den enskilda uppfinnaren}
+\author{Martin Söderén}
+\date{\today}
+\maketitle
+
+
+
+\vfill % Fill the rest of the page with whitespace
+
+\thispagestyle{empty}
+
+\end{titlepage}
+\pagenumbering{gobble}
+\renewcommand*\contentsname{Innehållsförteckning}
+\renewcommand\refname{Referenser}
+\tableofcontents
+\newpage
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\pagenumbering{arabic}
+\section{Inledning}
+Denna rapport behandlar hur uppfinnandet har förändrats det senaste årtusendet. Den fokuserar främst på det senaste århundradet. Den börjar vid det förra millennieskiftet och går för varje århundrade igenom olika viktiga uppfinningar som kom till under den perioden, deras uppfinnare och varför dessa uppfinningar kom till. Från att vara kinesiska militärer till att vara vetenskapsmän på universitet till att vara multinationella företag som lägger ned stora resurser på att vara innovativa. Frågor som denna rapport ska besvara är:
+\begin{itemize}
+\item Är den enskilda uppfinnaren försvunnen ?
+\item Uppfinner vi mer eller mindre idag än vad som har skett tidigare i historien?
+\end{itemize} 
+
+
+\section{Uppdelning i rapporten}
+Den första delen är teoridelen där viktiga uppfinningar och deras uppfinnare tas upp med en del kommentarer om de olika perioderna. Efter detta så analyseras hur uppfinnandet har förändrats de senaste tusen åren. Rapporten avslutas därefter med en sammanfattning och slutsats med svar på de frågorna som har ställts. 
+
+
+\section{Teori}
+\subsection{År 1000 till 1099}
+\begin{itemize}
+\item År 1040 uppfanns den första tryckpressen av Bi Sheng. Lite är känt om Bi Sheng men han var en vanlig människa utan någon speciell position eller utbildning. Hur han kom på idén är oklart.\cite{sheng}  
+\end{itemize}
+
+\subsection{År 1100 till 1199}
+\begin{itemize}
+\item År 1117 användes det första kompasshuset i Kina inom flottan för att navigera.\cite{compass} Det är oklart vem som uppfann det, man vet är att det användes då. Det hade stor betydelse då man kunde förlänga seglingssäsongen och handel med andra länder.\cite{hansson}[s. 187]
+\end{itemize}
+
+\subsection{År 1200 till 1299}
+\begin{itemize}
+
+\item Landminan användes för första gången i Kina någon gång under denna period.\cite{mina} Dessa var sfäriska och var fyllda med krut. De kunde antingen antändas med en lång stubin som sammankopplade flera landminor eller med en flintsten som antändes genom fiendens rörelse. Även med landminan är det oklart vem som uppfann den, det finns bara dokumenterat att den användes under strider vid denna period.
+
+\item Glasögonen uppfanns i Italien mellan 1286 och 1289, uppfinnaren är tyvärr okänd.\cite{eyeglasses}
+
+\item Det första pistolen uppfanns i Kina någon gång under denna period, uppfinnaren är okänd.\cite{handgun}
+
+\end{itemize}
+
+\subsection{År 1300 till 1399}
+\begin{itemize}
+\item Den första flerstegsraketen uppfanns någon gång under denna period i Kina och användes mest av den Kinesiska flottan.\cite{mina}[s. 510] Däremot så vet man att Choe Mu-Seon i Korea föreslog en flerstegsraket som användes inom den koreanska militären. Han var en vetenskapsman, uppfinnare och militär. Dock så användes den tidigare i Kina så den ursprungliga uppfinnaren är okänd.\cite{choe}
+
+\item Sjöminan uppfanns någon gång under denna period och var en blåsa från en oxe som innehöll en stor mängd krut eller en trälåda försluten med lera. De användes mest mot kinesiska piratskepp.\cite{navalmine}
+
+\item Den första handgranaten uppfanns i Kina och innehöll stålkulor, porslin och krut.\cite{mina}[s. 180-181]
+\end{itemize}
+Fram till 1399 har mycket av utvecklingen skett bland den Kinesiska militären och det är inte så konstigt då de hade den största flottan i världen med 6450 fartyg som kunde ta upp till 500 man styck.\cite{hansson}[s. 207] Eftersom de hade en stor flotta och hade möjligheten att navigera under längre resor så gjorde de mycket upptäcktsresor runt om i världen vilket gjorde att de kunde samla idéer från många olika länder. Under dessa resor var de också mycket hövliga mot de befolkningarna som de stötte på, jämfört med européerna som försökte ta över så mycket land de kunde så brydde sig Kineserna inte om det. De ansåg att de var så stora att inget land var något hot mot Kinas storhet.\cite{hansson}[s. 208]
+
+\subsection{År 1400 till 1499}
+\begin{itemize}
+\item Den första handborren uppfanns i Italien någon gång under 1420-talet.\cite{brace}
+
+\item 1439 återupptäcks tryckpressen i Tyskland av Gutenberg.\cite{gutenberg2} En trolig anledning till att den inte hade slagit igenom tidigare var för att den som uppfanns i Kina under 1000-talet var väldigt stor och otymplig, krävde många människor för att sköta samt att det begränsade europeiska alfabetet passade bättre att trycka än det kinesiska. Många människor anser detta vara den viktigaste uppfinningen i vår historia.\cite{gutenberg}\cite{gutenberg1} Detta är dock bara åsikter och kan inte ses som fakta, men hans återupptäckt av tryckpressen var däremot viktig. Gutenberg var smed till yrket men blev sedan tryckare och utgivare så han hade ingen officiell utbildning bortsett från att troligtvis ha varit lärjunge till en smed.
+\end{itemize}
+Boktryckarkonsten fick stort genomslag på kort tid. Redan 1480 var tryckpressar igång på 110 platser runt om i världen. Dock i början användes den mest som propagandamaskin för kyrkan men vart eftersom boktryckarkonsten spred sig och kyrkan fick mindre inflytande så började mer och mer vanlig litteratur spridas.\cite{hansson}[s. 197-198]
+
+
+\subsection{År 1500 till 1599}
+\begin{itemize}
+\item Backstaffen var ett navigeringsinstrument som uppfanns 1594 av den engelska navigatören John Davis.\cite{backstaff} Han hade ingen tekniska utbildningen utan gav sig ut på havet vid tidig ålder.
+
+\item Den första revolvern tillverkades 1597 av Hans Stohler som var en tysk smed. \cite{revolver}
+\end{itemize}
+Denna period gjorde grunden för det som skulle komma. Europa utvecklades snabbt inom många områden såsom järntillverkning, skeppsbygge och jordbruk. En del av européernas framgång bestod också av deras skicklighet inom handel. De begränsades dock av vilka resurser de hade, speciellt tillgång på trä var en stor flaskhals i deras utveckling. Detta gällde inte bara i Europa. Kina var fortfarande en stor makt med de hade också brist på trä, detta till stora planteringsprogram i Kina vilket innebar att cirka en miljard träd planterades.\cite{hansson}[s. 200]
+
+\subsection{År 1600 till 1699}
+\begin{itemize}
+\item Teleskopet uppfanns 1608 av Hans Lippershey,  Zacharias Janssen och Jacob Metius men snart därefter år 1609 så förbättrade Galileo Galilei deras design vilket ledde till att han har blivit uppmärksammad som teleskopets uppfinnare.\cite{telescope} En anledning till detta kan vara på grund av att tidningar hade blivit mer populära och information spred sig snabbare än tidigare, men detta är bara spekulationer. Galileo var astronom, fysiker, ingenjör, filosof och matematiker.\cite{galileo-life}
+
+\item År 1662 så uppfann Blaise Pascal den mekaniska räknaren. Tyvärr så kunde den dock inte tillverkas för ett resonabelt pris.\cite{calculator} Pascal var matematiker, fysiker och filosof.\cite{pascal-life}
+
+\item Barometern uppfanns antingen 1643 av Evangelista Torricelli eller mellan 1640 och 1643 av Gasparo Berti.\cite{barometer} Torricelli var fysiker och matematiker \cite{torricelli-life} medan Berti var endast var matematiker.\cite{berti-life}
+\end{itemize}
+
+\noindent
+Under denna period så grundas det som idag är den moderna vetenskapen. Flera börjar ifrågasätta Kyrkan och komma med nya teser som bättre förklarar universum. Detta leder dock till att kyrkan reagerar och till exempel blir Giordano Bruno bränd på bål för att han förnekade idén om jorden som universums mittpunkt.\cite{hansson}[s. 228] Detta ledde till att mycket av den tekniska utvecklingen förflyttades till norra Europa. Anledningen till att samma fenomen inte kunde bevittnas i Kina var för att de lade stor vikt på det gamla kinesiska tänket, det vill säga det konfucianska tänket.\cite{hansson}[s. 238]
+
+\subsection{År 1700 till 1799}
+\begin{itemize}
+\item 1712 uppfann Thomas Newcomen ångmaskinen, han uppfann den för att pumpa ut vatten ur kolgruvorna i dåtidens England.\cite{steam} Newcomen var järnhandlare och hade igen officiell utbildning.\cite{newcomen-life}
+
+\item 1736 testar John Harrison den första klockan som kunde användas på båtar. Den fungerade dock inte perfekt men 1761 så testades hans fjärde klocka H4 och den fungerade tillräckligt bra. Den gick fel med 24/9 sekunder per dag vilket är dåligt med dagens mått men på den tiden var det tillräckligt för att kunna navigera efter. Harrison var ursprungligen snickare och hade ingen utbildningen inom urmakeri.\cite{harrison}
+
+\item 1764 uppfann James Hargreaves Spinning Jenny vilket var en spinnmaskin som kunde spinna flera trådar samtidigt. Denna bidrog mycket till den industriella revolutionen och uppfanns dels för att några år tidigare hade den flygande skytteln uppfunnits vilket gjorde att tyg kunde vävas mycket snabbare men tråden som användes gjordes fortfarande för hand vilket var en flaskhals i produktionen.\cite{jenny}  Hargreaves var en outbildad spinnare.\cite{hargreaves-life} En del anser att Spinning Jenny, den flygande skytteln tillsammans med ångmaskinen var de viktigaste uppfinningarna under 1700 talet.\cite{haikola}
+
+\item 1765 förbättrade James Watt ångmaskinen, det han bidrog var att han såg till att kolven hade samma temperatur som ångan genom att leda den genom en kanal runt cylindern samt en separat kondensatortank vilket ökade effektiviteten.\cite{watt} James Watt var en mekanisk ingenjör och uppfinnare.\cite{watt-life}
+\end{itemize}
+Under denna period uppkom flera uppfinningar som utnyttjade ångmaskinen såsom det första ångdrivna fordonet vilket var en modifierad bil och den första ångbåten.
+Under denna period utvecklades också flera uppfinningar för att förbättra den mekaniska verkstaden såsom, verktyg för uppborrning, luftkompressorn och den hydrauliska pressen.
+\newline
+\newline
+ Det var inte bara det mekaniska som utvecklades utan även humanitära uppfinningar uppkom såsom bedövning och vaccin för smittkoppor. Det finns väldigt många uppfinningar som uppkom under detta århundrade och man kan inte gå igenom alla men de som har tagits upp här är ett urval av de viktigaste.
+\newline
+\newline
+Varför började England utvecklas så enormt under 1700-talet. En anledningarna kan vara att makten förskjuts från kungen till parlamentet och godsägare samt köpmän ges mer inflyttande. Detta leder till flera lagar som skyddar den privata egendomen vilket möjliggör att man kan starta företag och skydda sin intellektuella egendom.\cite{hansson}[s. 262]
+
+\subsection{År 1800 till 1899}
+Under detta århundrade utvecklades många viktiga uppfinningar och alla kan inte tas upp på grund av utrymmesskäl så fem valdes ut som med stor sannolikhet har påverkat människans historia.
+\begin{itemize}
+\item Ångloken uppfanns 1804 av Richard Trevithick.\cite{trevishick} Han var mekanisk ingenjör.\cite{trevithick-life}
+
+\item William Sturgeon uppfinner elektromagneten 1826.\cite{sturgeon} Han var elektrisk ingenjör.\cite{sturgeon-life}
+
+\item 1835 uppfinner Joseph Henry det elektromagnetiska relät.\cite{henry} Han var professor inom fysik.\cite{henry-life}
+
+\item 1876 uppfann Alfred Nobel dynamiten.\cite{nobel} Han var utbildad kemist.\cite{nobel-life}.
+
+\item Den första fonografen uppfinns 1877 av Thomas Edison.\cite{edison} Edison hade ingen utbildning utan var självlärd.\cite{edison-life}
+\end{itemize}
+\subsection{År 1900 till 1999}
+\begin{itemize}
+\item Det första flygplanet tillverkas 1903 av Bröderna Wright.\cite{wright} Ingen av bröderna hade någon speciell utbildning.\cite{wright-life}
+
+\item Det första elektronröret och dioden uppfinns 1904 av John Ambrose Fleming.\cite{ambrose} John läste på universitetet men var tvungen att hoppa av sin utbildning efter två år på grund av familjens dåliga ekonomi.\cite{ambrose-life}
+
+\item Penicillin upptäcks 1928 av Alexander Fleming.\cite{penicillin} Alexander var utbildad doktor bakteriolog.\cite{fleming-life}
+
+\item Konrad Zuse bygger den första programmerbara data 1938.\cite{zuse} Konrad var utbildad vägingenjör.\cite{zuse-life} 
+
+\item 1938 upptäcker Otto Hahn fission vilket lägger grunden för Manhattan-projektet.\cite{fission} Otto var utbildad doktor inom kemi.\cite{hahn-life}
+\end{itemize}
+\noindent
+Under 1900 talet uppfinns många fler uppfinningar som har påverkat hur vårt samhälle ser ut idag men alla kan inte tas upp av utrymmesskäl. Till exempel v2 raketen som la grunden för Apollo programmet, radion, tv, atombomben, transistorn, ic-kretsar, lasern, internet och mobiltelefonen. Alla kan såklart  inte tas upp men det man märker under detta århundrade är att i början så är de flesta uppfinningar av vetenskapsmän som forskar på universitet och under den senare delen så är det större företag som börjar lansera nya produkter som anses som viktiga för människan. 
+
+\section{Analys}
+De uppfinningar som behandlats i ovanstående avsnitt utgör endast en bråkdel av historiens alla uppfinningar, men de visar på hur processen för uppfinnandet har förändrats genom tiderna. Under de 400 första åren så var de flesta uppfinningarna kinesiska militära tillämpningar såsom landminan, sjöminan, flerstegsraketen och pistolen. Anledningen till detta var att Kina hade tidigt börjat med användning av metall och förfinade denna process var efter. Vid denna period hade deras metoder blivit så utvecklade så de kunde tillverka metall som var tillräckligt hård för att användas i till exempel pistoler och gevär.\cite{hansson}[s. 76 och 170] Anledningen till att de utvecklade flera uppfinningar som utnyttjade krutet var att de under 1100-talet hade lyckats tillverka krut med så hög nitratnivå (70-75\%) så att det kunde användas inom militära applikationer.\cite{hansson}[s. 170] En annan anledning till att Kina utvecklade flera militära uppfinningar var att Kina hade en stor armé och speciellt en stor flotta.
+\newline
+\newline
+Anledningen till att Kina förlorade sitt stora uppsving var på grund av invandrande ryttarfolk såsom Djingis Khan. Detta skedde rock rätt tidigt, redan 1167-1227, men dessa invandrare förstörde mycket av Kinas tekniska framsteg som de hade byggt upp. Till exempel automatiska bevattningssystem som de ansåg vara viktiga för befolkningen och om de förstörde dessa så skulle de lättare kunna ta över marken. \cite{hansson}[s. 180] De fick heller ingen industriell revolution på grund av det gamla kinesiska tänket.
+\newline
+\newline
+Under denna tid hade mycket handelsutbyte skett med Europa och även här märktes en nedgång. Denna märktes dock av vid ungefär 1300-talet. Europa var i kris dels på grund av den minskade handeln med Kina men också på grund av skogsbrist. På grund av utvecklingen då flera hade övergett skogsbruken och flyttat in i städer så fanns det nu många människor samlade på en plats. Detta ledde till en brist på mat och skog då transporterna inte var utvecklade och man var beroende på det som var närliggande städerna varav dessa resurser utnyttjades maximalt.\cite{hansson}[s. 182-183]
+\newline
+\newline
+Efter 1300-talet så började de flesta tekniska innovationerna dyka upp i Europa. En av anledningarna kan vara utvecklandet av fartyg samt navigeringsutrustning såsom kompassen och kvadranten vilket möjliggjorde för européer att resa i världen och samla idéer.\cite{hansson}[s. 187-192] Under 1400-talet så börjar även boktryckarkonsten ta fart vilket leder till att mer information kunde spridas på ett effektivare sätt.\cite{hansson}[s. 192-198]
+\newline
+\newline
+Under 1500-1600 talet så börjar järnframställningen i Europa utvecklas. Tidigare har masugnarna varit små, producerat lite och kunnat användas få veckor under året. Dessa utvecklas dock till att bli effektivare och större vilket leder till en större järnproduktion. Samtidigt som denna järnutveckling sker så håller den moderna vetenskapen på att utvecklas. Kopernicus, Brahe, Bruno, Gallei med många fler förändrade världsbilden och gjorde att fler började tvivla på kyrkan.\cite{hansson}[s. 226-228]. Detta togs inte väl av kyrkan, det var speciellt Galileo som fick bägaren att rinna över med sitt teleskop då detta möjliggjorde bevis av hans teorier. Hans dialog om de två världssystemen ledde 1632 till en fängelsedom vilket gav en avskräckande effekt i Italien. Detta ledde till att tyngdpunkten för forskningen flyttade till norra Europa.\cite{dick}
+\newline
+\newline
+Under denna tidsperiod hade många uppfinningar militära eller handelsresande applikationer. Till exempel var det intressant att forska på aerodynamik och ballistik då detta kunde ge bättre kanoner och snabbare fartyg. Kronometern utvecklades för att kunna navigera ute på havet effektivare. Under denna period utvecklades också många verktyg som kunde användas för att verifiera andra experiment såsom kikare, teleskop, mikroskop, barometer och termometer. Detta påskyndade utvecklingen och ledde till att många upptäckter som kom gjordes av vetenskapsmän som kunde hantera dessa verktyg. 
+\newline
+\newline
+Anledningen till att den industriella revolutionen skedde i Storbritannien anses vara att de hade fred och stabilitet, det var inga handelsgränser mellan England och Skottland, respekt för det juridiska systemet, möjligheten att skapa aktiebolag och en fri marknad.\cite{landes} Detta ledde till att entreprenörer, oftast utan någon utbildningen, kunde skapa företag runt sina idéer vilket de gjorde. Så många stora uppfinningar under denna period utvecklades av människor utan formella utbildningar eller av ingenjörer som hade en ide som de sedan skapade ett företag runt. Till exempel ångmaskinen, luftkompressorn, den hydrauliska pressen, ångloket och ångbåten. Den industriella revolutionen definierades av utveckling av maskinell produktion, frigörande av resurser, byråkratisering, specialisering, nya klasser inom samhället och urbanisering.\cite{gyberg}
+\newline
+\newline
+I slutet av och efter den industriella revolutionen, det vill säga under 1800 talet, börjar de mer tekniska uppfinningarna uppkomma. Till exempel elektromagneten som bannar väg för det elektromagnetiska reläet, dynamiten, fonografen, telefonen,telegraf och en förbättrad tryckpress. Under denna tid är de flesta uppfinnare som kommer med revolutionära idéer ingenjörer eller har någon slags högre utbildning. Detta beror troligtvis på att tekniken hade nått en sådan nivå att det krävdes en formell utbildning för att förstå sig på den. Oftast så var många uppfinningar vidareutvecklingar av fysiska fenomen. Till exempel att ström kunde ge uppskov till ett magnetfält var redan känt när elektromagneten uppfanns, han tillämpade bara fysiken praktiskt. Även radioröret var bara en tillämpning av edisoneffekten. Det finns dock fortfarande undantag såsom Edison som var självlärd. 
+\newline
+\newline
+Anledningen till att telegrafen under denna period kom till var för att järnvägen behövde ett sätt att kommunicera snabbt vilket ledde till att telegrafen snabbt utvecklades. Efter detta så stöttade den brittiska regeringen utvecklandet och gick in med medel för att man skulle kunna lägga en undervattenskabel till USA.
+\newline
+\newline
+Under 1900-talet fortsätter det ungefär som under 1800-talet. De flesta uppfinningarna kom till med hjälp av människor med utbildning inom området och de flesta uppfinningarna är tillämpningar av fysiska fenomen eller vidareutvecklingen av tidigare teknik. Om man tittar på den senare delen av 1900-talet så skapas många uppfinningar på stora företag eller inom det militära såsom DVD, VHS, CD, mobiltelefonen, engångskameran, MS-DOS, flashminnet, PC, ARPANET, videospel, miniräknaren och lasern. Under andra världskriget så uppkom många nya uppfinningar ur det militära med stöd från regeringen såsom atombomben och v-2 raketen. Jetmotorn var redan uppfunnen men utvecklingen påskyndades av kriget. 
+\newline
+\newline
+Om man tittar på vilka uppfinningar som många anser vara viktiga under 2000-talet så säger de flesta saker som har gjort vårt liv lättare men som man inte riktigt kan anse är nödvändiga och har påverkat oss lika mycket som de tidigare listade. Några exempel är Iphone, Ipod, Facebook och Youtube. Men det finns självklart uppfinningar som man kan anse vara betydligt viktigare såsom det första konstgjorda hjärtat, konstgjorda levern, självkörande bilar, preventivmedel i form av plåster och hybridbilen(gammal uppfinning). En del av dessa har utvecklats av större företag och en del startade från grunden och blev stora företag. Alla nya uppfinningar idag startas inte på större företag. Exempel på detta är Facebook och Youtube som startades av enskilda människor. Dessa simpla idéer har sedan utvecklas till stora företag. 
+
+\section{Sammanfattning och diskussion}
+Mellan år 1000 och 1400 var Kina den ledande utvecklarna och uppfinnarna var troligtvis Kinesiska militärer eller människor som uppfann militära applikationer. Därefter tog Europa över då främst Italien och Tyskland fram till 1700-talet. Under denna period var det i början människor utan någon speciell utbildning inom området som uppfann till under den senare delen bli filosofer och matematiker. Under 1700-talet tog England över och då var det mest entreprenörer som utvecklade då förutsättningarna för dessa var gynnande i England. Under 1800-talet var det ingenjörer och välutbildade människor som stod för de mest revolutionära uppfinningarna. Anledningen kan vara forskningen som hade skett sedan 1500-talet och nu började man få en sådan förståelse för naturen så man kunde börja tillämpa de fysiska fenomen i praktiska applikationer. För detta så krävdes självklart en förståelse för fysiken och då hjälpte det med en teknisk utbildning. 
+\newline
+\newline
+Under 1900-talet var de flesta nya idéerna tillämpningar på fysiska fenomen som togs fram av teoretiker. Det finns såklart undantag såsom Bröderna Wright som inte hade någon speciell utbildning men de var mekaniskt kunniga. Under 2000-talet så utnyttjades datarevolutionen som hade skett och många nya uppfinningar var tillämpningar som utnyttjade datorn. Många av dessa människor som har skapat stora företag under denna period hade nödvändigtvis inte en komplett utbildning utan fick en idé som de jobbade på och lyckades starta ett företag runt. Det finns troligtvis många enskilda uppfinnare idag, det är bara att gå in på kickstarter och se alla som söker finansiering för sina idéer. Dock så är det troligtvis svårare att få de stora genombrott som var vanligt under 1700 och 1800-talet. Allt som går att uppfinna är inte uppfunnet men mycket har blivit uppfunnet. De idéer som slår igenom idag behöver inte vara speciellt revolutionerande men de gör livet lite enklare. Det är svårt att se att det idag skulle uppfinnas något så viktigt som transistorn, att det däremot kommer en nya app som alla människor vill ha är inte speciellt svårt att föreställa sig. 
+\section{Slutsats}
+Den enskilda uppfinnaren är definitivt inte försvunnen. Det finns många människor med små idéer som de vill utveckla. Det är dock en stor skillnad jämfört med hur det var för några hundra år sedan då det var relativt få uppfinnare. Idag innebär nya idéer dock inte något fysiskt som det var då utan det det kan vara ett dataprogram som hjälper människor på något sätt. Skillnaden idag är att det finns så många uppfinnare att det är svårt att få in en fot på marknaden. 
+\newline
+\newline
+Idag uppfinner vi troligtvis mer än vad vi gjorde förr i tiden. Dock så är det troligtvis färre revolutionära idéer som upptäcks idag. 
+\section{Källkritik}
+I denna rapport har många källor används och många av dem är trovärdiga såsom Joseph Needham, Staffan Hansson, Kenneth Chase, Fu Chunjiang, Lynn Whitem Diana Childress, Richard Dunn, Charles Morris, Geoffrey Timmins, Brittanica, Simon Haikola, Tekniska museet, Dick Magnusson, David Landes och Per Gyberg. Dessa är publicerade böcker, uppslagsverk och föreläsningar av personer inom ämnet och kan anses vara trovärdiga. Även internetkällor har används, dessa har mest används för att stödja vad någon har uppfunnit, och vem människan var. Dessa kan anses vara mindre trovärdiga men det var svårt att hitta publicerade verk för all den information som denna rapport krävde. 
+\newpage
+
+\bibliographystyle{unsrt}
+\bibliography{sample}
+
+
+
+\end{document}

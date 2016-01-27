@@ -1,0 +1,533 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{subscript}
+\usepackage{tikz}
+\usepackage{multicol}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-0.5\baselineskip}%               space above header
+   {0.0001\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {0\baselineskip}%              space above header
+   {0.00001\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.00001\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+\begin{multicols}{2}
+
+%REQUIREMENTS
+\section{Requirements}
+standards are described in IEEE Standard 830
+
+\subsection{analysis}
+analyzing, documenting, validating and managing software or system requirements.
+
+\subsection{complete}
+The requirement is fully stated in one place with no missing information.
+
+\subsection{consistent}
+The requirement does not contradict any other requirement and is fully consistent with all authoritative external documentation.
+
+\subsection{elicitation}
+gathering requirements from end-users,customers and other stakeholders
+
+\subsection{Entity-Relationship}
+mostly used to describe business processes. For example relations between managers in companies
+
+\subsection{functional}
+What a system will do.
+\\Authentication, Administrative functions or External Interfaces, Reporting Requirements or Historical Data
+
+\subsection{generalizable-elements}
+Classes,Association, Stereotypes, Signals and Use Cases
+
+ \subsection{natural language}
+ pros:
+ \vspace{0 mm}
+ \begin{itemize}
+ \setlength\itemsep{0em}
+ \item almost everyone can understand them
+ \item almost anyone can write them
+ \end{itemize}
+ cons:
+ \vspace{0 mm}
+ \begin{itemize}
+  \setlength\itemsep{0em}
+ \item one requirement can be written in so many ways
+ \item There is no easy way to modularise natural language requirements
+ \end{itemize}
+
+\subsection{non-functional}
+ How a system will do something.
+\\bandwidth, availability,backup, documentation or maintainability
+
+\subsection{stakeholder(user-centered design)}
+Definition. A stakeholder in the architecture of a system is an individual, team, organization, or classes thereof, having an interest in the realization of the system. \\
+Primary stakeholder: people who is affected of the outcome of the project(users)
+\\secondary:people who can affect the outcome of the project but is not themself affected of it(designers)
+\\ Direct stakeholder: Concerned with the day to day activities of the project(designers)
+\\Indirect stakeholder: people affected by the end result(users)
+
+\subsection{tracable}
+The requirement meets all or part of a business need as stated by stakeholders and authoritatively documented.
+
+\subsection{unambigious}
+The requirement is concisely stated without recourse to technical jargon or acronyms
+
+
+%DESIGN AND ARCHITECTURE
+\section{Design \& Architecture}
+
+\subsection{architectural view}
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Logical view : The logic view of the functionality to the end-user
+\item Development view : The development view illustrates a system from a programmer's perspective
+\item Process view :Explains the system processes and how they communicate
+\item Physical view : The physical view depicts the system from a system engineer's point of view.
+\end{itemize}
+
+\subsection{Behavioral design patterns}
+This design patterns is all about Class's objects communication. Behavioral patterns are those patterns that are most specifically concerned with communication between objects.
+
+ \subsection{client-server}
+ \vspace{0 mm}
+ \begin{itemize}
+  \setlength\itemsep{0em}
+\item two-tier,thin-client: -heavy load on server,-significant network traffic\\
+\item two-tier.fat-client:+distribute workload on clients,-needs to update software on server
+\item three-tier:+map each layer on separate hardware,+possibility for load-balancing
+\end{itemize}
+
+ \subsection{cohesion and coupling}
+ Cohesion:How uniform and easy understanding the code in software is. High cohesion is prefered
+ \\Coupling: how much all the modules are entagled into another. Low coupling is prefered
+ 
+ \subsection{Facade pattern}
+hide complexity of a system from the user
+
+\subsection{implementation view}
+Software packages, libraries, frameworks and classes
+
+\subsection{layered architecture}
+pros:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item reduced complexity
+\item easier to maintain code
+\item easier to add new functionality
+\item easier to test
+\item allows to reuse code
+\end{itemize}
+cons:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item restricting communication to adjacent layers
+\item keeping coupling between layers reduced.
+\end{itemize}
+
+\subsection{observer pattern}
+Objects have observers which are notified if the object changes
+
+ \subsection{pipe-and-filters}
+ advantages:
+ \vspace{0 mm}
+ \begin{itemize}
+  \setlength\itemsep{0em}
+ \item simplicity:easy to see the software flow.
+ \item Maintenance and reuse
+ \item concurrent Execution:Each filter can be implemented as a separate task and be executed in parallel with other filters.
+ \end{itemize}
+ disadvantages:
+ \vspace{0 mm}
+ \begin{itemize}
+  \setlength\itemsep{0em}
+\item Interactive transformations are difficult – Filters being independent entities designer has to think of each filter as providing a complete transformation of input data to output data.
+\item No filter cooperation.
+\item Performance – may force a lowest common denominator on data transmission
+\end{itemize}
+
+ \subsection{strategy pattern}
+ In computer programming, the strategy pattern/policy pattern enables an algorithm's behavior to be selected at runtime.
+ \vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item defines a family of algorithms
+\item encapsulates each algorithm
+\item makes the algorithms interchangeable within that family.
+\end{itemize}
+
+%TESTING
+\section{Testing}
+A fault(bug) leads to an error that can lead to a failure of the system
+
+\subsection{acceptance testing}
+ is a test conducted to determine if the requirements of a specification or contract are met.
+ 
+ \subsection{big-bang-testing}
+A system wide test that test all modules at once. Very time efficiant
+
+\subsection{bottom-up}
+Start from the bottom and write drivers to run test-cases on the target level. Drivers are normally easier to write than stubs. Can write better tests for the upper level afterwards.
+ 
+ \subsection{code-coverage(white box testing)}
+Code-coverage means how much of the code in the project is being tested. For example a project with 100\% code-coverage means that every single line of code have been tested. 
+
+\subsection{configuration management}
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Lock-modify-unlock: When you check something out you lock that object so it cant be modified.
+\item Centralized-modify-merge: When a conflict occur the system tries to merge the changes. If its not able to you can merge the chages manually.
+\item Decentralized-modify-merge: The merging is done off the system. You ahve to mail patches around and then one person manually patches it and commits it. 
+\end{itemize}
+ 
+ \subsection{continuous integration}
+Everytime a developer commit a piece of code a build server builds the project and runs some tests to see that the integration with the new code works.
+ 
+ \subsection{daily build}
+Normally an automated procces that build the project daily and runs some smoke tests.
+ 
+ \subsection{function testing}
+bases its test cases on the specifications of the software component under test
+ 
+  \subsection{installation testing}
+ An installation test assures that the system is installed correctly and working at actual customer's hardware.
+ 
+ \subsection{performance test}
+is generally executed to determine how a system or sub-system performs in terms of responsiveness and stability under a particular workload 
+ 
+\subsection{repo phrases}
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item branch: create a new branch 
+\item tag: a version that you want to preserve
+\item merge: merge to branches in on branch
+\item trunk:main body of project from start to finish
+\end{itemize}
+
+\subsection{sandwhich testing}
+A target layer is defined in the middle of the program and testing is carried out from the top and bottom layers to meet at this target layer. top and bottom layers can be tested in parallel and
+can lower the need for stubs and drivers. Hard to select best target level.
+
+\subsection{smoke test}
+Very basic fast tests. For example does the program run?, does it open a windows?, does the main button do anything?
+
+\subsection{test case}
+every test-case needs test-case ID,inputs,expected outputs
+
+\subsection{top-down}
+Start from the top and write stubs for the lower lovels and work down. Might needs alot of stubs. Finds design errors early
+
+%PLANNING AND PROCESSES
+\section{Planning \& Processes}
+
+\subsection{Agile methods}
+agile manifesto:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Individuals and interactions: in agile development, self-organization and motivation are important, as are interactions like co-location and pair programming.
+\item Working software: working software will be more useful and welcome than just presenting documents to clients in meetings.
+\item Customer collaboration: requirements cannot be fully collected at the beginning of the software development cycle, therefore continuous customer or stakeholder involvement is very important.
+\item Responding to change: agile development is focused on quick responses to change and continuous development.
+
+\end{itemize}
+practices:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item adaptive planning
+\item evolutionary development
+\item early delivery
+\item continuous improvement
+\item encourages rapid and flexible response to change
+\end{itemize}
+pros:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item People and interactions are emphasized rather than process and tools.
+\item Working software is delivered frequently (weeks rather than months).
+\item Close, daily cooperation between business people and developers.
+\item Continuous attention to technical excellence and good design.
+\item Even late changes in requirements are welcomed
+\end{itemize}
+cons:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item In case of some software deliverables, especially the large ones, it is difficult to assess the effort required at the beginning of the software development life cycle.
+
+\item There is lack of emphasis on necessary designing and documentation.
+\item The project can easily get taken off track if the customer representative is not clear what final outcome that they want.
+\item Only senior programmers are capable of taking the kind of decisions required during the development process. Hence it has no place for newbie programmers, unless combined with experienced resources.
+\end{itemize}
+when:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item when change is needed during the project
+\item when a project needs to start right away
+\item major decisions can be made during the development
+\end{itemize}
+when not:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item the development team is spread over the world. You need face to face communication
+\item if you dont have a project manager on site that can make quick decisions
+\item if people affected by the project need complete clarity on solutions before starting the project
+\item You have a fix deadline with a fixed set of requirements
+\end{itemize}
+
+\subsection{delphi method}
+a panel of expert are asked anonymous how much time a task will take. Someone summaries the answers and the groups meets and discusses the different answer and converges towards the correct answer.
+
+\subsection{extreme programming(agile)}
+practises:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Pair programming: means that all code is produced by two people programming on one task on one workstation
+\item User stories (planning): desribes features
+\item Small releases (building blocks): With XP, you develop and deliver the application in a series of small, frequently updated versions.
+\item Collective ownership: No one person owns or is responsible for individual code segments.
+\item Coding standard: All team members write code in the same way, using the same styles and formats.
+\end{itemize}
+
+\subsection{four parameters}
+calender time,resources,features,quality
+
+\subsection{gantt chart}
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item task: for example "fix bug nr 34"
+\item phase: for example "design phase"
+\item milestone: for example "network module finished"
+\item tollgate: for example "design stop"
+\end{itemize}
+
+\subsection{incremental model}
+The projects consists of alot of small builds which become greater with time with more features added each time. 
+\\pros:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item generate working software quickly
+\item easier to test and debug with small iterations
+\item customers can respond to each built
+\end{itemize}
+cons:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item requires good planning and design
+\item needs a clear and complete definition of the whole system so it can be broken down
+\item resulting cost might be greater
+\item addiotional functionality that is added might arise problems related to the system design
+\end{itemize} 
+
+\subsection{iterative model}
+no overhead
+\\pros
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item building and improving the product step by step. Hence we can track the defects at early stages
+\item we can get the reliable user feedback.
+\item ess time is spent on documenting and more time is given for designing
+\end{itemize}
+cons:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Each phase of an iteration is rigid with no overlaps
+\item Costly system architecture or design issues may arise because not all requirements are gathered up front for the entire lifecycle
+\end{itemize}
+
+\subsection{project plan}
+project description:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Background to the project
+\item Relevant constraints (budget etc.)
+\item Project Goal
+\item Start and expected end date
+\end{itemize}
+project organization
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Roles
+\item Knowledge / skill
+\item Training
+\item Communication and reports
+\end{itemize}
+Time and Resource Plan
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Milestones
+\item Tollgates
+\item Deliverables
+\item Activities
+\item Resources
+\end{itemize}
+Risk Management
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Risks,Probability and Impact
+\item Mitigation and Contingency plan
+\end{itemize}
+
+\subsection{prototype model}
+Remainds alot of incremental model. You build a prototype of the system to find out what is missing and what needs to be refind or added to it and you refine the prototype. Itś good for system with alot of end-user interaction such as online systems and web interfaces. 
+\\pros:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item users are involved in the development
+\item errors can be detected early
+\item missing functionality can be identified easily
+\end{itemize}
+cons:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item leads to implementation then repairing
+\item may increase complexity of system
+\end{itemize}
+
+\subsection{risk planning}
+$$identify\: risk\rightarrow analyze\rightarrow plan\rightarrow monitor $$
+Risk avoidance:
+\\ for example not taking on a project and thuse avoiding the risk that comes with it.
+\\risk transfer:
+for example using a subcontractor for some part of the project that your company do not have the knowledge of.
+\\risk acceptance:
+you accept that there are a risk and you put it on a watch list and take no further action.
+\\risk mitigation:
+planning and taking actions to reduce the effects of the risks. For example don't start any war that might end in a terrorist attack.
+\\Contingency plan: minimize the effects if the worst would happen. Don't let alot of the employes travel on the same plan because there might be a terrorist attack.
+
+\subsection{scrum}
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item burn down chart:is a graphical representation of work left to do versus time. 
+\item daily scrum meeting:
+    What have you done since yesterday?
+    What are you planning to do today?
+    Any impediments/stumbling blocks? Problems are the scrum master responability to resolve
+\item scrum master:being a facilitator, makes shure tho project moves forward
+\item product backlog: is a prioritized list of features
+\item sprint: short durations milestones
+\item sprint retrospective. 15-30 minuts to look at what is and what is not working
+\end{itemize}
+
+\subsection{waterfall model}
+good with fix-rpice contracts\\
+pros:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item This model is simple and easy to understand and use.
+\item It is easy to manage due to the rigidity of the model 
+\item Waterfall model works well for smaller projects where requirements are very well understood.
+\end{itemize}
+cons:
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Once an application is in the testing stage, it is very difficult to go back and change something that was not well-thought out in the concept stage.
+\item No working software is produced until late during the life cycle.
+\item Not suitable for the projects where requirements are at a moderate to high risk of changing.
+\end{itemize}
+
+%QUALITY FACTORS
+\section{Quality factors}
+
+\subsection{availability}
+(total time - down time) / total time.
+More os less how available the system is. A system with high availability seldom crashes and when it crashes id recovers fast.
+
+\subsection{correctness and functionality}
+Does the software have all the functionality stated in the specification?
+
+\subsection{cylomatic complexity}
+It directly measures the number of linearly independent paths through a program's source code.
+
+\subsection{depth in the inheritance tree}
+greater depth means greater complexity
+
+\subsection{flexability}
+possible to add/remove modules without breaking the system. 
+
+\subsection{maintainability}
+How easy the software is to maintain meaning does the code follow any standars, are everything well documented an so on.
+
+\subsection{performance}
+How fast the software respons and how efficiently it uses ram and harddrive space. For example a software that does some easy calculations cannot use 16gb of ram.
+
+\subsection{portability}
+Can it run on several platforms?
+
+\subsection{reliability}
+Software reliability is the probability of the software components of producing incorrect output. Software should not wear out and continue to operate after a bad result.
+
+\subsection{scalability}
+Can run on newer machines(vertical scaling). Can run on several machines/multi proccesing (horizontal scaling).
+
+\subsection{software audit}
+An independent examination of a software product, software process, or set of software processes to assess compliance with specifications, standards, contractual agreements, or other criteria
+
+\subsection{software inspection}
+peer review by trained individuals who look for defects using a well defined process.The goal of the inspection is to identify defects
+\\roles
+\vspace{0 mm}
+\begin{itemize}
+ \setlength\itemsep{0em}
+\item Author: The person who created the work product being inspected.
+\item Moderator: This is the leader of the inspection. The moderator plans the inspection and coordinates it.
+\end{itemize}
+
+\subsection{usability}
+How easy the system is to use. Mostly through UI:s
+
+\subsection{usability inspection}
+experts test the software without end-users
+
+\subsection{usability testing}
+users test the software and give feedback
+
+\end{multicols}
+\end{document}

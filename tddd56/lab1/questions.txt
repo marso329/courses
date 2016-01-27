@@ -1,0 +1,15 @@
+Write a detailed explanation why computation load can be imbalanced and how it
+affects the global performance:
+
+A black pixel requires maxiter iterations to be calculated. So in the naive parallel implementation the
+thread(s) that get to calculate the middle part of the picture will get more work.
+
+
+Describe a load-balancing method that would help reducing the performance loss
+due to load-imbalance:
+
+The picture is split up into a 10x10 grid and a counter with lock is implemented. Each threads grabs a 
+number and increases the counter by one. From the counter, picture width and picture height the pixels
+that will be calculated can be extracted. When the counter reaches 100 all threads are done.
+
+

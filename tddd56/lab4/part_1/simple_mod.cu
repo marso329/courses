@@ -1,0 +1,62 @@
+// Simple CUDA example by Ingemar Ragnemalm 2009. Simplest possible?
+// Assigns every element in an array with its index.
+
+// nvcc simple.cu -L /usr/local/cuda/lib -lcudart -o simple
+
+#include <stdio.h>
+
+const int N = 16; 
+const int blocksize = 16; 
+
+__global__ 
+void simple(float *c) 
+{
+	c[threadIdx.x] = sqrt(c[threadIdx.x]);
+}
+
+int main()
+{
+	
+	//used to get data
+	float *c = new float[N];
+
+	float *to_square = new float[N];
+to_square[0]=1;
+	//fill c with numbers
+	for (int i=1; i < N; i++){
+	to_square[i]=to_square[i-1]*2;
+}
+
+	//pointer to cuda data	
+	float *cd;
+	const int size = N*sizeof(float);
+	
+	//allocate data on gpu
+	cudaMalloc( (void**)&cd, size );
+	dim3 dimBlock( blocksize, 1 );
+	dim3 dimGrid( 1, 1 );
+
+	//upload data to gpu
+	cudaMemcpy( cd, to_square, size, cudaMemcpyHostToDevice );
+	
+	//start computation
+	simple<<<dimGrid, dimBlock>>>(cd);
+
+	//sync	
+	cudaThreadSynchronize();
+	
+	//download data
+	cudaMemcpy( c, cd, size, cudaMemcpyDeviceToHost ); 
+	
+	//free data on gpu 		
+	cudaFree( cd );
+	
+	//display data
+printf("\n");
+	for (int i = 0; i < N; i++)
+		printf("gpu:%f cpu: %f \n", c[i],sqrt(to_square[i]));
+	printf("\n");
+	delete[] c;
+	printf("done\n");
+	return EXIT_SUCCESS;
+}

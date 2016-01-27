@@ -1,0 +1,13 @@
+Question: How is the communication between the host and the graphic card handled?
+
+Through buffers and queues
+
+Question: What function executes your kernel?
+
+clEnqueueNDRangeKernel
+
+Question: How does the kernel know what element to work on?
+
+through get_global_id
+
+

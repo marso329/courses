@@ -1,0 +1,150 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{subscript}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[]{algorithm2e}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {-10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+\title{Tana21 Summary:}
+\author{Martin Söderén\\ marso329@student.liu.se\\900929-1098}
+\date{\today}
+\maketitle
+\vfill % Fill the rest of the page with whitespace
+\thispagestyle{empty}
+\end{titlepage}
+\section{Relativa fel}
+$\dfrac{\Delta a}{a}$ där $\Delta a=\bar{a}-a$ där $\bar{a}$ är det absoluta felet.
+\subsection{Exempel}
+Närmevärdet 150824 har ett relativt fel på 1.2. Hur många signifikanta siffror har närmevärdet? 
+$$\dfrac{\Delta a}{150824}=1.2$$
+$$\Delta a=180988.8$$ 
+$$\bar{a}=\Delta a +a=180988.8+150824=331812.8$$
+Vilket är mycket större än närmevärdet så det har inga signifikanta siffror.
+
+\section{Normaliserad form i ett flyttalssystem}
+\subsection{Exempel}
+Skriv 150824 i flyttalssystem med två decimaler, basen 10 och exponenet $\pm$ 9. Svar:
+$1.51*10^5$
+
+\section{Normer}
+\subsection{Vektor}
+x är en vektor
+$$||x||_\infty=max_i |x_i|$$ 
+$$||x||_p=(\sum_i|x_i|^p)^{1/p}$$
+\subsection{Matriser}
+Beräkna:
+$$\dfrac{||\Delta x||_{\infty}}{||x||_{\infty}}$$
+$$\dfrac{||\Delta x||_{\infty}}{||x||_{\infty}}=||A||_{\infty}*||A^{-1}||_{\infty}*\dfrac{||\Delta b||_{\infty}}{||b||_{\infty}}$$
+Där
+$||K||_{\infty}$ är max summan för alla radvektorer för en godtycklig matris \textit{K}.
+
+\section{Trapetsregeln}
+Används för integrering
+
+\section{Trapetsmetoden}
+Används för att lösa differentialsekvationer av första ordningen.
+
+\section{Skriv om till ett system av första ordningen}
+\subsection{Exempel}
+$$y''=2y'-y/x,y(1)=4,y'(1)=1$$
+Sätt
+$$u=y,v=y'$$
+Vilket ger:
+$$u'=v, v'=2v-u/x,u(1)=4,v(1)=1$$	
+$$$$
+
+\section{Bestämma ett närmevärde och totalla felet till en funktion}
+\subsection{Exempel}
+$$f(r,\alpha)=\dfrac{r^2}{2}(\alpha-sin(\alpha))$$
+$$r =1.50\pm 0.03$$
+dvs $\Delta r=0.03$
+$$\alpha=0.22\pm0.01$$
+och $\Delta \alpha=0.01$
+\newline
+Maximalfeluppskattning:
+$$|\Delta  y|=\sum_{k=1}^{n}|\dfrac{\delta f}{\delta x_k}(\bar{x_1},...\bar{x_n})\Delta x_n|$$
+Dvs maximalfeluppskattning är summan av funktionen funktionens partiella derivator gånger variabelns absoluta fel.
+\newline
+Detta ger
+$$|\Delta y|=|1.5(0.22-sin(0.22))0.03|+|\dfrac{1.5^2}{2}(1-cos(0.22))0.01|\approx 3.51*10^{-4}$$
+$\bar{y}=0.00199167$ och med $\bar{y}=0.00199$ blir $|R_b|$(avrundningsfelet) $< 0.5*10^{-5}$ 
+Totala felet blir $0.5*10^{-5}+3.51*10^{-4}\text{ vilket är }<3.6*10^{-4}$
+Så $y=0.00199\pm 0.00036$
+
+\section{Minsta kvadratmetoden}
+Vi har en massa mätpunkter som vi vill skapa en approximativ funktion till.
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    $x_1$ & $x_2$  & ...  & $x_n$ \\ \hline
+    $y_1$ &  $y_2$ &  & $y_n$ \\ \hline
+
+  \end{tabular}
+  \caption{Mätpunkter}
+  \label{tab:funktion2}
+\end{table}
+\subsection{Exempel för första gradens polynom}
+vi vill lösa:
+$$a+bx_1=y_1$$
+$$a+bx_2=y_2$$
+\centering
+...
+$$a+bx_n=y_n$$
+Så bra som möjligt. Sätt upp det i matrisform
+\[ \left( \begin{array}{ccc}
+1 & x_1  \\
+1 & x_2  \\
+\vdots & \vdots  \\
+1 & x_n  \end{array} \right)
+ \left( \begin{array}{ccc}
+a   \\
+b     \end{array} \right)=
+\left( \begin{array}{ccc}
+ y_1  \\
+ y_2  \\
+ \vdots  \\
+ y_n  \end{array} \right)
+\]
+$Ax=b$
+Beräkna:
+$$A^tAx=A^tb$$
+och lös ekvationssystemet för att få fram a och b.
+
+\section{Lagrange interpolation}
+$p_j(x)=y_j\prod_{k=1, k\neq j}\dfrac{x-x_k}{x_j-x_k}$
+
+\end{document}

@@ -1,0 +1,110 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper,textwidth=140mm,textheight=245mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\makeatletter
+\renewcommand{\section}{\@startsection
+   {section}%                         name
+   {1}%                               level
+   {0mm}%                             indent
+   {-1.5\baselineskip}%               space above header
+   {0.5\baselineskip}%                space under header
+   {\sffamily\bfseries\upshape\normalsize}}% style
+\renewcommand{\subsection}{\@startsection
+   {subsection}%                      name
+   {2}%                               level
+   {0mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\renewcommand{\subsubsection}{\@startsection
+   {subsubsection}%                    name
+   {3}%                               level
+   {10mm}%                             indent
+   {-0.75\baselineskip}%              space above header
+   {0.25\baselineskip}%               space under header
+   {\rmfamily\normalfont\slshape\normalsize}}% style
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+\title{TDDC93 Exercises:\\
+Quality}
+\author{Martin Söderén\\ marso329@student.liu.se\\900929-1098}
+\date{\today}
+\maketitle
+
+
+
+
+\vfill % Fill the rest of the page with whitespace
+
+\thispagestyle{empty}
+
+\end{titlepage}
+\section{SMART GOALS}
+\subsection{Goal 1}
+Increase the number of the costumer who finds that our Apps is improving their health with 20 procent units within a year.
+\begin{itemize}
+\item Specific - Customer satisfaction
+\item Measurable - A survey in the beginning of the year and one at the end of the year to find out if the apps are improving customers health
+\item Assignable - Customer relationsship department
+\item Realistic - That depends on the first survey. There might be that 100 procent of our customers think that our apps improve their health
+\item Time-related One year
+\end{itemize}
+Quality factors: Usability,Functionality \newline
+By increasing the number of customer who finds that our apps improve their health more people will integrate our software as a apart of their lifestyle and create a long-time usage.
+
+
+\subsection{Goal 2}
+Within two years all of our apps will be available on the three most used platforms in mobile devices.
+\begin{itemize}
+\item Specific - Market shares
+\item Measurable - Keep track of the most used platforms and make sure we are available on the three largest.
+\item Assignable - Software development department
+\item Realistic - We will need to hire new programmers for the platforms which we don't have any experience with but the development time for the new apps are significant less than two years
+\item Time-related Two years
+\end{itemize}
+Quality factors:Portability,Reusability \newline
+By increasing the number of platforms which we are available on we increase our market shares
+
+
+\subsection{Goal 3}
+Within six months all of our apps will be able to integrate in our website
+\begin{itemize}
+\item Specific - Usability
+\item Measurable - In six months all apps will be able to send statistic information about the user to our servers so the user can login and get a complete picture of his or hers health and lifestyle
+\item Assignable - Software development department
+\item Realistic - We have all the developers we need for this and the time-frame is not unrealistic
+\item Time- Six months
+\end{itemize}
+Quality factors: Integrity, Interoperability, Functionality \newline
+If all apps are integrated the users will start to use more of our apps.
+
+\subsection{Goal 4}
+The MTBF of all apps on all platforms should be higher than a week within a year
+\begin{itemize}
+\item Specific - Quality and usability
+\item Measurable - All apps sends a crash report when they fail so we have information about the MTBF
+\item Assignable - Software development department adn software quality department
+\item Realistic - Quality is one of our main priorites and a week between failures is a rather low number so it is definitly realistic
+\item Time- A year
+\end{itemize}
+Quality factors: Reliability \newline
+If the apps are stable the user satisfaction will increase and better the relationship with our products.
+\section{CMMI}
+I am going to assume that the company is at a maturity level of 2. It has some standards how to work with software development but the projects them self does not have any standard protocols.
+\subsection{Requirements Management}
+ The company needs to manage the requirments of its products and get a clear view of what the apps needs to fulfill to be attractive to the customers. We also need to be able to translate the requirments of the customer to what the app needs to fulfill to meet those criterias. \newline
+ \newline We also need to setup protocols for what to do if the requirments changes. For example if a new diet suddenly becomes very popular, we need to quickle integrate it into our nutrition-app. We need to make shure that the project work is in alignment with the requirments of the product.
+ 
+ \subsection{Measurement and Analysis }
+ We need to develop a information and analasis protocol and at the same time measure what the company has in resources regarding internal resources so we know what kind of expertise we have in-house. We need to specify how we will gather information, how it will be stored and how to report it. For example how a user-survey will be executed.
+ \subsection{Project Monitoring and Control}
+ Plan how projects in the future will be planned and executed and what to do if a projects is behind
+ Decide what will be monitored in the projects and how we will do it. How we will evaluate risks in projects. How milestones will be set in projects and what to do if those milestones is not reached in the desired time.
+\end{document}

@@ -1,0 +1,30 @@
+inledning:
+aritmetiskakomplexiteten(två ord)
+Matlab här men senare MATLAB, välj ett sätt
+
+uppgift:
+bra
+
+teori:
+matlabs tider skulle kunna varit i teori
+teori om hur man lu uppdelar
+varför man lu uppdelar
+
+lösning:
+bra
+
+kod:
+bra
+
+validering:
+gjordes ett försök. Borde ha gjort ett testprogram som skapade en random nxn matris och jämförde med matlabs lösning
+
+diskussion:
+förväntad tidskomplexitet?
+Man kan se implementation med "edit lu"
+
+LU decomposition är ordo n^3 men kan göras med ordo n^2.8
+Tiden beror på hur a ser ut. Om a är sparse så använder matlab en annan struktur för att spara undan matriser
+
+
+
