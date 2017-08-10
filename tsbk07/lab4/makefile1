@@ -1,0 +1,32 @@
+LDIR=lib
+SDIR=src
+INCLUDE_DIR = includes
+BUILD_DIR = obj
+CC=g++
+CFLAGS= -std=c++11 -Wall -g
+LIBS=-lglut -lGL -lGLU -lGLEW -lX11 -lm -lXrandr -lXi -lXxf86vm -lpthread -ldl -lncurses
+
+SRCS = $(wildcard $(SDIR)/*.cpp)
+OBJS = $(patsubst %.cpp, %.o, $(subst $(SDIR)/, $(BUILD_DIR)/, $(SRCS)))
+LRCS = $(wildcard $(LDIR)/*.c)
+OBJS += $(patsubst %.c, %.o, $(subst $(LDIR)/, $(BUILD_DIR)/, $(LRCS)))
+
+
+all: main
+.PHONY : all
+
+main: $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS)  -o main  $(LIBS) 
+
+$(BUILD_DIR)/%.o: $(SDIR)/%.cpp $(wildcard $(INCLUDE_DIR)/*.h)
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o $@ 
+
+$(BUILD_DIR)/%.o: $(LDIR)/%.c $(wildcard $(LDIR)/*.h)
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -I $(LDIR) -c $< -o $@ 
+
+.PHONY: clean
+clean :
+	rm -f main *.o *~>//dev/null
+	rm -rf $(BUILD_DIR)

@@ -1,0 +1,48 @@
+cores: 1
+iterations: 557
+omp time: 1.262383 
+cores: 2
+iterations: 557
+omp time: 1.188747 
+cores: 3
+iterations: 810
+omp time: 1.085733 
+cores: 4
+iterations: 557
+omp time: 0.831787 
+cores: 5
+iterations: 557
+omp time: 0.809604 
+cores: 6
+iterations: 713
+omp time: 0.861691 
+cores: 7
+iterations: 1003
+omp time: 1.218471 
+cores: 8
+iterations: 557
+omp time: 2.041009 
+cores: 9
+iterations: 253
+omp time: 2.461286 
+cores: 10
+iterations: 557
+omp time: 1.714398 
+cores: 11
+iterations: 400
+omp time: 2.739573 
+cores: 12
+iterations: 243
+omp time: 0.780366 
+cores: 13
+iterations: 243
+omp time: 1.940223 
+cores: 14
+iterations: 243
+omp time: 0.706025 
+cores: 15
+iterations: 321
+omp time: 0.912855 
+cores: 16
+iterations: 246
+omp time: 0.604084 

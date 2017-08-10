@@ -1,0 +1,7 @@
+
+for cores in {1..16};do 
+	echo cores: $cores  >>openmp.txt;
+	export OMP_NUM_THREADS=$cores; 
+	 ompsalloc ./lapsolvomp>>openmp.txt;
+done
+

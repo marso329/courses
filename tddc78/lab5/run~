@@ -1,0 +1,5 @@
+	for cores in {1..64..2};do 
+		echo cores: $cores >>particles.txt; 
+		mpirun -n $cores ./main 100000000 10000 >>particles.txt;
+	done
+

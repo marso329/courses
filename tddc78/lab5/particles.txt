@@ -1,0 +1,656 @@
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores:
+cores: 1
+cores: 3
+cores: 5
+cores: 7
+cores: 9
+cores: 11
+cores: 13
+cores: 15
+cores: 17
+cores: 19
+cores: 21
+cores: 23
+cores: 25
+cores: 27
+cores: 29
+cores: 31
+cores: 33
+cores: 35
+cores: 37
+cores: 39
+cores: 41
+cores: 43
+cores: 45
+cores: 47
+cores: 49
+cores: 51
+cores: 53
+cores: 55
+cores: 57
+cores: 59
+cores: 61
+cores: 63
+cores: 1
+cores: 3
+cores: 5
+cores: 7
+cores: 9
+cores: 11
+cores: 13
+cores: 15
+cores: 17
+cores: 19
+cores: 21
+cores: 23
+cores: 25
+cores: 27
+cores: 29
+cores: 31
+cores: 33
+cores: 35
+cores: 37
+cores: 39
+cores: 41
+cores: 43
+cores: 45
+cores: 47
+cores: 49
+cores: 51
+cores: 53
+cores: 55
+cores: 57
+cores: 59
+cores: 61
+cores: 63
+cores: 1
+cores: 3
+cores: 5
+cores: 7
+cores: 9
+cores: 11
+cores: 13
+cores: 15
+cores: 17
+cores: 19
+cores: 21
+cores: 23
+cores: 25
+cores: 27
+cores: 29
+cores: 31
+cores: 33
+cores: 35
+cores: 37
+cores: 39
+cores: 41
+cores: 43
+cores: 45
+cores: 47
+cores: 49
+cores: 51
+cores: 53
+cores: 55
+cores: 57
+cores: 59
+cores: 61
+cores: 63
+cores: 1
+cores: 3
+cores: 5
+cores: 7
+cores: 9
+cores: 11
+cores: 13
+cores: 15
+cores: 17
+cores: 19
+cores: 21
+cores: 23
+cores: 25
+cores: 27
+cores: 29
+cores: 31
+cores: 33
+cores: 35
+cores: 37
+cores: 39
+cores: 41
+cores: 43
+cores: 45
+cores: 47
+cores: 49
+cores: 1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 9.17264e-05
+that took 1.84707 seconds
+cores: 3
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0187496
+that took 0.259051 seconds
+cores: 5
+cores: 7
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0577879
+that took 0.14162 seconds
+cores: 9
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0640298
+that took 0.168147 seconds
+cores: 11
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0680317
+that took 0.0742209 seconds
+cores: 13
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0902341
+that took 0.0680718 seconds
+cores: 15
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.100926
+that took 0.079329 seconds
+cores: 17
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.123678
+that took 0.068902 seconds
+cores: 19
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.132025
+that took 0.0413799 seconds
+cores: 21
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.146823
+that took 0.07813 seconds
+cores: 23
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.147886
+that took 0.063684 seconds
+cores: 25
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.179228
+that took 0.0562899 seconds
+cores: 27
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.20037
+that took 0.0775821 seconds
+cores: 29
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.214256
+that took 0.122483 seconds
+cores: 31
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.226364
+that took 0.0865989 seconds
+cores: 33
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.235974
+that took 0.103524 seconds
+cores: 35
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.240325
+that took 0.0833941 seconds
+cores: 37
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.267685
+that took 0.0946321 seconds
+cores: 39
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.264736
+that took 0.0987799 seconds
+cores: 41
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.263297
+that took 0.101649 seconds
+cores: 43
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.269668
+that took 0.074599 seconds
+cores: 45
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.304921
+that took 0.0964692 seconds
+cores: 47
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.303876
+that took 0.103292 seconds
+cores: 49
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.327616
+that took 0.094774 seconds
+cores: 51
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.363292
+that took 0.129871 seconds
+cores: 53
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.349844
+that took 0.0978701 seconds
+cores: 55
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.370539
+that took 0.122466 seconds
+cores: 57
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.391813
+that took 0.117254 seconds
+cores: 59
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.375001
+that took 0.103154 seconds
+cores: 61
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.347209
+that took 0.1495 seconds
+cores: 63
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.36172
+that took 0.14919 seconds
+cores: 1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 9.17264e-05
+that took 1.80959 seconds
+cores: 3
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0187496
+that took 0.282514 seconds
+cores: 5
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0423906
+that took 0.206586 seconds
+cores: 7
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0577879
+that took 0.173964 seconds
+cores: 9
+cores: 11
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+the pressure is: 0.0680317
+that took 0.120744 seconds
+cores: 13

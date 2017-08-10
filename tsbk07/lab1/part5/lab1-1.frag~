@@ -1,0 +1,12 @@
+#version 150
+
+in vec4 out_Color;
+out vec4 out_Color1;
+uniform mat4 myMatrix;
+
+void main(void)
+{
+gl_Position = vec4(in_Position, 1.0)*myMatrix;
+	out_Color1 = out_Color;
+}
+

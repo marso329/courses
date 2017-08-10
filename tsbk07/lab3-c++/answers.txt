@@ -1,0 +1,45 @@
+1.
+How can you get all four blades to rotate with just one time-dependent rotation matrix?
+each blade has a initial offset in their model-to-world matrix and the last matrix multiplication is times 
+the time-dependet matrix which is shared across the blades. (not the last since after that they are moved to their 
+correct position)
+
+How do you make the wings follow the body's movements?
+the last matrix multiplication in the blades model-to-world matrix is times the bodys model-to-world matrix
+
+You may have to tweak some numbers to make the placement right. How can you do that without making a lot of small changes in numbers in the code followed by recompilations?
+use input from the keyboard the move them to their correct position and print their position.
+Microglut keyboard func did not work for me, started on glfw but seemed like to much work so i recompiled each time
+
+2.
+What kind of control did you implement?
+by combining glutMouseFunc and glutMotionFunc i did a cad based viewing control where the mouse position
+in the window is translated into theta and phi which translates to x,y,z using spherical corrdinates system.
+You can also translate the camera. This is done using the crossproduct of the viewing vector and the
+up vector for the camera and translating the center and the camera along the resulting vector
+
+3.
+How did you handle the camera matrix for the skybox?
+copied the camera matrix, zeroed the translation and set that matrix as camera matrix
+
+How did you represent the objects? Is this a good way to manage a scene or would you do it differently for a "real" application?
+?
+All the objects are stored in a ModelData struct that contains the Model, a vector with all matrix transforamtions, the texture int, 
+these structs are stored in a all_models vectors that is used in display to render them. This is a nice way to represnent them.
+
+What special considerations are needed when rendering a skybox?
+Z-buffer? light?
+
+4:
+How do you generate a vector from the surface to the eye? 
+pass the camera position and calculate the vector with camera_position-position
+
+Which vectors need renormalization in the fragment shader? 
+normal, position camera_position since they are interpolated
+
+5.
+How did you choose to combine the texture colour and the lighting colour?
+50%light+50%texture
+
+How did you choose to combine the two textures?
+25%texture1 25%texture2 50%light

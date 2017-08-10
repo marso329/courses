@@ -1,0 +1,11 @@
+
+for cores in {1..64..2};do 
+	echo cores: $cores  >>blurthreaddata.txt; 
+	./blurthread 21 $cores im1.ppm output>>blurthreaddata.txt;
+done
+
+for cores in {1..64..2};do 
+	echo cores: $cores  >>thresthreaddata.txt; 
+	./thresthread 21 $cores im1.ppm output>>blurthreaddata.txt;
+done
+

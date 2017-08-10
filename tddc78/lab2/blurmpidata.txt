@@ -1,0 +1,7 @@
+it took: 7.277717
+it took: 2.421738
+it took: 1.992753
+it took: 7.227131
+it took: 2.457074
+it took: 1.739973
+it took: 1.890312

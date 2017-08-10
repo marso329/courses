@@ -1,0 +1,13 @@
+//Ingemar magic
+#include "MicroGlut.h"
+#include "GL_utilities.h"
+#include "loadobj.h"
+#include "VectorUtils3.h"
+#include "LoadTGA.h"
+
+
+
+int main(int argc, char *argv[]) {
+
+  return 0;
+}

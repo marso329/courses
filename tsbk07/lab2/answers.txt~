@@ -1,0 +1,40 @@
+part1:
+
+How are the textures coordinates mapped on the bunny? Can you see what geometry was used?
+the texture is mapped with x,y values from 0 to 1. where 0,0 is bottom left corner. No i cant see that.
+
+What kind of procedural texture did you make?
+The r and g is the texture coordinates and the b is a sinewave from the rotation matrix, the alpha i constant 1
+
+part 2:
+
+Can we modify how we access the texture? How?
+?
+
+
+Why can't we just pass the texture object to the shader? There is a specific reason for this, a limited resource. What?
+bandwidth
+
+part3:
+How did you move the bunny to get it in view?
+moved the object back in z-direction
+
+part4:
+
+    Given a certain vector for v, is there some place you can't place the camera?
+the camera looking vector can't be perpendicular to the v vector
+
+part5:
+Did you implement your light calculations in the vertex or fragment shader? So, which kind of shading did you implement?
+fragment shader
+fragment shader, phong shader
+
+Some geometry data must be vec4, others are just as well vec3's. Which ones, and why? How about vertices, light source, normal vectors...?
+
+part7:
+If you rotate an object or rotate the camera, what matrices are affected?
+
+object:
+mdlmatrix
+camera:
+lookMatrix

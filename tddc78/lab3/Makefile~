@@ -1,0 +1,15 @@
+CC=gcc
+CFLAGS= -std=c99 -Wall -g -fopenmp
+
+all:laplsolv lapsolvomp
+
+clean:
+	rm laplsolv lapsolvomp
+
+
+
+laplsolv:laplsolv.f90
+	gfortran -fopenmp $^ -o $@
+
+lapsolvomp:
+	$(CC) $(CFLAGS) lapsolomp.c -o $@

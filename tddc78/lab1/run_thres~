@@ -1,0 +1,6 @@
+
+	for cores in {1..4};do 
+		echo cores: $cores >>thresmpidata.txt; 
+		mpirun -np $cores ./thresmpi im1.ppm output>>blurmpidata.txt;
+	done
+

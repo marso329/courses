@@ -1,0 +1,66 @@
+\documentclass[titlepage, a4paper]{article}
+\input{../mall/layout.tex}	% Importera generella layout-strukturer
+
+% Information nödvändig för generella layout-strukturer
+\newcommand{\LIPSgrupp}{50}
+\newcommand{\LIPSredaktor}{Martin Söderén}
+\newcommand{\LIPSversion}{0.1}
+\newcommand{\LIPSdokument}{Rapport}
+\newcommand{\LIPSdokumenttyp}{Rapport}
+\newcommand{\LIPSgranskatdatum}{-}
+\newcommand{\LIPSgranskare}{-}
+\newcommand{\LIPSgodkannare}{-}
+\newcommand{\LIPSgodkantdatum}{-}
+\newcommand{\LIPSkursnamn}{TSBK07}
+\newcommand{\LIPSprojektnamn}{TMBTRF 3D File Manager}
+\newcommand{\LIPSprojektgrupp}{Grupp 50}
+\newcommand{\LIPSartaltermin}{VT, 2016}
+\newcommand{\LIPSgrupphemsida}{https://github.com/marso329/tsbk07/tree/master/projekt}
+\newcommand{\LIPSkund}{LIU}
+\newcommand{\LIPSkundkontakt}{Ingemar Ragnemalm}
+\newcommand{\LIPSkursansvarig}{Ingemar Ragnemalm}
+\newcommand{\LIPShandledare}{Ingemar Ragnemalm}
+
+% Dokument-specifika paket
+\usepackage{tabularx}
+\usepackage{tikz}	
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{hyperref}
+\usetikzlibrary{shapes, arrows}
+
+\pagenumbering{roman}
+
+\begin{document}
+
+\LIPSTitelsida
+
+\begin{LIPSprojektidentitet}
+	\LIPSgruppmedlem{Martin Söderén}{Senior Software design engineer}{070 816 32 41}{marso329@student.liu.se}
+\end{LIPSprojektidentitet}
+
+%\newpage
+%\tableofcontents	%Innehållsförteckning
+
+\newpage
+
+\begin{LIPSdokumenthistorik}
+\LIPSversionsinfo{0.1}{2016-05-26}{Första utkast}{Martin}{}
+\end{LIPSdokumenthistorik}
+
+\newpage
+\pagenumbering{arabic}	%Påbörja sidnumrering
+
+\input{tex/inledning}
+
+
+\input{tex/bakgrund}
+
+\input{tex/implementation}
+
+\input{tex/problem}
+
+\input{tex/sammanfattning}
+
+\end{document}

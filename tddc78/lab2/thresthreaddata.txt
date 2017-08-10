@@ -1,0 +1,64 @@
+cores: 1
+it took: 0.001941
+cores: 3
+it took: 0.000880
+cores: 5
+it took: 0.000693
+cores: 7
+it took: 0.000595
+cores: 9
+it took: 0.000847
+cores: 11
+it took: 0.000782
+cores: 13
+it took: 0.000934
+cores: 15
+it took: 0.000810
+cores: 17
+it took: 0.000813
+cores: 19
+it took: 0.001017
+cores: 21
+it took: 0.000760
+cores: 23
+it took: 0.000911
+cores: 25
+it took: 0.000802
+cores: 27
+it took: 0.000943
+cores: 29
+it took: 0.001252
+cores: 31
+it took: 0.001256
+cores: 33
+it took: 0.001067
+cores: 35
+it took: 0.001158
+cores: 37
+it took: 0.001127
+cores: 39
+it took: 0.001138
+cores: 41
+it took: 0.001305
+cores: 43
+it took: 0.001218
+cores: 45
+it took: 0.001244
+cores: 47
+it took: 0.001271
+cores: 49
+it took: 0.001457
+cores: 51
+it took: 0.001301
+cores: 53
+it took: 0.001509
+cores: 55
+it took: 0.001416
+cores: 57
+it took: 0.001571
+cores: 59
+it took: 0.001498
+cores: 61
+it took: 0.001532
+cores: 63
+it took: 0.001542

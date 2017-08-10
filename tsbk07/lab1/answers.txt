@@ -1,0 +1,100 @@
+
+}Where is the origin placed in the on-screen coordinate system?
+Bang in the middle
+
+Which direction are the X and Y axes pointing in the on-screen coordinate system? 
+positive x to the right and positive y up
+
+The triangle color is controlled from the fragment shader. Would it be possible to control it from the main program? How?
+
+in lab1-1.c
+
+GLfloat colors[] =
+{
+	1.0f,1.0f,1.0f,1.0f,
+	0.5f,0.5f,0.5f,0.5f,
+	0.0f,0.0f,0.0f,0.0f
+};
+
+	glGenBuffers(1, &colorBufferObjID);
+	glBindBuffer(GL_ARRAY_BUFFER, colorBufferObjID); 
+	glBufferData(GL_ARRAY_BUFFER, 12*sizeof(GLfloat), colors, GL_STATIC_DRAW); 
+	glVertexAttribPointer(glGetAttribLocation(program, "in_Color"), 4, GL_FLOAT, GL_FALSE, 0, 0);
+	glEnableVertexAttribArray(glGetAttribLocation(program, "in_Color"));
+	
+	frag:
+	#version 150
+
+in vec4 out_Color;
+out vec4 out_Color1;
+
+void main(void)
+{
+	out_Color1 = out_Color;
+}
+vert:
+
+#version 150
+
+in vec3 in_Position;
+in vec4 in_Color;
+
+out vec4 out_Color;
+void main(void)
+{
+	gl_Position = vec4(in_Position, 1.0);
+
+	out_Color = in_Color;
+}
+
+
+
+part 2:
+
+What is the purpose of the "in", "out" and "uniform" modifiers?
+in :in variables, out=out variables, uniform:does not change between shader kernel executions. (static)
+
+What is the output of the vertex shader?
+The input to the fragment shader
+
+What does the function glUniformMatrix4fv do?
+Specify the value of a uniform variable 4×4 matrix for the current program object.	
+
+part3:
+
+What is the frame rate of the animation?
+50fps
+
+part 4:
+Did you need to do anything different when uploading the color data?
+I needed to create a vbo just like for the vertices
+
+The "in" and "out" modifiers are now used for something different. What?
+passing data from the vertex shader to the fragment shader
+
+What is this kind of shading called? What could we use otherwise?
+?
+
+part5:
+What problems did you encounter while building the cube?
+none but one problem could be clockwise/anti-clockwise position of the vertices in the polygon
+How do you change the facing of a polygon?
+change the position of the vertices 
+
+part6:
+Why do we need normal vectors for a model?
+For light, collision detection, ray tracing
+
+What did you do in your fragment shader?
+Just sat the color=normal
+
+Should a normal vector always be perpendicular to a certain triangle? If not, why?
+yes
+
+Now we are using glBindBuffer and glBufferData again. They deal with buffers, but in what way?
+glbindbuffer creates a buffer on the gpu and glbufferdata uploads it
+
+
+
+
+

@@ -1,0 +1,370 @@
+#include "lab4.h"
+using namespace std;
+
+#define __GL_SYNC_TO_VBLANK = 1;
+Model *m, *m2, *tm;
+GLuint tex1, tex2, tex3, skybox_texture,snow_texture;
+TextureData ttex; // terrain
+vector<ModelData> all_models;
+GLuint program;
+GLuint skybox_program;
+GLuint ground_program;
+WorldData* worlddata;
+
+Point3D lightSourcesColorsArr[] = { { 1.0f, 0.0f, 0.0f }, // Red light
+		{ 0.0f, 1.0f, 0.0f }, // Green light
+		{ 0.0f, 0.0f, 1.0f }, // Blue light
+		{ 1.0f, 1.0f, 1.0f } }; // White light
+
+Point3D lightSourcesDirectionsPositions[] = { { 10.0f, 5.0f, 0.0f }, // Red light, positional
+		{ 0.0f, 5.0f, 10.0f }, // Green light, positional
+		{ -1.0f, 0.0f, 0.0f }, // Blue light along X
+		{ 0.0f, 0.0f, -1.0f } }; // White light along Z
+
+GLfloat specularExponent[] = { 10.0, 20.0, 60.0, 5.0 };
+GLint isDirectional[] = { 0, 0, 1, 1 };
+
+void update_world() {
+	float height= calculate_height(worlddata->cam.x,worlddata->cam.z,tm);
+	if (worlddata->cam.y<height+0.5){
+		worlddata->cam.y=height+0.5;
+	}
+	worlddata->camMatrix = lookAt(worlddata->cam.x, worlddata->cam.y,
+			worlddata->cam.z, worlddata->lookAtPoint.x,
+			worlddata->lookAtPoint.y, worlddata->lookAtPoint.z, worlddata->up.x,
+			worlddata->up.y, worlddata->up.z);
+	worlddata->total = Mult(worlddata->camMatrix, IdentityMatrix());
+}
+
+void update_sphere_height(ModelData* model) {
+	mat4 temp_matrix = T(0, 0, 0);
+	for (auto it = model->transformations.begin();
+			it != model->transformations.end(); it++) {
+		temp_matrix = Mult(*(*it), temp_matrix);
+	}
+	GLfloat x = temp_matrix.m[3];
+	GLfloat z = temp_matrix.m[11];
+	GLfloat height = calculate_height(x, z, tm);
+	temp_matrix = T(0, height + 0.2, 0);
+	memcpy(model->height_control->m, &temp_matrix.m, sizeof(GLfloat) * 16);
+
+	temp_matrix = T((glutGet(GLUT_ELAPSED_TIME) / 1000.0) * model->direction.x,
+			(glutGet(GLUT_ELAPSED_TIME) / 1000.0) * model->direction.y,
+			(glutGet(GLUT_ELAPSED_TIME) / 1000.0) * model->direction.z);
+	memcpy(&(model->movement->m), &temp_matrix.m, sizeof(GLfloat) * 16);
+	if (!model->changed_direction) {
+		if (x > tm->tex_width || x < 0) {
+			model->direction = vec3(model->direction.x * -1.0,
+					model->direction.y, model->direction.z);
+			model->changed_direction = true;
+		}
+		if (z > tm->tex_height || z < 0) {
+			model->direction = vec3(model->direction.x, model->direction.y,
+					model->direction.z * -1.0);
+			model->changed_direction = true;
+		}
+	} else {
+		model->numbers_waited += 1;
+		if (model->numbers_waited > 20) {
+			model->numbers_waited = 0;
+			model->changed_direction = false;
+		}
+	}
+
+	vec3 normal = getNormal(x, z, tm);
+	GLfloat xy_dot = normal.x;
+
+	GLfloat yz_dot = normal.z;
+	if (xy_dot > 1.0) {
+		xy_dot += -2.0;
+
+	}
+	if (xy_dot < -1.0) {
+		xy_dot += 2.0;
+	}
+	if (yz_dot > 1.0) {
+		yz_dot += -2.0;
+
+	}
+	if (yz_dot < -1.0) {
+		yz_dot += 2.0;
+	}
+	GLfloat xy_angle = acos(xy_dot) - PI / 2.0;
+	GLfloat yz_angle = acos(yz_dot) - PI / 2.0;
+	temp_matrix = Rx(yz_angle);
+	temp_matrix = Mult(temp_matrix, Rz(xy_angle));
+	memcpy(&(model->rotation_control->m), &temp_matrix.m, sizeof(GLfloat) * 16);
+
+}
+
+void skybox_rendering(ModelData* model) {
+	mat4 temp_matrix;
+	memcpy(&temp_matrix.m, &worlddata->total.m, sizeof(GLfloat) * 16);
+	temp_matrix.m[3] = 0;
+	temp_matrix.m[7] = 0;
+	temp_matrix.m[11] = 0;
+	temp_matrix.m[15] = 1;
+	glDisable(GL_DEPTH_TEST);
+	glUniformMatrix4fv(glGetUniformLocation(program, "cameraMatrix"), 1,
+	GL_TRUE, temp_matrix.m);
+	temp_matrix = T(0, -0.5, 0);
+	glUniformMatrix4fv(glGetUniformLocation(program, "mdlMatrix"), 1, GL_TRUE,
+			temp_matrix.m);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, model->texture);
+	DrawModel(model->model, program, (char*) "inPosition", (char*) "inNormal",
+			(char*) "inTexCoord");
+	glEnable(GL_DEPTH_TEST);
+}
+
+void skybox_rendering_before(ModelData* model) {
+	mat4 temp_matrix;
+	memcpy(&temp_matrix.m, &worlddata->total.m, sizeof(GLfloat) * 16);
+	temp_matrix.m[3] = 0;
+	temp_matrix.m[7] = 0;
+	temp_matrix.m[11] = 0;
+	temp_matrix.m[15] = 1;
+	glDisable(GL_DEPTH_TEST);
+	glUniformMatrix4fv(glGetUniformLocation(skybox_program, "cameraMatrix"), 1,
+	GL_TRUE, temp_matrix.m);
+
+}
+void skybox_rendering_after(ModelData* model) {
+	glEnable(GL_DEPTH_TEST);
+
+}
+void ground_before(ModelData* model){
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, model->texture2);
+	glUniform1i(glGetUniformLocation(model->program, "texUnit2"), 1);
+}
+
+void init(void) {
+	dumpInfo();
+	glewExperimental = GL_TRUE;
+	glewInit();
+	//clear the error which glewinit() throws,apperently it is normal
+	while (glGetError() != GL_NO_ERROR) {
+	}
+	// GL inits
+	glClearColor(0.2, 0.2, 0.5, 0);
+	glEnable(GL_DEPTH_TEST);
+	glDisable(GL_CULL_FACE);
+	printError("GL inits");
+
+	//store data about the world
+	worlddata = (WorldData*) malloc(sizeof(WorldData));
+	worlddata->projectionMatrix = frustum(-0.1, 0.1, -0.1, 0.1, 0.2, 50.0);
+	worlddata->sphere_radius = 2.0;
+	worlddata->distance_from_ground = 2.0;
+	worlddata->mouse_x_old = 0.0;
+	worlddata->mouse_y_old = 0.0;
+	worlddata->up = vec3(0, 1, 0);
+	worlddata-> cam = {0, 10, 2};
+	worlddata->lookAtPoint = {2, 0, 2};
+
+	// Load and compile shader
+	program = loadShaders("shaders/terrain.vert", "shaders/terrain.frag");
+	skybox_program = loadShaders("shaders/skybox.vert", "shaders/skybox.frag");
+	ground_program=loadShaders("shaders/ground.vert", "shaders/ground.frag");
+	glUseProgram(program);
+	printError("init shader");
+	LoadTGATextureSimple((char*) "resources/grass.tga", &tex1);
+	LoadTGATextureData((char*) "resources/dirt.tga", &ttex);
+	LoadTGATextureSimple((char*) "resources/earth.tga", &tex2);
+	LoadTGATextureSimple((char*) "resources/SkyBox512.tga", &skybox_texture);
+	LoadTGATextureSimple((char*) "resources/snow.tga", &snow_texture);
+
+	ModelData skybox;
+	skybox.model = LoadModelPlus((char*) "resources/skybox.obj");
+	skybox.texture = skybox_texture;
+	skybox.transformations.push_back(create_matrix(T(0, -0.5, 0)));
+	skybox.program = skybox_program;
+	//skybox.override = &skybox_rendering;
+	skybox.after = &skybox_rendering_after;
+	skybox.before = &skybox_rendering_before;
+	all_models.push_back(skybox);
+
+	tm = GenerateTerrain(&ttex);
+	//ScaleModel(tm,0.1,0.1,0.1);
+	GenerateNormals(tm);
+
+	ModelData ground;
+	ground.model = tm;
+	ground.texture = tex1;
+	ground.texture2=snow_texture;
+	ground.transformations.push_back(create_matrix(T(0, 0, 0)));
+	ground.program = ground_program;
+	ground.before=&ground_before;
+	all_models.push_back(ground);
+
+	srand(time(NULL));
+
+	ModelData sphere;
+	Model* temp_model= LoadModelPlus((char*) "resources/sphere.obj");
+	for (unsigned int i = 0; i < 10; i++) {
+		sphere=ModelData();
+		sphere.model=temp_model;
+		sphere.model = LoadModelPlus((char*) "resources/sphere.obj");
+		sphere.texture = tex2;
+		sphere.movement = (mat4*) malloc(sizeof(mat4));
+		sphere.rotation_control = (mat4*) malloc(sizeof(mat4));
+		sphere.height_control = (mat4*) malloc(sizeof(mat4));
+		sphere.transformations.push_back(sphere.rotation_control);
+		sphere.transformations.push_back(create_matrix(S(0.5, 0.5, 0.5)));
+		sphere.transformations.push_back(
+				create_matrix(T(5, 0.35, 5)));
+		sphere.transformations.push_back(sphere.movement);
+		sphere.transformations.push_back(sphere.height_control);
+		sphere.program = program;
+		mat4 temp_matrix = T(0, 0, 0);
+		sphere.direction = vec3((float) (rand() % 100) / 100.0, 0,
+				(float) (rand() % 100 ) / 100.0);
+		memcpy(&(sphere.height_control->m), &temp_matrix.m,
+				sizeof(GLfloat) * 16);
+		memcpy(&(sphere.movement->m), &temp_matrix.m, sizeof(GLfloat) * 16);
+		memcpy(&(sphere.rotation_control->m), &temp_matrix.m,
+				sizeof(GLfloat) * 16);
+		sphere.before = &update_sphere_height;
+		all_models.push_back(sphere);
+	}
+
+	//light
+	glUniform3fv(glGetUniformLocation(program, "lightSourcesDirPosArr"), 4,
+			&lightSourcesDirectionsPositions[0].x);
+	glUniform3fv(glGetUniformLocation(program, "lightSourcesColorArr"), 4,
+			&lightSourcesColorsArr[0].x);
+	glUniform1fv(glGetUniformLocation(program, "specularExponent"), 4,
+			specularExponent);
+	glUniform1iv(glGetUniformLocation(program, "isDirectional"), 4,
+			isDirectional);
+
+	printError("init terrain");
+
+}
+
+void timer(int i) {
+	glutTimerFunc(20, &timer, i);
+	glutPostRedisplay();
+}
+
+//w=25 ,a=38, 40=d, 39=s
+void keyboard(unsigned int key, int x, int y) {
+	vec3 dir_vector, dir_vector2;
+	dir_vector = VectorSub(worlddata->cam, worlddata->lookAtPoint);
+	dir_vector = Normalize(dir_vector);
+	dir_vector = ScalarMult(dir_vector, 0.1);
+	dir_vector2 = CrossProduct(dir_vector, worlddata->up);
+	dir_vector2 = Normalize(dir_vector2);
+	dir_vector2 = ScalarMult(dir_vector2, 0.1);
+	if (key == 25) {
+		worlddata->cam = VectorSub(worlddata->cam, dir_vector);
+		worlddata->lookAtPoint = VectorSub(worlddata->lookAtPoint, dir_vector);
+	} else if (key == 39) {
+		worlddata->cam = VectorAdd(worlddata->cam, dir_vector);
+		worlddata->lookAtPoint = VectorAdd(worlddata->lookAtPoint, dir_vector);
+
+	} else if (key == 38) {
+		worlddata->cam = VectorAdd(worlddata->cam, dir_vector2);
+		worlddata->lookAtPoint = VectorAdd(worlddata->lookAtPoint, dir_vector2);
+
+	} else if (key == 40) {
+		worlddata->cam = VectorSub(worlddata->cam, dir_vector2);
+		worlddata->lookAtPoint = VectorSub(worlddata->lookAtPoint, dir_vector2);
+
+	}
+	worlddata->lookAtPoint.y = calculate_height(worlddata->lookAtPoint.x,
+			worlddata->lookAtPoint.z, tm) + 0.5;
+}
+
+void mouse(int x, int y) {
+	mouse_motion_func(x, y, worlddata);
+}
+
+void display(void) {
+	// clear the screen
+	//printf("model height: %f \n",get_height2(worlddata->lookAtPoint.z,worlddata->lookAtPoint.x,tm));
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	printError("pre display");
+	update_world();
+	mat4 temp_trans;
+	for (auto it = all_models.begin(); it != all_models.end(); it++) {
+		if ((*it).override != NULL) {
+			(*(*it).override)(&(*it));
+		} else {
+			glUseProgram((*it).program);
+			//light
+			glUniform3fv(glGetUniformLocation((*it).program, "lightSourcesDirPosArr"), 4,
+					&lightSourcesDirectionsPositions[0].x);
+			glUniform3fv(glGetUniformLocation((*it).program, "lightSourcesColorArr"), 4,
+					&lightSourcesColorsArr[0].x);
+			glUniform1fv(glGetUniformLocation((*it).program, "specularExponent"), 4,
+					specularExponent);
+			glUniform1iv(glGetUniformLocation((*it).program, "isDirectional"), 4,
+					isDirectional);
+
+			glUniformMatrix4fv(
+			glGetUniformLocation((*it).program, "cameraMatrix"), 1,
+			GL_TRUE, worlddata->total.m);
+			if ((*it).before != NULL) {
+				(*(*it).before)(&(*it));
+			}
+
+
+			printError("display 1");
+			glUniformMatrix4fv(
+			glGetUniformLocation((*it).program, "projMatrix"), 1,
+			GL_TRUE, worlddata->projectionMatrix.m);
+			glActiveTexture((*it).texture_unit);
+			glUniform1i(glGetUniformLocation((*it).program, "tex"),
+					(*it).texture_unit);
+			temp_trans = T(0, 0, 0);
+			printError("display 2");
+
+			for (auto it2 = (*it).transformations.begin();
+					it2 != (*it).transformations.end(); it2++) {
+				temp_trans = Mult(*(*it2), temp_trans);
+			}
+			glUniformMatrix4fv(glGetUniformLocation((*it).program, "mdlMatrix"),
+					1,
+					GL_TRUE, temp_trans.m);
+			printError("display 3");
+
+			/**		glUniformMatrix4fv(glGetUniformLocation(program, "cameraMatrix"), 1,
+			 GL_TRUE, worlddata->total.m);
+			 **/
+			glUniform3fv(glGetUniformLocation((*it).program, "cameraPosition"),
+					1, &worlddata->cam.x);
+			glBindTexture(GL_TEXTURE_2D, (*it).texture);
+			printError("display 4");
+
+			DrawModel((*it).model, (*it).program, (char*) "inPosition",
+					(char*) "inNormal", (char*) "inTexCoord");
+			if ((*it).after != NULL) {
+				(*(*it).after)(&(*it));
+			}
+		}
+	}
+	printError("display 3");
+
+	glutSwapBuffers();
+}
+
+int main(int argc, char *argv[]) {
+
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
+	glutInitContextVersion(3, 2);
+	glutInitWindowSize(600, 600);
+	glutCreateWindow((char*) "TSBK07 Lab 4");
+	glutDisplayFunc(display);
+	glutKeyboardFunc(&keyboard);
+	init();
+	glutTimerFunc(20, &timer, 0);
+
+	glutPassiveMotionFunc(mouse);
+	glutMainLoop();
+	exit(0);
+}
+

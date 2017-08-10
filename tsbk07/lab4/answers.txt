@@ -1,0 +1,35 @@
+1.
+What kind of data does the heightmap image data hold? What range is the heightmap data?
+grayscale 0-255
+
+The terrain is 4x4. How many polygons does it draw?
+18st 
+
+Did you need to extend your camera movement code? How?
+yes, i extended it so that the camera looks at a point above the ground all the time,
+
+
+3.
+How did you implement the cross product? Function call, inline...? Normalization? 
+CalcNormalVector
+
+Which method did you use to find the normal vector? 
+three neighbor vertices
+
+4.
+How did you figure out what surface to use? 
+Normalized the x and z values and checked which side of the line in the quad the point was
+
+How did you calculate the height from the surface? 
+three points->normal
+normal+one point=plane equation
+solve for y with the x and z values given
+
+5.
+Objects with terrain dependent slope 
+
+Camera movement
+
+Multitextured terrain
+
+multiple objects(without collision detection)

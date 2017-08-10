@@ -1,0 +1,8 @@
+
+for radius in {1..21..10};do 
+		for cores in {1..64..2};do 
+		echo cores: $cores radius: $radius>>blurmpidata.txt; 
+		mpprun -n $cores ./blurmpi $radius im1.ppm output>>blurmpidata.txt;
+	done
+	done
+

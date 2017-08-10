@@ -1,0 +1,42 @@
+Describe the sequential sorting algorithm you chose to implement. This algo-
+rithm would sort 4 bytes integers in increasing order:
+
+quicksort:
+
+chose pivot
+split into two list with < and with >= elements
+call quicksort recursice on each list
+
+Describe the basic parallelization strategy you implemented:
+
+instead of calling recursive two job stucts are pushed to a stack proteced by a lock
+each thread function contains a while loop:
+check if stack is empty 
+if not get job and execute job and push more to stack
+check if we are done
+if we are done exit
+
+
+Show the limitations of your parallel implementation. In what situation(s) does
+it struggle to take profit of all cores available?
+
+Limitations.
+In the first iteration only one core is being used
+in the second iteration only two cores is being used
+each threads polls from the stack all the time(could be solver using condition variables)
+not doing it inplace push_back to c++ vectors takes 40% of the time
+
+Describe how you made your implementation to run fast on 3 cores.
+after two iterations all the work is spread even on all cores
+
+Show the sorting time and/or the speedup of your implementation. The per-
+formance with 3 cores should be approximately mid-way between performance
+with 2 and 4 cores:
+
+Show the pipeline structure you chose for 1 to 6 cores (4 cores for students in
+Southfork):
+4 level balanced tree for one and two cores and a 6 level balanced trees for three and four cores to make it more fine grain
+
+
+Show the schedule you used for 1 to 6 cores (4 cores for students in Southfork).
+Longest path for all, made custom for two and three cores

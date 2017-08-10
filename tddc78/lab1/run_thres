@@ -1,0 +1,6 @@
+
+	for cores in {1..64};do 
+		echo cores: $cores >>thresmpidata.txt; 
+		mpprun -n $cores ./thresmpi im1.ppm output>>thresmpidata.txt;
+	done
+

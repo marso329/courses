@@ -1,0 +1,256 @@
+cores: 1
+mpprun info: Starting impi run on 2 node ( 1 rank X 1 th ) for job ID 9702967
+That took 0.007560 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.348594
+cores: 2
+mpprun info: Starting impi run on 2 node ( 2 rank X 1 th ) for job ID 9702967
+That took 0.004026 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.274388
+cores: 3
+mpprun info: Starting impi run on 2 node ( 3 rank X 1 th ) for job ID 9702967
+That took 0.004183 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.106916
+cores: 4
+mpprun info: Starting impi run on 2 node ( 4 rank X 1 th ) for job ID 9702967
+That took 0.005349 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.134879
+cores: 5
+mpprun info: Starting impi run on 2 node ( 5 rank X 1 th ) for job ID 9702967
+That took 0.003914 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.167072
+cores: 6
+mpprun info: Starting impi run on 2 node ( 6 rank X 1 th ) for job ID 9702967
+That took 0.004775 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.082159
+cores: 7
+mpprun info: Starting impi run on 2 node ( 7 rank X 1 th ) for job ID 9702967
+That took 0.004917 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.184509
+cores: 8
+mpprun info: Starting impi run on 2 node ( 8 rank X 1 th ) for job ID 9702967
+That took 0.006142 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.124125
+cores: 9
+mpprun info: Starting impi run on 2 node ( 9 rank X 1 th ) for job ID 9702967
+That took 0.005206 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.439095
+cores: 10
+mpprun info: Starting impi run on 2 node ( 10 rank X 1 th ) for job ID 9702967
+That took 0.006624 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.246026
+cores: 11
+mpprun info: Starting impi run on 2 node ( 11 rank X 1 th ) for job ID 9702967
+That took 0.007608 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.279904
+cores: 12
+mpprun info: Starting impi run on 2 node ( 12 rank X 1 th ) for job ID 9702967
+That took 0.007053 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.300444
+cores: 13
+mpprun info: Starting impi run on 2 node ( 13 rank X 1 th ) for job ID 9702967
+That took 0.008624 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.388669
+cores: 14
+mpprun info: Starting impi run on 2 node ( 14 rank X 1 th ) for job ID 9702967
+That took 0.010796 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.352003
+cores: 15
+mpprun info: Starting impi run on 2 node ( 15 rank X 1 th ) for job ID 9702967
+That took 0.011740 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.392368
+cores: 16
+mpprun info: Starting impi run on 2 node ( 16 rank X 1 th ) for job ID 9702967
+That took 0.008705 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.420911
+cores: 17
+mpprun info: Starting impi run on 2 node ( 17 rank X 1 th ) for job ID 9702967
+That took 0.015689 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.541982
+cores: 18
+mpprun info: Starting impi run on 2 node ( 18 rank X 1 th ) for job ID 9702967
+That took 0.011760 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.484589
+cores: 19
+mpprun info: Starting impi run on 2 node ( 19 rank X 1 th ) for job ID 9702967
+That took 0.014182 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.494546
+cores: 20
+mpprun info: Starting impi run on 2 node ( 20 rank X 1 th ) for job ID 9702967
+That took 0.013275 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.488811
+cores: 21
+mpprun info: Starting impi run on 2 node ( 21 rank X 1 th ) for job ID 9702967
+That took 0.013058 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.516404
+cores: 22
+mpprun info: Starting impi run on 2 node ( 22 rank X 1 th ) for job ID 9702967
+That took 0.011186 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.525510
+cores: 23
+mpprun info: Starting impi run on 2 node ( 23 rank X 1 th ) for job ID 9702967
+That took 0.010274 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.526664
+cores: 24
+mpprun info: Starting impi run on 2 node ( 24 rank X 1 th ) for job ID 9702967
+That took 0.007553 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.553124
+cores: 25
+mpprun info: Starting impi run on 2 node ( 25 rank X 1 th ) for job ID 9702967
+That took 0.008281 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.555354
+cores: 26
+mpprun info: Starting impi run on 2 node ( 26 rank X 1 th ) for job ID 9702967
+That took 0.008592 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.571450
+cores: 27
+mpprun info: Starting impi run on 2 node ( 27 rank X 1 th ) for job ID 9702967
+That took 0.008119 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.578845
+cores: 28
+mpprun info: Starting impi run on 2 node ( 28 rank X 1 th ) for job ID 9702967
+That took 0.012218 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.574699
+cores: 29
+mpprun info: Starting impi run on 2 node ( 29 rank X 1 th ) for job ID 9702967
+That took 0.008913 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.595287
+cores: 30
+mpprun info: Starting impi run on 2 node ( 30 rank X 1 th ) for job ID 9702967
+That took 0.011346 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.595067
+cores: 31
+mpprun info: Starting impi run on 2 node ( 31 rank X 1 th ) for job ID 9702967
+That took 0.011630 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.609985
+cores: 32
+mpprun info: Starting impi run on 2 node ( 32 rank X 1 th ) for job ID 9702967
+That took 0.011062 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.656595
+cores: 33
+mpprun info: Starting impi run on 2 node ( 33 rank X 1 th ) for job ID 9702967
+That took 0.009198 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.731367
+cores: 34
+mpprun info: Starting impi run on 2 node ( 34 rank X 1 th ) for job ID 9702967
+That took 0.017580 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.810281
+cores: 35
+mpprun info: Starting impi run on 2 node ( 35 rank X 1 th ) for job ID 9702967
+That took 0.013904 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.827645
+cores: 36
+mpprun info: Starting impi run on 2 node ( 36 rank X 1 th ) for job ID 9702967
+That took 0.013663 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.879288
+cores: 37
+mpprun info: Starting impi run on 2 node ( 37 rank X 1 th ) for job ID 9702967
+That took 0.013275 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.948874
+cores: 38
+mpprun info: Starting impi run on 2 node ( 38 rank X 1 th ) for job ID 9702967
+That took 0.023945 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:00.979465
+cores: 39
+mpprun info: Starting impi run on 2 node ( 39 rank X 1 th ) for job ID 9702967
+That took 0.021379 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.033736
+cores: 40
+mpprun info: Starting impi run on 2 node ( 40 rank X 1 th ) for job ID 9702967
+That took 0.023564 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.037126
+cores: 41
+mpprun info: Starting impi run on 2 node ( 41 rank X 1 th ) for job ID 9702967
+That took 0.017300 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.161958
+cores: 42
+mpprun info: Starting impi run on 2 node ( 42 rank X 1 th ) for job ID 9702967
+That took 0.022232 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.274064
+cores: 43
+mpprun info: Starting impi run on 2 node ( 43 rank X 1 th ) for job ID 9702967
+That took 0.025655 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.334190
+cores: 44
+mpprun info: Starting impi run on 2 node ( 44 rank X 1 th ) for job ID 9702967
+That took 0.017836 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.390055
+cores: 45
+mpprun info: Starting impi run on 2 node ( 45 rank X 1 th ) for job ID 9702967
+That took 0.021567 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.550376
+cores: 46
+mpprun info: Starting impi run on 2 node ( 46 rank X 1 th ) for job ID 9702967
+That took 0.041396 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.728817
+cores: 47
+mpprun info: Starting impi run on 2 node ( 47 rank X 1 th ) for job ID 9702967
+That took 0.024699 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.801404
+cores: 48
+mpprun info: Starting impi run on 2 node ( 48 rank X 1 th ) for job ID 9702967
+That took 0.019212 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.882584
+cores: 49
+mpprun info: Starting impi run on 2 node ( 49 rank X 1 th ) for job ID 9702967
+That took 0.029517 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.803098
+cores: 50
+mpprun info: Starting impi run on 2 node ( 50 rank X 1 th ) for job ID 9702967
+That took 0.027322 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.921770
+cores: 51
+mpprun info: Starting impi run on 2 node ( 51 rank X 1 th ) for job ID 9702967
+That took 0.057186 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.857875
+cores: 52
+mpprun info: Starting impi run on 2 node ( 52 rank X 1 th ) for job ID 9702967
+That took 0.029979 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.935131
+cores: 53
+mpprun info: Starting impi run on 2 node ( 53 rank X 1 th ) for job ID 9702967
+That took 0.033421 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.072585
+cores: 54
+mpprun info: Starting impi run on 2 node ( 54 rank X 1 th ) for job ID 9702967
+That took 0.034034 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.930741
+cores: 55
+mpprun info: Starting impi run on 2 node ( 55 rank X 1 th ) for job ID 9702967
+That took 0.047085 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.941561
+cores: 56
+mpprun info: Starting impi run on 2 node ( 56 rank X 1 th ) for job ID 9702967
+That took 0.047009 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.107579
+cores: 57
+mpprun info: Starting impi run on 2 node ( 57 rank X 1 th ) for job ID 9702967
+That took 0.053013 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.983157
+cores: 58
+mpprun info: Starting impi run on 2 node ( 58 rank X 1 th ) for job ID 9702967
+That took 0.040568 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:01.941089
+cores: 59
+mpprun info: Starting impi run on 2 node ( 59 rank X 1 th ) for job ID 9702967
+That took 0.060118 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.073032
+cores: 60
+mpprun info: Starting impi run on 2 node ( 60 rank X 1 th ) for job ID 9702967
+That took 0.045786 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.120810
+cores: 61
+mpprun info: Starting impi run on 2 node ( 61 rank X 1 th ) for job ID 9702967
+That took 0.034023 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.310687
+cores: 62
+mpprun info: Starting impi run on 2 node ( 62 rank X 1 th ) for job ID 9702967
+That took 0.036704 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.154026
+cores: 63
+mpprun info: Starting impi run on 2 node ( 63 rank X 1 th ) for job ID 9702967
+That took 0.065020 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.770104
+cores: 64
+mpprun info: Starting impi run on 2 node ( 64 rank X 1 th ) for job ID 9702967
+That took 0.071643 seconds
+mpprun info: Elapsed time (h:m:s):  0:00:02.949583
